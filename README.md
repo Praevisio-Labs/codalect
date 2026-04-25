@@ -2,6 +2,8 @@
 
 > *Rethinking Coding Education for the AI Era*
 
+**Live Demo:** https://raisin-ide.vercel.app/
+
 ### An Uphill Battle
 
 Professional AI coding tools weren't designed for learners. They're governed by task completion as the success condition.
