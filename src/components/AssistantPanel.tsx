@@ -1,7 +1,7 @@
-export default function AssistantPanel() {
+export default function AssistantPanel({ theme }: { theme: string }) {
     return (
         <>
-            <div className="text-xs text-dark-font">Assistant</div>
+            <div className={`text-xs text-${theme}-font`}>Assistant</div>
         </>
     )
 }

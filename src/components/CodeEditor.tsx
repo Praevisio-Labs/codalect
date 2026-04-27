@@ -5,9 +5,11 @@ import type { Language } from '@/types/index'
 import { SNIPPETS } from '@/data/snippets'
 import Editor from '@monaco-editor/react'
 
-export default function CodeEditor() {
+export default function CodeEditor({ theme }: { theme: string }) {
     const [language, setLanguage] = useState<Language>('typescript')
     const [snippet, setSnippet] = useState(SNIPPETS[language])
+
+    const editorTheme = theme == 'light' ? 'vs' : 'vs-dark'
 
     function onSelect(e: React.ChangeEvent<HTMLSelectElement>) {
         const lang: Language = e.target.value as Language
@@ -20,7 +22,7 @@ export default function CodeEditor() {
             <select
                 value={language}
                 onChange={onSelect}
-                className="text-xs text-dark-font">
+                className={`text-xs text-${theme}-font`}>
                 <option value="typescript">TypeScript</option>
                 <option value="javascript">JavaScript</option>
                 <option value="python">Python</option>
@@ -32,7 +34,7 @@ export default function CodeEditor() {
                     value={snippet}
                     language={language}
                     className="rounded-sm overflow-hidden"
-                    theme="vs-dark"
+                    theme={editorTheme}
                 />
             </div>
         </>

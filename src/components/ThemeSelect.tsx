@@ -1,17 +1,28 @@
 import { MoonIcon, SunIcon } from '@heroicons/react/24/outline'
 import RaisinIcon from '@/components/RaisinIcon'
 
-export default function ThemeSelect() {
+interface ThemeProps {
+    theme: string
+    setTheme: (theme: string) => void
+}
+
+export default function ThemeSelect({ theme, setTheme }: ThemeProps) {
     return (
         <div className="flex gap-1 items-center">
-            <div className="rounded-sm bg-dark-gap px-3 py-2">
-                <MoonIcon className="h-4 w-4 text-dark-font" />
+            <div
+                onClick={() => setTheme('dark')}
+                className={`rounded-sm bg-${theme}-gap px-3 py-2 cursor-pointer ${theme === 'dark' ? 'opacity-100' : 'opacity-40'}`}>
+                <MoonIcon className={`h-4 w-4 text-${theme}-font`} />
             </div>
-            <div className="rounded-sm bg-dark-gap px-3 py-2">
-                <RaisinIcon className="h-4 w-4 text-dark-font" />
+            <div
+                onClick={() => setTheme('raisin')}
+                className={`rounded-sm bg-${theme}-gap px-3 py-2 cursor-pointer ${theme === 'raisin' ? 'opacity-100' : 'opacity-40'}`}>
+                <RaisinIcon className={`h-4 w-4 text-${theme}-font`} />
             </div>
-            <div className="rounded-sm bg-dark-gap px-3 py-2">
-                <SunIcon className="h-4 w-4 text-dark-font" />
+            <div
+                onClick={() => setTheme('light')}
+                className={`rounded-sm bg-${theme}-gap px-3 py-2 cursor-pointer ${theme === 'light' ? 'opacity-100' : 'opacity-40'}`}>
+                <SunIcon className={`h-4 w-4 text-${theme}-font`} />
             </div>
         </div>
     )

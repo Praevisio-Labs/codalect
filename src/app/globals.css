@@ -1,24 +1,29 @@
 @import "tailwindcss";
 
 @theme {
-  --color-dark-page: #020509;
-  --color-dark-editor: #0B0E12;
-  --color-dark-panel: #020509;
-  --color-dark-input: #0B0E12;
-  --color-dark-gap: #171B1F;
-  --color-dark-font: #B9C3CD;
+  --color-dark-page: #020408;
+  --color-dark-editor: #0D1116;
+  --color-dark-panel: #020408;
+  --color-dark-input: #272C34;
+  --color-dark-gap: #161B22;
+  --color-dark-font: #838C96;
+  --color-dark-accent: #838C96;
   
-  --color-light-page: #FAFBFC;
-  --color-light-editor: #FFFFFF;
-  --color-light-panel: #FAFBFC;
-  --color-light-input: #FFFFFF;
-  --color-light-gap: #E4E7EB;
-  --color-light-font: #2F3640;
+  --color-light-page: #403D39;
+  --color-light-editor: #FFFCF2;
+  --color-light-panel: #FFFCF2;
+  --color-light-input: #CCC5B9;
+  --color-light-gap: #CCC5B9;
+  --color-light-font: #EB5E28;
+  --color-light-accent: #EB5E28;
   
-  --color-raisin-page: #1E1B22;
+  --color-raisin-page: #161419;
   --color-raisin-editor: #19161C;
   --color-raisin-panel: #19161C;
   --color-raisin-input: #1E1B22;
-  --color-raisin-gap: #161419;
-  --color-raisin-font: #7E7F80;
+  --color-raisin-gap: #1E1B22;
+  --color-raisin-font: #908E92;
+  --color-raisin-accent: #908E92;
 }
+
+@source inline("bg-dark-page bg-dark-editor bg-dark-panel bg-dark-input bg-dark-gap text-dark-font border-dark-accent bg-light-page bg-light-editor bg-light-panel bg-light-input bg-light-gap text-light-font border-light-accent bg-raisin-page bg-raisin-editor bg-raisin-panel bg-raisin-input bg-raisin-gap text-raisin-font border-raisin-accent");

@@ -10,8 +10,9 @@
 
 ## Sprint 2: Three-panel IDE with file tree and AI panel
 
-- [ ] build three-panel IDE layout with file tree, Monaco editor, and AI panel
-- [ ] implement static file tree with hardcoded file list
-- [ ] wire file tree clicks to load placeholder text into Monaco editor
-- [ ] build AI panel UI shell with input, send button, and message list
-- [ ] enhance and finalize layout at desktop screens sizes
+- [x] build three-panel IDE layout with file tree, Monaco editor, and AI panel, #12
+- [x] add custom tailwind classes and implement three-theme toggle, #17
+- [ ] implement static file tree with hardcoded file list, #13
+- [ ] wire file tree clicks to load placeholder text into Monaco editor, #14
+- [ ] build AI panel UI shell with input, send button, and message list, #15
+- [ ] enhance and finalize layout at desktop screen sizes, #16
