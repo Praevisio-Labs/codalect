@@ -16,14 +16,22 @@ export default function CodeEditor() {
     }
 
     return (
-        <div>
+        <>
             <select value={language} onChange={onSelect}>
                 <option value="typescript">TypeScript</option>
                 <option value="javascript">JavaScript</option>
                 <option value="python">Python</option>
                 <option value="java">Java</option>
             </select>
-            <Editor height="90vh" value={snippet} language={language} />
-        </div>
+            <div className="flex-1 min-h-0">
+                <Editor
+                    height="100%"
+                    value={snippet}
+                    language={language}
+                    className="rounded-sm overflow-hidden"
+                    theme="vs"
+                />
+            </div>
+        </>
     )
 }

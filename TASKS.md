@@ -7,3 +7,11 @@
 - [x] confirm Monaco renders TypeScript file with syntax highlighting, #5
 - [x] validate editor is functional: typing, cursor movement, basic keybindings, #6
 - [x] deploy editor to Vercel and confirm live URL, #3
+
+## Sprint 2: Three-panel IDE with file tree and AI panel
+
+- [ ] build three-panel IDE layout with file tree, Monaco editor, and AI panel
+- [ ] implement static file tree with hardcoded file list
+- [ ] wire file tree clicks to load placeholder text into Monaco editor
+- [ ] build AI panel UI shell with input, send button, and message list
+- [ ] enhance and finalize layout at desktop screens sizes
