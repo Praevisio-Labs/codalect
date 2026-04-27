@@ -1,7 +1,7 @@
 export default function FileTree() {
     return (
         <>
-            <p>File Tree</p>
+            <div className="text-xs text-dark-font">Explorer</div>
         </>
     )
 }

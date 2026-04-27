@@ -1,7 +1,7 @@
 export default function AssistantPanel() {
     return (
         <>
-            <p>AI Panel</p>
+            <div className="text-xs text-dark-font">Assistant</div>
         </>
     )
 }

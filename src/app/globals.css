@@ -1,1 +1,24 @@
 @import "tailwindcss";
+
+@theme {
+  --color-dark-page: #020509;
+  --color-dark-editor: #0B0E12;
+  --color-dark-panel: #020509;
+  --color-dark-input: #0B0E12;
+  --color-dark-gap: #171B1F;
+  --color-dark-font: #B9C3CD;
+  
+  --color-light-page: #FAFBFC;
+  --color-light-editor: #FFFFFF;
+  --color-light-panel: #FAFBFC;
+  --color-light-input: #FFFFFF;
+  --color-light-gap: #E4E7EB;
+  --color-light-font: #2F3640;
+  
+  --color-raisin-page: #1E1B22;
+  --color-raisin-editor: #19161C;
+  --color-raisin-panel: #19161C;
+  --color-raisin-input: #1E1B22;
+  --color-raisin-gap: #161419;
+  --color-raisin-font: #7E7F80;
+}
