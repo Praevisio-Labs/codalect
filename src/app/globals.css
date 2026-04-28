@@ -7,7 +7,8 @@
   --color-dark-input: #272C34;
   --color-dark-gap: #161B22;
   --color-dark-font: #838C96;
-  --color-dark-accent: #838C96;
+  --color-dark-accent: #001D3D;
+  --color-dark-card: #0D1116;
   
   --color-light-page: #403D39;
   --color-light-editor: #FFFCF2;
@@ -15,15 +16,17 @@
   --color-light-input: #CCC5B9;
   --color-light-gap: #CCC5B9;
   --color-light-font: #EB5E28;
-  --color-light-accent: #EB5E28;
+  --color-light-accent: #F2CC8F;
+  --color-light-card: #F4F1DE;
   
-  --color-raisin-page: #161419;
-  --color-raisin-editor: #19161C;
-  --color-raisin-panel: #19161C;
-  --color-raisin-input: #1E1B22;
-  --color-raisin-gap: #1E1B22;
-  --color-raisin-font: #908E92;
-  --color-raisin-accent: #908E92;
+  --color-raisin-page: #240046;
+  --color-raisin-editor: #5A189A;
+  --color-raisin-panel: #3C096C;
+  --color-raisin-input: #9D4EDD;
+  --color-raisin-gap: #7B2CBF;
+  --color-raisin-font: #FF9E00;
+  --color-raisin-accent: #FF6D00;
+  --color-raisin-card: #5A189A;
 }
 
-@source inline("bg-dark-page bg-dark-editor bg-dark-panel bg-dark-input bg-dark-gap text-dark-font border-dark-accent bg-light-page bg-light-editor bg-light-panel bg-light-input bg-light-gap text-light-font border-light-accent bg-raisin-page bg-raisin-editor bg-raisin-panel bg-raisin-input bg-raisin-gap text-raisin-font border-raisin-accent");
+@source inline("bg-dark-page bg-dark-editor bg-dark-panel bg-dark-input bg-dark-gap text-dark-font border-dark-accent bg-dark-card bg-light-page bg-light-editor bg-light-panel bg-light-input bg-light-gap text-light-font border-light-accent bg-light-card bg-raisin-page bg-raisin-editor bg-raisin-panel bg-raisin-input bg-raisin-gap text-raisin-font border-raisin-accent bg-raisin-card");

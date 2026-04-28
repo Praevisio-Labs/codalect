@@ -22,8 +22,7 @@ export default function Home() {
                 <ThemeSelect theme={theme} setTheme={setTheme} />
             </div>
             <div className="flex-1 flex gap-1 p-1 overflow-hidden">
-                <div
-                    className={`flex-1 h-full rounded-sm bg-${theme}-panel p-2`}>
+                <div className={`flex-1 h-full rounded-sm bg-${theme}-panel`}>
                     <FileTree theme={theme} />
                 </div>
                 <div
