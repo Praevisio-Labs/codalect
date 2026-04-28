@@ -1,6 +1,6 @@
-import { IconProps } from '@/types/components'
+import { LogoProps } from '@/types/components'
 
-export default function RaisinIcon({ className }: IconProps) {
+export default function RaisinIcon({ className }: LogoProps) {
     return (
         <svg
             className={className}

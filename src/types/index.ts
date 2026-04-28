@@ -1,6 +1,15 @@
-export type Language = 'typescript' | 'javascript' | 'python' | 'java'
+export type Language =
+    | 'typescript'
+    | 'javascript'
+    | 'python'
+    | 'java'
+    | 'html'
+    | 'css'
+    | 'markdown'
+    | 'json'
+    | 'sql'
 
 export type File = {
     name: string
-    language: Language
+    fileType: Language
 }

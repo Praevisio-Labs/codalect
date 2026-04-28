@@ -1,5 +1,6 @@
 import { FileTreeProps } from '@/types/components'
 import { FILES } from '@/data/files'
+import FileIcon from '@/components/FileIcon'
 
 export default function FileTree({ theme }: FileTreeProps) {
     return (
@@ -9,9 +10,13 @@ export default function FileTree({ theme }: FileTreeProps) {
                 {FILES.map((file, index) => (
                     <li
                         key={index}
-                        className={`border border-${theme}-accent 
-                            bg-${theme}-card text-xs text-${theme}-font 
-                            px-2 py-1`}>
+                        className={`
+                            flex items-center gap-2
+                            border border-${theme}-accent
+                            bg-${theme}-card text-xs text-${theme}-font
+                            px-2 py-1
+                            `}>
+                        <FileIcon fileType={file.fileType} />
                         {file.name}
                     </li>
                 ))}

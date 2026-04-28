@@ -1,8 +1,10 @@
 import type { File } from '@/types/index'
 
 export const FILES: File[] = [
-    { name: 'page.tsx', language: 'typescript' },
-    { name: 'index.js', language: 'javascript' },
-    { name: 'main.py', language: 'python' },
-    { name: 'Main.java', language: 'java' },
+    { name: 'page.tsx', fileType: 'typescript' },
+    { name: 'index.js', fileType: 'javascript' },
+    { name: 'main.py', fileType: 'python' },
+    { name: 'index.html', fileType: 'html' },
+    { name: 'styles.css', fileType: 'css' },
+    { name: 'README.md', fileType: 'markdown' },
 ]

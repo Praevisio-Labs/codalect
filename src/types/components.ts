@@ -15,6 +15,10 @@ export interface ThemeProps {
     setTheme: (theme: string) => void
 }
 
-export interface IconProps {
+export interface LogoProps {
     className?: string
+}
+
+export interface FileIconProps {
+    fileType: string
 }
