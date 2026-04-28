@@ -1,11 +1,12 @@
 'use client'
 
 import { useState } from 'react'
-import type { Language } from '@/types/index'
-import { SNIPPETS } from '@/data/snippets'
 import Editor from '@monaco-editor/react'
+import { SNIPPETS } from '@/data/snippets'
+import type { Language } from '@/types/index'
+import { EditorProps } from '@/types/components'
 
-export default function CodeEditor({ theme }: { theme: string }) {
+export default function CodeEditor({ theme }: EditorProps) {
     const [language, setLanguage] = useState<Language>('typescript')
     const [snippet, setSnippet] = useState(SNIPPETS[language])
 

@@ -1,6 +1,4 @@
-interface IconProps {
-    className?: string
-}
+import { IconProps } from '@/types/components'
 
 export default function RaisinIcon({ className }: IconProps) {
     return (
