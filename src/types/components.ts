@@ -1,8 +1,11 @@
+import { File } from './index'
+
 export interface FileTreeProps {
     theme: string
 }
 
 export interface EditorProps {
+    file: File
     theme: string
 }
 

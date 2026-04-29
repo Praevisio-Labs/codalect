@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { lusitana } from '@/app/ui/fonts'
 
+import { FILES } from '@/data/files'
 import FileTree from '@/components/FileTree'
 import CodeEditor from '@/components/CodeEditor'
 import AssistantPanel from '@/components/AssistantPanel'
