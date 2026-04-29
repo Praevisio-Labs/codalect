@@ -88,11 +88,21 @@ h1 {
         fileType: 'markdown',
         content: `
 
-# Raisin.IDE
+<br/>
 
-> Rethinking Coding Education for the AI Era
+<div id="raisin-logo" align="center">
+    <br />
+    <img src="./public/brand-slogan.png" alt="Raisin.IDE Logo" width="300"/>
+    <h3>Raisin.IDE</h3>
+</div>
 
-**Live Demo:** https://raisin-ide.vercel.app/
+<div id="tagline" align="center">
+
+<em>Rethinking Coding Education for the AI Era</em>
+
+</div>
+
+> **Live Demo:** https://raisin-ide.vercel.app/
 
 ## Overview
 
