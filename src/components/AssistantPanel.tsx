@@ -1,5 +1,9 @@
+'use client'
+
+import {useState} from 'react'
 import { AssistantProps } from '@/types/components'
 import RaisinIcon from '@/components/RaisinIcon'
+import { ArrowUpCircleIcon } from '@heroicons/react/24/outline'
 
 const messages = [
     { role: 'assistant', content: 'What are we building today?' },
@@ -24,8 +28,19 @@ const messages = [
 ]
 
 export default function AssistantPanel({ theme }: AssistantProps) {
-    const userStyle = 'self-end border rounded-sm opacity-60 font-semibold'
+    const [userQuery, setUserQuery] = useState('')
+
+    const userStyle = 'self-end border rounded-sm opacity-66 font-medium'
     const assistantStyle = 'self-start'
+
+    function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
+        setUserQuery(e.target.value)
+    }
+
+    function handleSubmit(e: React.SubmitEvent<HTMLFormElement>) {
+        e.preventDefault()
+        console.log("User asked:", userQuery)
+    }
 
     return (
         <>
@@ -38,16 +53,26 @@ export default function AssistantPanel({ theme }: AssistantProps) {
                     <div
                         key={index}
                         className={`
-                            text-xs text-${theme}-font p-2
+                            text-xs text-${theme}-font px-2 py-1
                             ${msg.role === 'user' ? userStyle : assistantStyle}
                             `}>
                         {msg.content}
                     </div>
                 ))}
-                <div
-                    className={`w-[80%] flex rounded-sm overflow-hidden bg-${theme}-editor mb-4`}>
-                    <input type="text" className="flex-1" />
-                </div>
+                {/* Check onChange: {userQuery} */}
+                <form
+                    onSubmit={handleSubmit}
+                    className={`w-[88%] flex rounded-sm overflow-hidden bg-${theme}-editor mb-4`}>
+                    <input 
+                        type="text" 
+                        value={userQuery} 
+                        onChange={handleChange} 
+                        placeholder="How can I help?"
+                        className={`flex-1 text-xs text-${theme}-font px-2 py-1`} />
+                    <button className={`bg-${theme}-accent px-1`}>
+                        <ArrowUpCircleIcon className="h-5 w-5" />
+                    </button>
+                </form>
             </div>
         </>
     )

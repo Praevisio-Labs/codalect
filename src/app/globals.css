@@ -29,4 +29,4 @@
   --color-raisin-card: #5A189A;
 }
 
-@source inline("bg-dark-page bg-dark-editor bg-dark-panel bg-dark-input bg-dark-gap bg-dark-card bg-dark-font text-dark-font text-dark-card border-dark-accent border-dark-gap bg-light-page bg-light-editor bg-light-panel bg-light-input bg-light-gap bg-light-card bg-light-font text-light-font text-light-card border-light-accent border-light-gap bg-raisin-page bg-raisin-editor bg-raisin-panel bg-raisin-input bg-raisin-gap bg-raisin-card bg-raisin-font text-raisin-font text-raisin-card border-raisin-accent border-raisin-gap");
+@source inline("bg-dark-page bg-dark-editor bg-dark-panel bg-dark-input bg-dark-gap bg-dark-card bg-dark-font bg-dark-accent text-dark-font text-dark-card border-dark-accent border-dark-gap bg-light-page bg-light-editor bg-light-panel bg-light-input bg-light-gap bg-light-card bg-light-font bg-light-accent text-light-font text-light-card border-light-accent border-light-gap bg-raisin-page bg-raisin-editor bg-raisin-panel bg-raisin-input bg-raisin-gap bg-raisin-card bg-raisin-font bg-raisin-accent text-raisin-font text-raisin-card border-raisin-accent border-raisin-gap");
