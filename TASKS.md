@@ -15,4 +15,4 @@
 - [x] implement static file tree with hardcoded file list, #13
 - [x] wire file tree clicks to load placeholder text into Monaco editor, #14
 - [x] build AI panel UI shell with input, send button, and message list, #15
-- [ ] enhance and finalize layout at desktop screen sizes, #16
+- [x] enhance styling and finalize layout at desktop screens sizes, #16

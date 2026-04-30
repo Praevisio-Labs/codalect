@@ -4,29 +4,35 @@
   --color-dark-page: #020408;
   --color-dark-editor: #0D1116;
   --color-dark-panel: #020408;
-  --color-dark-input: #272C34;
+  --color-dark-input: #112345;
   --color-dark-gap: #161B22;
   --color-dark-font: #838C96;
-  --color-dark-accent: #001D3D;
+  --color-dark-accent-bright: #0065D7;
+  --color-dark-accent-subtle: #0059BE;
   --color-dark-card: #0D1116;
+  --color-dark-message: #0C1831;
   
   --color-light-page: #403D39;
   --color-light-editor: #FFFCF2;
   --color-light-panel: #FFFCF2;
-  --color-light-input: #CCC5B9;
+  --color-light-input: #FFF6D9;
   --color-light-gap: #CCC5B9;
-  --color-light-font: #EB5E28;
-  --color-light-accent: #F2CC8F;
+  --color-light-font: #EB7F28;
+  --color-light-accent-bright: #EB5E28;
+  --color-light-accent-subtle: #CD4713;
   --color-light-card: #F4F1DE;
+  --color-light-message: #FFF0C0;
   
   --color-raisin-page: #240046;
   --color-raisin-editor: #5A189A;
   --color-raisin-panel: #3C096C;
-  --color-raisin-input: #9D4EDD;
+  --color-raisin-input: #560D9B;
   --color-raisin-gap: #7B2CBF;
   --color-raisin-font: #FF9E00;
-  --color-raisin-accent: #FF6D00;
+  --color-raisin-accent-bright: #FF6D00;
+  --color-raisin-accent-subtle: #CC5700;
   --color-raisin-card: #5A189A;
+  --color-raisin-message: #7011CA;
 }
 
-@source inline("bg-dark-page bg-dark-editor bg-dark-panel bg-dark-input bg-dark-gap bg-dark-card bg-dark-font bg-dark-accent text-dark-font text-dark-card border-dark-accent border-dark-gap bg-light-page bg-light-editor bg-light-panel bg-light-input bg-light-gap bg-light-card bg-light-font bg-light-accent text-light-font text-light-card border-light-accent border-light-gap bg-raisin-page bg-raisin-editor bg-raisin-panel bg-raisin-input bg-raisin-gap bg-raisin-card bg-raisin-font bg-raisin-accent text-raisin-font text-raisin-card border-raisin-accent border-raisin-gap");
+@source inline("bg-dark-page bg-dark-editor bg-dark-panel bg-dark-input bg-dark-gap bg-dark-card bg-dark-font bg-dark-accent-bright bg-dark-message text-dark-font text-dark-card border-dark-accent-bright border-dark-accent-subtle border-dark-gap bg-light-page bg-light-editor bg-light-panel bg-light-input bg-light-gap bg-light-card bg-light-font bg-light-accent-bright bg-light-message text-light-font text-light-card border-light-accent-bright border-light-accent-subtle border-light-gap bg-raisin-page bg-raisin-editor bg-raisin-panel bg-raisin-input bg-raisin-gap bg-raisin-card bg-raisin-font bg-raisin-accent-bright bg-raisin-message text-raisin-font text-raisin-card border-raisin-accent-bright border-raisin-accent-subtle border-raisin-gap");

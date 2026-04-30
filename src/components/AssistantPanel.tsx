@@ -22,8 +22,7 @@ export default function AssistantPanel({ theme }: AssistantProps) {
         }
     }, [messages, isLoading])
 
-    const userStyle =
-        'max-w-[75%] self-end border rounded-sm opacity-66 font-medium mt-6'
+    const userStyle = `max-w-[85%] self-end rounded-sm bg-${theme}-message opacity-90 mt-6`
     const assistantStyle = 'self-start mt-3'
 
     function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -66,19 +65,25 @@ export default function AssistantPanel({ theme }: AssistantProps) {
 
     return (
         <>
-            <div className={`bg-${theme}-page text-xs text-${theme}-font p-2`}>
+            <div
+                className={`bg-${theme}-page uppercase tracking-wider text-[10px] text-${theme}-font p-2`}>
                 Assistant
             </div>
             <div className="flex-1 items-center flex flex-col overflow-hidden p-2">
                 <RaisinIcon
                     className={`flex-none h-8 w-8 text-${theme}-font m-4`}
                 />
-                <div className="flex-1 w-full overflow-y-auto flex flex-col">
+                <div
+                    className="flex-1 w-full overflow-y-auto flex flex-col py-2"
+                    style={{
+                        maskImage:
+                            'linear-gradient(to bottom, transparent, black 2%, black 98%, transparent)',
+                    }}>
                     {messages.map((msg, index) => (
                         <div
                             key={index}
                             className={`
-                            text-xs text-${theme}-font px-2 py-1
+                            text-xs text-${theme}-font px-2.5 py-1
                             ${msg.role === 'user' ? userStyle : assistantStyle}
                             `}>
                             {msg.content}
@@ -97,7 +102,7 @@ export default function AssistantPanel({ theme }: AssistantProps) {
                         placeholder="Ask a question, I'm here to help..."
                         className={`flex-1 text-xs text-${theme}-font px-2 py-1`}
                     />
-                    <button className={`bg-${theme}-accent px-1`}>
+                    <button className={`bg-${theme}-accent-bright px-1`}>
                         <ArrowUpCircleIcon className="h-5 w-5" />
                     </button>
                 </form>

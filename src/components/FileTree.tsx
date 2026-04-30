@@ -8,7 +8,7 @@ export default function FileTree({
     onSelect,
     theme,
 }: FileTreeProps) {
-    const baseStyle = `border border-${theme}-accent bg-${theme}-card text-${theme}-font hover:opacity-60`
+    const baseStyle = `border border-${theme}-accent-bright bg-${theme}-card text-${theme}-font hover:opacity-60`
     const highlightStyle = `border-y-2 border-${theme}-gap -my-px bg-${theme}-font text-${theme}-card`
 
     function handleSelect(file: File) {
@@ -17,7 +17,8 @@ export default function FileTree({
 
     return (
         <>
-            <div className={`bg-${theme}-page text-xs text-${theme}-font p-2`}>
+            <div
+                className={`bg-${theme}-page uppercase tracking-wider text-[10px] text-${theme}-font p-2`}>
                 Explorer
             </div>
             <ul className="flex flex-col gap-1">
