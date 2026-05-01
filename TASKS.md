@@ -16,3 +16,10 @@
 - [x] wire file tree clicks to load placeholder text into Monaco editor, #14
 - [x] build AI panel UI shell with input, send button, and message list, #15
 - [x] enhance styling and finalize layout at desktop screens sizes, #16
+
+## Sprint 3: First teaching module with /learn dashboard
+
+- [ ] add /learn route and dashboard ui rendering first teaching module, #19
+- [ ] define module schema and author module content for simple spa app, #20
+- [ ] wire selection to load module files into the editor and file tree, #21
+- [ ] add App Router navigation between editor and dashboard interfaces, #22
