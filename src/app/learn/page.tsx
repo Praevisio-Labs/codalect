@@ -3,6 +3,8 @@
 import { useState } from 'react'
 import { sora } from '@/app/ui/fonts'
 import ThemeSelect from '@/components/ThemeSelect'
+import ModuleCard from '@/components/ModuleCard'
+import { projectData } from '@/data/modules'
 
 export default function Page() {
     const [theme, setTheme] = useState('raisin')
@@ -17,33 +19,20 @@ export default function Page() {
                 <ThemeSelect theme={theme} setTheme={setTheme} />
             </div>
             <div className="flex-none p-6 overflow-auto">
-                <h2 className={`text-${theme}-font text-5xl font-bold mb-4`}>Skills Modules</h2>
+                <h2
+                    className={`text-${theme}-font text-4xl font-semibold mb-4`}>
+                    Project Modules
+                </h2>
             </div>
             <div className="flex-1 flex justify-center items-center gap-5">
-                <div className={`
-                    flex flex-col justify-center items-center
-                    w-50 h-50 
-                    rounded-lg border-3 border-${theme}-accent-bright 
-                    text-3xl text-${theme}-font font-semibold
-                    opacity-80`}>
-                HTML
-                </div>
-                <div className={`
-                    flex flex-col justify-center items-center
-                    w-50 h-50 
-                    rounded-lg border-3 border-${theme}-accent-bright 
-                    text-3xl text-${theme}-font font-semibold
-                    opacity-80`}>
-                JavaScript
-                </div>
-                <div className={`
-                    flex flex-col justify-center items-center
-                    w-50 h-50 
-                    rounded-lg border-3 border-${theme}-accent-bright 
-                    text-3xl text-${theme}-font font-semibold
-                    opacity-80`}>
-                CSS
-                </div>
+                {projectData.map((project, index) => (
+                    <ModuleCard
+                        key={index}
+                        theme={theme}
+                        name={project.name}
+                        description={project.description}
+                    />
+                ))}
             </div>
         </main>
     )

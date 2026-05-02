@@ -33,3 +33,11 @@ export interface FileIconProps {
 export interface TypingIndicatorProps {
     theme: string
 }
+
+export interface ModuleProps {
+    theme: string
+    id?: string
+    name?: string
+    description?: string
+    skills?: string[]
+}
