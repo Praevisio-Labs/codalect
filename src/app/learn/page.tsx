@@ -13,14 +13,15 @@ export default function Page() {
         <main
             className={`flex flex-col w-full h-screen bg-${theme}-gap overflow-hidden`}>
             <div className={`flex justify-between bg-${theme}-page p-2`}>
-                <h1 className={`${sora.className} text-${theme}-font text-2xl`}>
+                <h1
+                    className={`${sora.className} text-${theme}-font-primary text-2xl`}>
                     Raisin.IDE
                 </h1>
                 <ThemeSelect theme={theme} setTheme={setTheme} />
             </div>
             <div className="flex-none p-6 overflow-auto">
                 <h2
-                    className={`text-${theme}-font text-4xl font-semibold mb-4`}>
+                    className={`text-${theme}-font-tertiary text-4xl font-semibold mb-4`}>
                     Project Modules
                 </h2>
             </div>

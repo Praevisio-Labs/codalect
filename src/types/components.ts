@@ -40,4 +40,5 @@ export interface ModuleProps {
     name?: string
     description?: string
     skills?: string[]
+    files?: File[]
 }

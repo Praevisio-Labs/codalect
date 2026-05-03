@@ -20,6 +20,6 @@
 ## Sprint 3: First teaching module with /learn dashboard
 
 - [x] add /learn route and dashboard ui rendering first teaching module, #19
-- [ ] define module schema and author module content for simple spa app, #20
+- [x] define module schema and auwhat abothor module content for simple spa app, #20
 - [ ] wire selection to load module files into the editor and file tree, #21
 - [ ] add App Router navigation between editor and dashboard interfaces, #22
