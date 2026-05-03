@@ -1,16 +1,26 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, Suspense } from 'react'
+import { useSearchParams } from 'next/navigation'
 import { sora } from '@/app/ui/fonts'
 
-import { FILES } from '@/data/files'
+import { DEMO_FILES } from '@/data/demo-files'
+import { projectData } from '@/data/modules'
 import FileTree from '@/components/FileTree'
 import CodeEditor from '@/components/CodeEditor'
 import AssistantPanel from '@/components/AssistantPanel'
 import ThemeSelect from '@/components/ThemeSelect'
 
-export default function Home() {
-    const [selected, setSelected] = useState(FILES[0])
+function DefaultDisplay() {
+    const searchParams = useSearchParams()
+    const moduleID = searchParams.get('module')
+
+    const workspace = moduleID
+        ? projectData.find((proj) => proj.id === moduleID)
+        : null
+    const workspaceFiles = workspace ? workspace.files : DEMO_FILES
+
+    const [selected, setSelected] = useState(workspaceFiles[0])
     const [theme, setTheme] = useState('raisin')
 
     return (
@@ -27,7 +37,7 @@ export default function Home() {
                 <div
                     className={`flex-1 h-full rounded-sm rounded-bl-xl overflow-hidden bg-${theme}-panel`}>
                     <FileTree
-                        files={FILES}
+                        files={workspaceFiles}
                         selected={selected}
                         onSelect={setSelected}
                         theme={theme}
@@ -43,5 +53,13 @@ export default function Home() {
                 </div>
             </div>
         </main>
+    )
+}
+
+export default function Page() {
+    return (
+        <Suspense>
+            <DefaultDisplay />
+        </Suspense>
     )
 }

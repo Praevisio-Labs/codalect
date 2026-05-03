@@ -14,3 +14,11 @@ export type File = {
     fileType: Language
     content: string
 }
+
+export type Project = {
+    id: string
+    name: string
+    description: string
+    skills: string[]
+    files: File[]
+}

@@ -1,4 +1,6 @@
-export const projectData = [
+import type { Project } from '@/types/index'
+
+export const projectData: Project[] = [
     {
         id: 'spa-app',
         name: 'Simple SPA App',
