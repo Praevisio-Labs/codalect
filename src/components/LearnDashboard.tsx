@@ -1,12 +1,18 @@
-import ModuleCard from '@/components/ModuleCard'
-import { projectData } from '@/data/modules'
 import { DashboardProps } from '@/types/components'
+import { projectData } from '@/data/modules'
 
-export default function LearnDashboard({ theme, onClick }: DashboardProps) {
+import Header from '@/app/ui/Header'
+import ModuleCard from '@/components/ModuleCard'
+
+export default function LearnDashboard({
+    theme,
+    setTheme,
+    onClick,
+}: DashboardProps) {
     return (
         <main
             className={`flex flex-col w-full h-screen bg-${theme}-gap overflow-hidden`}>
-            {header}
+            <Header theme={theme} setTheme={setTheme} />
             <div className="flex-none p-6 overflow-auto">
                 <h2
                     className={`text-${theme}-font-tertiary text-4xl font-semibold mb-4`}>

@@ -2,8 +2,7 @@
 
 import { useState } from 'react'
 import { useSearchParams, useRouter } from 'next/navigation'
-import { sora } from '@/app/ui/fonts'
-import ThemeSelect from '@/components/ThemeSelect'
+import ThemeSelect from '@/app/ui/ThemeSelect'
 import Dashboard from '@/components/LearnDashboard'
 import Project from '@/components/LearnProject'
 import { projectData } from '@/data/modules'
@@ -17,22 +16,17 @@ export default function Page() {
         ? projectData.find((proj) => proj.id === moduleID)
         : null
 
-    const header = (
-        <div className={`flex justify-between bg-${theme}-page p-2`}>
-            <h1 className={`${sora.className} text-2xl`}>Raisin.IDE</h1>
-            <ThemeSelect theme={theme} setTheme={setTheme} />
-        </div>
-    )
-
     return project ? (
         <Project
             theme={theme}
+            setTheme={setTheme}
             project={project}
             onClick={() => router.push(`/?module=${project.id}`)}
         />
     ) : (
         <Dashboard
             theme={theme}
+            setTheme={setTheme}
             onClick={(id) => router.push(`/learn/?module=${id}`)}
         />
     )

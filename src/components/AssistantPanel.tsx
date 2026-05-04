@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react'
 import { AssistantProps } from '@/types/components'
-import RaisinIcon from '@/components/RaisinIcon'
+import RaisinIcon from '@/app/ui/RaisinIcon'
 import { ArrowUpCircleIcon } from '@heroicons/react/24/outline'
 import TypingIndicator from '@/components/TypingIndicator'
 

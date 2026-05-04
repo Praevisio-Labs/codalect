@@ -2,14 +2,13 @@
 
 import { useState, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
-import { sora } from '@/app/ui/fonts'
 
 import { DEMO_FILES } from '@/data/demo-files'
 import { projectData } from '@/data/modules'
+import Header from '@/app/ui/Header'
 import FileTree from '@/components/FileTree'
 import CodeEditor from '@/components/CodeEditor'
 import AssistantPanel from '@/components/AssistantPanel'
-import ThemeSelect from '@/components/ThemeSelect'
 
 function DefaultDisplay() {
     const searchParams = useSearchParams()
@@ -26,13 +25,7 @@ function DefaultDisplay() {
     return (
         <main
             className={`flex flex-col w-full h-screen bg-${theme}-gap overflow-hidden`}>
-            <div className={`flex justify-between bg-${theme}-page p-2`}>
-                <h1
-                    className={`${sora.className} text-${theme}-font-primary text-2xl`}>
-                    Raisin.IDE
-                </h1>
-                <ThemeSelect theme={theme} setTheme={setTheme} />
-            </div>
+            <Header theme={theme} setTheme={setTheme} />
             <div className="flex-1 flex gap-1 p-1 overflow-hidden">
                 <div
                     className={`flex-1 h-full rounded-sm rounded-bl-xl overflow-hidden bg-${theme}-panel`}>

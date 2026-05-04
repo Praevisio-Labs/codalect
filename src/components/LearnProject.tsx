@@ -1,9 +1,11 @@
 import { ibmPlexMono, manrope } from '@/app/ui/fonts'
-import { skillsData } from '@/data/modules'
 import { ProjectProps } from '@/types/components'
+import { skillsData } from '@/data/modules'
+import Header from '@/app/ui/Header'
 
 export default function LearnProject({
     theme,
+    setTheme,
     project,
     onClick,
 }: ProjectProps) {
@@ -14,7 +16,7 @@ export default function LearnProject({
                 bg-${theme}-gap text-${theme}-font-primary 
                 overflow-hidden
                 `}>
-            {header}
+            <Header theme={theme} setTheme={setTheme} />
             <div className="flex-none p-2">
                 <h2
                     className={`${ibmPlexMono.className} text-xl font-bold mb-4`}>

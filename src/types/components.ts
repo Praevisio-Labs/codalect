@@ -1,5 +1,10 @@
 import { File, Project } from './index'
 
+export interface HeaderProps {
+    theme: string
+    setTheme: (theme: string) => void
+}
+
 export interface FileTreeProps {
     files: File[]
     selected: File
@@ -46,11 +51,13 @@ export interface ModuleProps {
 
 export interface DashboardProps {
     theme: string
+    setTheme: (theme: string) => void
     onClick: (id: string) => void
 }
 
 export interface ProjectProps {
     theme: string
+    setTheme: (theme: string) => void
     project: Project
     onClick: () => void
 }
