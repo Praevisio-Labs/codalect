@@ -1,13 +1,12 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, Suspense } from 'react'
 import { useSearchParams, useRouter } from 'next/navigation'
-import ThemeSelect from '@/app/ui/ThemeSelect'
 import Dashboard from '@/components/LearnDashboard'
 import Project from '@/components/LearnProject'
 import { projectData } from '@/data/modules'
 
-export default function Page() {
+function Page() {
     const [theme, setTheme] = useState('raisin')
     const searchParams = useSearchParams()
     const router = useRouter()
@@ -29,5 +28,13 @@ export default function Page() {
             setTheme={setTheme}
             onClick={(id) => router.push(`/learn/?module=${id}`)}
         />
+    )
+}
+
+export default function SuspenseWrapper() {
+    return (
+        <Suspense fallback={null}>
+            <Page />
+        </Suspense>
     )
 }

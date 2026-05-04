@@ -16,7 +16,12 @@ export default function LearnProject({
                 bg-${theme}-gap text-${theme}-font-primary 
                 overflow-hidden
                 `}>
-            <Header theme={theme} setTheme={setTheme} />
+            <Header
+                theme={theme}
+                setTheme={setTheme}
+                path={'/learn'}
+                linkText="Modules"
+            />
             <div className="flex-none p-2">
                 <h2
                     className={`${ibmPlexMono.className} text-xl font-bold mb-4`}>
@@ -24,13 +29,13 @@ export default function LearnProject({
                 </h2>
             </div>
             <div className="flex-1 flex flex-col gap-12 p-3">
-                {project.skills.map((projectSkill, index) => {
+                {project.skills.map((projectSkill) => {
                     const thisSkill = skillsData.find(
                         (skill) => skill.id === projectSkill,
                     )
                     return (
                         <div
-                            key={index}
+                            key={project.id}
                             className="flex flex-col text-lg font-semibold gap-2">
                             <h1
                                 className={`${manrope.className} text-${theme}-font-tertiary`}>

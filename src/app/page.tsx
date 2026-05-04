@@ -10,7 +10,7 @@ import FileTree from '@/components/FileTree'
 import CodeEditor from '@/components/CodeEditor'
 import AssistantPanel from '@/components/AssistantPanel'
 
-function DefaultDisplay() {
+function Page() {
     const searchParams = useSearchParams()
     const moduleID = searchParams.get('module')
 
@@ -25,7 +25,12 @@ function DefaultDisplay() {
     return (
         <main
             className={`flex flex-col w-full h-screen bg-${theme}-gap overflow-hidden`}>
-            <Header theme={theme} setTheme={setTheme} />
+            <Header
+                theme={theme}
+                setTheme={setTheme}
+                path="/learn"
+                linkText="Learn"
+            />
             <div className="flex-1 flex gap-1 p-1 overflow-hidden">
                 <div
                     className={`flex-1 h-full rounded-sm rounded-bl-xl overflow-hidden bg-${theme}-panel`}>
@@ -49,10 +54,10 @@ function DefaultDisplay() {
     )
 }
 
-export default function Page() {
+export default function SuspenseWrapper() {
     return (
-        <Suspense>
-            <DefaultDisplay />
+        <Suspense fallback={null}>
+            <Page />
         </Suspense>
     )
 }

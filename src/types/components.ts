@@ -3,6 +3,8 @@ import { File, Project } from './index'
 export interface HeaderProps {
     theme: string
     setTheme: (theme: string) => void
+    path: string
+    linkText: string
 }
 
 export interface FileTreeProps {

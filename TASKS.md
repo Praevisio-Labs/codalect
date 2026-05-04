@@ -23,4 +23,4 @@
 - [x] define module schema and author module content for simple spa app, #20
 - [x] wire selection to load module files into the editor and file tree, #21
 - [x] extract dashboard, project, page headers as standalone components, #23
-- [ ] add App Router navigation between editor and dashboard interfaces, #22
+- [x] add App Router navigation between editor and dashboard interfaces, #22

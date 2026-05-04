@@ -12,7 +12,12 @@ export default function LearnDashboard({
     return (
         <main
             className={`flex flex-col w-full h-screen bg-${theme}-gap overflow-hidden`}>
-            <Header theme={theme} setTheme={setTheme} />
+            <Header
+                theme={theme}
+                setTheme={setTheme}
+                path={'/'}
+                linkText="Editor"
+            />
             <div className="flex-none p-6 overflow-auto">
                 <h2
                     className={`text-${theme}-font-tertiary text-4xl font-semibold mb-4`}>
