@@ -1,4 +1,4 @@
-import { File } from './index'
+import { File, Project } from './index'
 
 export interface FileTreeProps {
     files: File[]
@@ -41,5 +41,16 @@ export interface ModuleProps {
     description?: string
     skills?: string[]
     files?: File[]
+    onClick: () => void
+}
+
+export interface DashboardProps {
+    theme: string
+    onClick: (id: string) => void
+}
+
+export interface ProjectProps {
+    theme: string
+    project: Project
     onClick: () => void
 }
