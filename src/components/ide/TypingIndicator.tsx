@@ -1,4 +1,4 @@
-import RaisinIcon from '@/app/ui/RaisinIcon'
+import RaisinIcon from '@/components/RaisinIcon'
 import { TypingIndicatorProps } from '@/types/components'
 
 export default function LogoIndicator({ theme }: TypingIndicatorProps) {

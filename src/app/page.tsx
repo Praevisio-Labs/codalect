@@ -5,10 +5,10 @@ import { useSearchParams } from 'next/navigation'
 
 import { DEMO_FILES } from '@/data/demo-files'
 import { projectData } from '@/data/project-modules'
-import Header from '@/app/ui/Header'
-import FileTree from '@/components/FileTree'
-import CodeEditor from '@/components/CodeEditor'
-import AssistantPanel from '@/components/AssistantPanel'
+import Header from '@/components/Header'
+import FileTree from '@/components/ide/FileTree'
+import CodeEditor from '@/components/ide/CodeEditor'
+import AssistantPanel from '@/components/ide/AssistantPanel'
 
 function Page() {
     const searchParams = useSearchParams()

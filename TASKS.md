@@ -24,4 +24,4 @@
 - [x] wire selection to load module files into the editor and file tree, #21
 - [x] extract dashboard, project, page headers as standalone components, #23
 - [x] add App Router navigation between editor and dashboard interfaces, #22
-- [ ] content expansion and UI enhancements for learning modules, #24
+- [x] content expansion and UI enhancements for learning modules, #24

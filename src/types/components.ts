@@ -80,3 +80,7 @@ export interface AsideProps {
     content: string
     link?: Link
 }
+
+export interface ScrollTopProps {
+    targetId: string
+}

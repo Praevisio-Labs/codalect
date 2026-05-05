@@ -3,10 +3,11 @@ import { ProjectProps } from '@/types/components'
 import { skillsData } from '@/data/skill-modules'
 import { scrollMask } from '@/app/ui/styles'
 
-import Header from '@/app/ui/Header'
-import Skill from '@/app/ui/learn/Skill'
-import Markdown from '@/app/ui/Markdown'
-import Aside from '@/app/ui/Aside'
+import Header from '@/components/Header'
+import Skill from '@/components/learn/Skill'
+import Markdown from '@/components/Markdown'
+import Aside from '@/components/Aside'
+import ScrollTop from '@/components/ScrollTop'
 
 export default function Project({
     theme,
@@ -78,11 +79,7 @@ export default function Project({
                             Start Project
                         </button>
                     </div>
-                    <a
-                        href="#project-overview"
-                        className="absolute inset-y-0 right-10 flex items-center text-xs text-slate-400 underline cursor-pointer">
-                        Back to top
-                    </a>
+                    <ScrollTop targetId='project-overview' />
                 </div>
             </div>
         </main>

@@ -1,8 +1,8 @@
 import { DashboardProps } from '@/types/components'
 import { projectData } from '@/data/project-modules'
 
-import Header from '@/app/ui/Header'
-import ModuleCard from '@/components/ModuleCard'
+import Header from '@/components/Header'
+import ModuleCard from '@/components/learn/ModuleCard'
 
 export default function Dashboard({
     theme,

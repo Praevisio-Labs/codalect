@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { sora, outfit } from '@/app/ui/fonts'
 import { HeaderProps } from '@/types/components'
-import ThemeSelect from '@/app/ui/ThemeSelect'
+import ThemeSelect from '@/components/ThemeSelect'
 
 export default function Header({
     theme,

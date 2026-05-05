@@ -1,5 +1,5 @@
 import type { SkillProps } from '@/types/components'
-import Markdown from '@/app/ui/Markdown'
+import Markdown from '@/components/Markdown'
 
 export default function Skill({ theme, content }: SkillProps) {
     return (

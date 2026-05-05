@@ -1,5 +1,5 @@
 import { MoonIcon, SunIcon } from '@heroicons/react/24/outline'
-import RaisinIcon from '@/app/ui/RaisinIcon'
+import RaisinIcon from '@/components/RaisinIcon'
 import { ThemeProps } from '@/types/components'
 
 export default function ThemeSelect({ theme, setTheme }: ThemeProps) {

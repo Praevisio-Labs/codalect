@@ -5,8 +5,8 @@ import { ArrowUpCircleIcon } from '@heroicons/react/24/outline'
 import { scrollMask } from '@/app/ui/styles'
 import { AssistantProps } from '@/types/components'
 
-import RaisinIcon from '@/app/ui/RaisinIcon'
-import TypingIndicator from '@/components/TypingIndicator'
+import RaisinIcon from '@/components/RaisinIcon'
+import TypingIndicator from '@/components/ide/TypingIndicator'
 
 export default function AssistantPanel({ theme }: AssistantProps) {
     const [isLoading, setIsLoading] = useState(false)
