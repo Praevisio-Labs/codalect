@@ -3,6 +3,7 @@ import { ProjectProps } from '@/types/components'
 import { skillsData } from '@/data/skill-modules'
 import Header from '@/app/ui/Header'
 import Skill from '@/app/ui/learn/Skill'
+import MarkdownRender from '@/app/ui/MarkdownRender'
 
 export default function Project({
     theme,
@@ -30,20 +31,21 @@ export default function Project({
                 </h2>
             </div>
             <div className="flex-1 flex flex-col gap-12 p-3 overflow-y-auto">
+                <MarkdownRender theme={theme} content={project.overview} />
                 {project.skills.map((projectSkill) => {
                     const thisSkill = skillsData.find(
                         (skill) => skill.id === projectSkill,
                     )
-                    if (!thisSkill) return
+                    if (!thisSkill) return null
                     return (
                         <Skill
                             key={thisSkill.id}
                             theme={theme}
-                            name={thisSkill.name}
                             content={thisSkill.content}
                         />
                     )
                 })}
+                <MarkdownRender theme={theme} content={project.instructions} />
             </div>
             <button onClick={onClick}>Start Project</button>
         </main>

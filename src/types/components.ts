@@ -66,6 +66,11 @@ export interface ProjectProps {
 
 export interface SkillProps {
     theme: string
-    name: string
+    name?: string
+    content: string
+}
+
+export interface MarkdownRenderProps {
+    theme: string
     content: string
 }

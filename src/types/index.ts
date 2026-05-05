@@ -19,12 +19,15 @@ export type Project = {
     id: string
     name: string
     description: string
+    overview: string
+    instructions: string
+    outcomes: string
     skills: string[]
     files: File[]
 }
 
 export type Skill = {
     id: string
-    name: string
+    name?: string
     content: string
 }
