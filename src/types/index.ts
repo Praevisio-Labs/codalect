@@ -31,3 +31,5 @@ export type Skill = {
     name?: string
     content: string
 }
+
+export type Aside = 'note' | 'warning' | 'tip'

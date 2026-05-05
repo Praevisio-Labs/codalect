@@ -1,4 +1,4 @@
-import { File, Project, Skill } from './index'
+import { File, Project, Skill, Aside } from './index'
 
 export interface HeaderProps {
     theme: string
@@ -70,7 +70,12 @@ export interface SkillProps {
     content: string
 }
 
-export interface MarkdownRenderProps {
+export interface MarkdownProps {
     theme: string
+    content: string
+}
+
+export interface AsideProps {
+    type: Aside
     content: string
 }

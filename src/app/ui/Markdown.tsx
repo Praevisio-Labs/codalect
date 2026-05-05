@@ -2,12 +2,9 @@ import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import rehypeHighlight from 'rehype-highlight'
 import 'highlight.js/styles/atom-one-dark.css'
-import { MarkdownRenderProps } from '@/types/components'
+import { MarkdownProps } from '@/types/components'
 
-export default function MarkdownRender({
-    theme,
-    content,
-}: MarkdownRenderProps) {
+export default function Markdown({ theme, content }: MarkdownProps) {
     return (
         <div
             className={`

@@ -9,13 +9,7 @@ export const projectData: Project[] = [
 
 You'll build a working todo list app from scratch using vanilla HTML, CSS, and JavaScript — no frameworks, no build step, no libraries. The result is a single-page app where users can add tasks, mark them complete, and remove them.
 
-This is the foundation project for web development. Every modern framework — React, Vue, Svelte — is built on top of the same primitives you'll use here: the DOM, event listeners, and CSS selectors. Understanding what the browser actually does before you reach for a framework is what separates someone who *uses* React from someone who *understands* what React is solving.
-
----
-
-### Note on Refresher Lessons: 
-
-Below are brief refresher lessons on each skill this project uses. If you're already comfortable with HTML, JavaScript, and CSS, feel free to skip ahead to the exercise instructions and start building. The refreshers are here in case you need a quick reference or a reminder of the concepts you'll be using.`,
+This is the foundation project for web development. Every modern framework — React, Vue, Svelte — is built on top of the same primitives you'll use here: the DOM, event listeners, and CSS selectors. Understanding what the browser actually does before you reach for a framework is what separates someone who *uses* React from someone who *understands* what React is solving.`,
         instructions: `## Your Exercise
 
 The starter files give you a working scaffold with deliberate gaps to fill in.

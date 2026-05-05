@@ -3,7 +3,8 @@ import { ProjectProps } from '@/types/components'
 import { skillsData } from '@/data/skill-modules'
 import Header from '@/app/ui/Header'
 import Skill from '@/app/ui/learn/Skill'
-import MarkdownRender from '@/app/ui/MarkdownRender'
+import Markdown from '@/app/ui/Markdown'
+import Aside from '@/app/ui/Aside'
 
 export default function Project({
     theme,
@@ -31,7 +32,11 @@ export default function Project({
                 </h2>
             </div>
             <div className="flex-1 flex flex-col gap-12 p-3 overflow-y-auto">
-                <MarkdownRender theme={theme} content={project.overview} />
+                <Markdown theme={theme} content={project.overview} />
+                <Aside
+                    type="note"
+                    content="The sections below are refreshers on each skill this project uses. If you're already comfortable, skip ahead to the exercise instructions."
+                />
                 {project.skills.map((projectSkill) => {
                     const thisSkill = skillsData.find(
                         (skill) => skill.id === projectSkill,
@@ -45,7 +50,7 @@ export default function Project({
                         />
                     )
                 })}
-                <MarkdownRender theme={theme} content={project.instructions} />
+                <Markdown theme={theme} content={project.instructions} />
             </div>
             <button onClick={onClick}>Start Project</button>
         </main>
