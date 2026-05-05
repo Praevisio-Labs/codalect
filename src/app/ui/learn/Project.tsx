@@ -1,6 +1,6 @@
 import { ibmPlexMono } from '@/app/ui/fonts'
 import { ProjectProps } from '@/types/components'
-import { skillsData } from '@/data/modules'
+import { skillsData } from '@/data/skill-modules'
 import Header from '@/app/ui/Header'
 import Skill from '@/app/ui/learn/Skill'
 

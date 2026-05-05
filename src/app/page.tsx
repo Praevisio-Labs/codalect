@@ -4,7 +4,7 @@ import { useState, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 
 import { DEMO_FILES } from '@/data/demo-files'
-import { projectData } from '@/data/modules'
+import { projectData } from '@/data/project-modules'
 import Header from '@/app/ui/Header'
 import FileTree from '@/components/FileTree'
 import CodeEditor from '@/components/CodeEditor'
