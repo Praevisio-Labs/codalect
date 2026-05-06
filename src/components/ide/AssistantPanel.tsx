@@ -72,10 +72,6 @@ export default function AssistantPanel({ theme }: AssistantProps) {
 
                         if (!textContent) return null // prevent first empty msg from rendering
 
-                        const isLastMessage = index === messages.length - 1
-                        const isCurrentlyStreaming =
-                            isLastMessage && isStreaming
-
                         if (msg.role === 'user') {
                             return (
                                 <div
@@ -90,17 +86,11 @@ export default function AssistantPanel({ theme }: AssistantProps) {
                             <div
                                 key={msg.id}
                                 className={`px-2.5 ${assistantStyle}`}>
-                                {isCurrentlyStreaming ? (
-                                    <span
-                                        className={`text-xs text-${theme}-font-primary`}>
-                                        {textContent}
-                                    </span>
-                                ) : (
-                                    <Markdown
-                                        theme={theme}
-                                        content={textContent}
-                                    />
-                                )}
+                                <Markdown
+                                    theme={theme}
+                                    content={textContent}
+                                    size={'xs'}
+                                />
                             </div>
                         )
                     })}

@@ -30,7 +30,7 @@
 
 - [x] install Vercel AI SDK, create new IAM service user, store env vars, #27
 - [x] create POST /api/chat route with streaming response, #28
-- [ ] replace mock response in AssistantPanel with useChat hook, #29
+- [x] replace mock response in AssistantPanel with useChat hook, #29
 - [ ] track cursor position in CodeEditor and lift to page state, #30
 - [ ] inject active file content and cursor line into each chat request, #31
 - [ ] add filename and line indicator to AI panel showing active context, #32

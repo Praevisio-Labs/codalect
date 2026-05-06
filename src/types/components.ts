@@ -75,6 +75,7 @@ export interface SkillProps {
 export interface MarkdownProps {
     theme: string
     content: string
+    size?: 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl'
 }
 
 export interface AsideProps {

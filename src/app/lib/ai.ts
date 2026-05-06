@@ -23,18 +23,21 @@ export async function getStreamingResponse({
 
     const selectedModel = selectModel(provider)
     const convertedMessages = await convertToModelMessages(messages)
+    const outputFormat =
+        'Format your response using Markdown when it improves readability.'
 
     const response = streamText({
         model: selectedModel,
         messages: convertedMessages,
-        system,
+        system: outputFormat,
     })
 
     console.log('response:', response)
     return response
 }
 
-const params: StreamingResponseProps = {
+// code below for dev test only
+const testParams: StreamingResponseProps = {
     messages: [
         {
             id: '1',
