@@ -1,4 +1,5 @@
 import { Link, File, Project, Skill, Aside } from './index'
+import { type UIMessage } from 'ai'
 
 export interface HeaderProps {
     theme: string
@@ -83,4 +84,9 @@ export interface AsideProps {
 
 export interface ScrollTopProps {
     targetId: string
+}
+
+export interface StreamingResponseProps {
+    messages: UIMessage[]
+    system?: string
 }
