@@ -1,22 +1,11 @@
 import RaisinIcon from '@/components/RaisinIcon'
-import { TypingIndicatorProps } from '@/types/components'
+import { LoadingIndicatorProps } from '@/types/components'
 
-export default function LogoIndicator({
+export default function LoadingIndicator({
     theme,
-    status,
-    messages,
-}: TypingIndicatorProps) {
-    const isStreaming = status === 'submitted' || status === 'streaming'
-    const lastMessage = messages[messages.length - 1]
-    const lastAssistantHasText =
-        lastMessage?.role === 'assistant' &&
-        lastMessage.parts.some(
-            (part) => part.type === 'text' && part.text.length > 0,
-        )
-
-    const showTypingIndicator = isStreaming && !lastAssistantHasText
-
-    if (!showTypingIndicator) return null
+    show,
+}: LoadingIndicatorProps) {
+    if (!show) return null
 
     return (
         <div className="self-start flex items-center gap-1 px-2 py-1 mt-3">

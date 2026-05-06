@@ -38,10 +38,9 @@ export interface FileIconProps {
     fileType: string
 }
 
-export interface TypingIndicatorProps {
+export interface LoadingIndicatorProps {
     theme: string
-    status: string
-    messages: UIMessage[]
+    show: boolean
 }
 
 export interface ModuleProps {

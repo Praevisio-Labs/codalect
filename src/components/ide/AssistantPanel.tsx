@@ -2,13 +2,14 @@
 
 import { useRef, useEffect, useState } from 'react'
 import { useChat } from '@ai-sdk/react'
-import { DefaultChatTransport, type UIMessage } from 'ai'
+import { DefaultChatTransport, type UIMessage, isTextUIPart } from 'ai'
 import { ArrowUpCircleIcon } from '@heroicons/react/24/outline'
 import { scrollMask } from '@/app/ui/styles'
 import { AssistantProps } from '@/types/components'
 
 import RaisinIcon from '@/components/RaisinIcon'
-import TypingIndicator from '@/components/ide/TypingIndicator'
+import LoadingIndicator from '@/components/ide/LoadingIndicator'
+import Markdown from '@/components/Markdown'
 
 export default function AssistantPanel({ theme }: AssistantProps) {
     const [input, setInput] = useState('')
@@ -38,6 +39,15 @@ export default function AssistantPanel({ theme }: AssistantProps) {
         }
     }, [messages, status])
 
+    const isStreaming = status === 'submitted' || status === 'streaming'
+    const lastMessage = messages[messages.length - 1]
+    const lastAssistantHasText =
+        lastMessage?.role === 'assistant' &&
+        lastMessage.parts.some(
+            (part) => isTextUIPart(part) && part.text.length > 0,
+        )
+    const showLoadingIndicator = isStreaming && !lastAssistantHasText
+
     const userStyle = `max-w-[85%] self-end rounded-sm bg-${theme}-message opacity-90 mt-6`
     const assistantStyle = 'self-start mt-3'
 
@@ -54,32 +64,49 @@ export default function AssistantPanel({ theme }: AssistantProps) {
                 <div
                     className="flex-1 w-full overflow-y-auto flex flex-col py-2"
                     style={scrollMask}>
-                    {messages.map((msg) => {
-                        const hasText = msg.parts.some(
-                            (part) =>
-                                part.type === 'text' && part.text.length > 0,
-                        )
-                        if (!hasText) return null
+                    {messages.map((msg, index) => {
+                        const textContent = msg.parts
+                            .filter(isTextUIPart)
+                            .map((part) => part.text)
+                            .join('')
+
+                        if (!textContent) return null // prevent first empty msg from rendering
+
+                        const isLastMessage = index === messages.length - 1
+                        const isCurrentlyStreaming =
+                            isLastMessage && isStreaming
+
+                        if (msg.role === 'user') {
+                            return (
+                                <div
+                                    key={msg.id}
+                                    className={`text-xs text-${theme}-font-primary px-2.5 py-1 ${userStyle}`}>
+                                    <span>{textContent}</span>
+                                </div>
+                            )
+                        }
 
                         return (
                             <div
                                 key={msg.id}
-                                className={`
-                                text-xs text-${theme}-font-primary px-2.5 py-1
-                                ${msg.role === 'user' ? userStyle : assistantStyle}
-                                `}>
-                                {msg.parts.map((part, index) =>
-                                    part.type === 'text' ? (
-                                        <span key={index}>{part.text}</span>
-                                    ) : null,
+                                className={`px-2.5 ${assistantStyle}`}>
+                                {isCurrentlyStreaming ? (
+                                    <span
+                                        className={`text-xs text-${theme}-font-primary`}>
+                                        {textContent}
+                                    </span>
+                                ) : (
+                                    <Markdown
+                                        theme={theme}
+                                        content={textContent}
+                                    />
                                 )}
                             </div>
                         )
                     })}
-                    <TypingIndicator
+                    <LoadingIndicator
                         theme={theme}
-                        status={status}
-                        messages={messages}
+                        show={showLoadingIndicator}
                     />
                     <div ref={scrollRef}></div>
                 </div>
