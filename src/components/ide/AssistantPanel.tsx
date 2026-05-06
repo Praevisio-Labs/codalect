@@ -1,6 +1,7 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
+import { useRef, useEffect } from 'react'
+import { useChat } from '@ai-sdk/react'
 import { ArrowUpCircleIcon } from '@heroicons/react/24/outline'
 import { scrollMask } from '@/app/ui/styles'
 import { AssistantProps } from '@/types/components'
@@ -9,12 +10,6 @@ import RaisinIcon from '@/components/RaisinIcon'
 import TypingIndicator from '@/components/ide/TypingIndicator'
 
 export default function AssistantPanel({ theme }: AssistantProps) {
-    const [isLoading, setIsLoading] = useState(false)
-    const [query, setQuery] = useState('')
-    const [messages, setMessages] = useState([
-        { role: 'assistant', content: 'Hi! What are we building today?' },
-    ])
-
     const scrollRef = useRef<HTMLDivElement>(null)
     useEffect(() => {
         if (scrollRef.current) {
@@ -26,44 +21,6 @@ export default function AssistantPanel({ theme }: AssistantProps) {
 
     const userStyle = `max-w-[85%] self-end rounded-sm bg-${theme}-message opacity-90 mt-6`
     const assistantStyle = 'self-start mt-3'
-
-    function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
-        setQuery(e.target.value)
-    }
-
-    function handleSubmit(e: React.SubmitEvent<HTMLFormElement>) {
-        e.preventDefault()
-
-        if (!query) return
-        setIsLoading(true)
-
-        const userQuery = {
-            role: 'user',
-            content: query.trim(),
-        }
-        setMessages((prev) => [
-            ...prev,
-            userQuery, //
-        ])
-
-        setQuery('')
-        appendMockResponse()
-    }
-
-    function appendMockResponse() {
-        setTimeout(() => {
-            const assistantResponse = {
-                role: 'assistant',
-                content:
-                    'Great question. But the endpoint is not live. Check back soon!',
-            }
-            setMessages((prev) => [
-                ...prev,
-                assistantResponse, //
-            ])
-            setIsLoading(false)
-        }, 2800)
-    }
 
     return (
         <>

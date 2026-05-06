@@ -1,4 +1,4 @@
-import { getStreamingResponse } from '@/app/lib/ai-sdk-test'
+import { getStreamingResponse } from '@/app/lib/ai'
 
 export async function POST(request: Request) {
     const body = await request.json()
