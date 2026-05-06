@@ -25,3 +25,14 @@
 - [x] extract dashboard, project, page headers as standalone components, #23
 - [x] add App Router navigation between editor and dashboard interfaces, #22
 - [x] content expansion and UI enhancements for learning modules, #24
+
+## Sprint 4: Streaming responses + editor context injection 
+
+- [ ] install Vercel AI SDK, create new IAM service user, store env vars, #27
+- [ ] create POST /api/chat route with streaming response, #28
+- [ ] replace mock response in AssistantPanel with useChat hook, #29
+- [ ] track cursor position in CodeEditor and lift to page state, #30
+- [ ] inject active file content and cursor line into each chat request, #31
+- [ ] add filename and line indicator to AI panel showing active context, #32
+- [ ] tune response for contextual awareness of reference code in editor, #33
+- [ ] complete backlogged UI enhancements and minor bug fixes, #34
