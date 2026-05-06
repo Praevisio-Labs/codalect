@@ -1,7 +1,8 @@
 'use client'
 
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import { useChat } from '@ai-sdk/react'
+import { DefaultChatTransport, type UIMessage } from 'ai'
 import { ArrowUpCircleIcon } from '@heroicons/react/24/outline'
 import { scrollMask } from '@/app/ui/styles'
 import { AssistantProps } from '@/types/components'
@@ -10,6 +11,24 @@ import RaisinIcon from '@/components/RaisinIcon'
 import TypingIndicator from '@/components/ide/TypingIndicator'
 
 export default function AssistantPanel({ theme }: AssistantProps) {
+    const [input, setInput] = useState('')
+
+    const { messages, sendMessage, status } = useChat({
+        messages: [
+            {
+                id: 'init',
+                role: 'assistant',
+                parts: [
+                    {
+                        type: 'text',
+                        text: 'Hi! What are we building today?',
+                    },
+                ],
+            },
+        ] as UIMessage[],
+        transport: new DefaultChatTransport({ api: '/api/chat' }),
+    })
+
     const scrollRef = useRef<HTMLDivElement>(null)
     useEffect(() => {
         if (scrollRef.current) {
@@ -17,7 +36,7 @@ export default function AssistantPanel({ theme }: AssistantProps) {
                 behavior: 'smooth',
             })
         }
-    }, [messages, isLoading])
+    }, [messages, status])
 
     const userStyle = `max-w-[85%] self-end rounded-sm bg-${theme}-message opacity-90 mt-6`
     const assistantStyle = 'self-start mt-3'
@@ -35,30 +54,45 @@ export default function AssistantPanel({ theme }: AssistantProps) {
                 <div
                     className="flex-1 w-full overflow-y-auto flex flex-col py-2"
                     style={scrollMask}>
-                    {messages.map((msg, index) => (
+                    {messages.map((msg) => (
                         <div
-                            key={index}
+                            key={msg.id}
                             className={`
                             text-xs text-${theme}-font-primary px-2.5 py-1
                             ${msg.role === 'user' ? userStyle : assistantStyle}
                             `}>
-                            {msg.content}
+                            {msg.parts.map((part, index) =>
+                                part.type === 'text' ? (
+                                    <span key={index}>{part.text}</span>
+                                ) : null,
+                            )}
                         </div>
                     ))}
-                    {isLoading && <TypingIndicator theme={theme} />}
+                    {status === 'streaming' && (
+                        <TypingIndicator theme={theme} />
+                    )}
                     <div ref={scrollRef}></div>
                 </div>
                 <form
-                    onSubmit={handleSubmit}
+                    onSubmit={(e) => {
+                        e.preventDefault()
+                        if (input.trim()) {
+                            sendMessage({ text: input })
+                            setInput('')
+                        }
+                    }}
                     className={`flex-none w-[88%] flex rounded-sm overflow-hidden bg-${theme}-input my-4`}>
                     <input
                         type="text"
-                        value={query}
-                        onChange={handleChange}
+                        value={input}
+                        onChange={(e) => setInput(e.target.value)}
                         placeholder="Ask a question, I'm here to help..."
                         className={`flex-1 text-xs text-${theme}-font-primary px-2 py-1`}
                     />
-                    <button className={`bg-${theme}-accent-primary px-1`}>
+                    <button
+                        type="submit"
+                        disabled={status !== 'ready'}
+                        className={`bg-${theme}-accent-primary px-1`}>
                         <ArrowUpCircleIcon className="h-5 w-5" />
                     </button>
                 </form>
