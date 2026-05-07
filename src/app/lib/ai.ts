@@ -18,6 +18,9 @@ function selectModel(provider: string) {
 export async function getStreamingResponse({
     messages,
     system,
+    fileName,
+    fileContent,
+    cursorLine,
 }: StreamingResponseProps) {
     const provider = process.env.AI_PROVIDER || 'openai'
 
@@ -26,10 +29,27 @@ export async function getStreamingResponse({
     const outputFormat =
         'Format your response using Markdown when it improves readability.'
 
+    const systemPrompt = `
+    
+You are a coding assistant helping a learner understand their code.
+
+${system}
+
+The user is currently viewing: ${fileName ?? 'unknown file'} (cursor at line ${cursorLine ?? 1})
+
+File contents:
+\`\`\`
+${fileContent ?? ''}
+\`\`\`
+
+${outputFormat}
+
+    `.trim()
+
     const response = streamText({
         model: selectedModel,
         messages: convertedMessages,
-        system: outputFormat,
+        system: systemPrompt,
     })
 
     console.log('response:', response)

@@ -1,14 +1,15 @@
 import { getStreamingResponse } from '@/app/lib/ai'
 
 export async function POST(request: Request) {
-    const body = await request.json()
-
-    const messages = body.messages
-    const system = body.system
+    const { messages, system, fileName, fileContent, cursorLine } =
+        await request.json()
 
     const streamResponse = await getStreamingResponse({
         messages,
         system,
+        fileName,
+        fileContent,
+        cursorLine,
     })
 
     const response = streamResponse.toUIMessageStreamResponse()

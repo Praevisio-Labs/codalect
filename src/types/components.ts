@@ -95,4 +95,7 @@ export interface ScrollTopProps {
 export interface StreamingResponseProps {
     messages: UIMessage[]
     system?: string
+    fileName?: string
+    fileContent?: string
+    cursorLine?: number
 }

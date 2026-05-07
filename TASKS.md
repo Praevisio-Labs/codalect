@@ -33,7 +33,7 @@
 - [x] replace mock response in AssistantPanel with useChat hook, #29
 - [x] track cursor position in CodeEditor and lift to page state, #30
 - [x] track highlighted text in CodeEditor and lift to page state, #36
-- [ ] inject active file content and cursor line into each chat request, #31
+- [x] inject active file content and cursor line into each chat request, #31
 - [ ] add filename and line indicator to AI panel showing active context, #32
 - [ ] tune response for contextual awareness of reference code in editor, #33
 - [ ] complete backlogged UI enhancements and minor bug fixes, #34
