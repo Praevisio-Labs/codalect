@@ -1,8 +1,21 @@
-import Editor from '@monaco-editor/react'
+import Editor, { OnMount } from '@monaco-editor/react'
 import { EditorProps } from '@/types/components'
 
-export default function CodeEditor({ file, theme }: EditorProps) {
+export default function CodeEditor({
+    file,
+    theme,
+    onCursorChange,
+}: EditorProps) {
     const editorTheme = theme == 'light' ? 'vs' : 'vs-dark'
+
+    // note shape: (editor: IStandaloneCodeEditor, monaco: Monaco)
+    const handleMount: OnMount = (editor) => {
+        editor.onDidChangeCursorPosition((e) => {
+            if (onCursorChange) {
+                onCursorChange(e.position.lineNumber)
+            }
+        })
+    }
 
     return (
         <>
@@ -23,6 +36,7 @@ export default function CodeEditor({ file, theme }: EditorProps) {
                     language={file.fileType}
                     className="overflow-hidden"
                     theme={editorTheme}
+                    onMount={handleMount}
                     options={{
                         padding: { top: 16 },
                     }}

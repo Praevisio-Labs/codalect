@@ -18,6 +18,7 @@ export interface FileTreeProps {
 export interface EditorProps {
     file: File
     theme: string
+    onCursorChange?: (line: number) => void
 }
 
 export interface AssistantProps {

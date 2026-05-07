@@ -21,6 +21,7 @@ function Page() {
 
     const [selected, setSelected] = useState(workspaceFiles[0])
     const [theme, setTheme] = useState('raisin')
+    const [cursorLine, setCursorLine] = useState(1)
 
     return (
         <main
@@ -43,7 +44,11 @@ function Page() {
                 </div>
                 <div
                     className={`flex-4 h-full flex flex-col rounded-sm  overflow-hidden bg-${theme}-editor`}>
-                    <CodeEditor file={selected} theme={theme} />
+                    <CodeEditor
+                        file={selected}
+                        theme={theme}
+                        onCursorChange={setCursorLine}
+                    />
                 </div>
                 <div
                     className={`flex-3 h-full flex flex-col gap-2 rounded-sm rounded-br-xl overflow-hidden bg-${theme}-panel`}>
