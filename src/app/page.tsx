@@ -78,6 +78,7 @@ function Page() {
                         file={selectedFile}
                         cursorLine={cursorLine}
                         fileContent={activeContent}
+                        textSelection={highlightedText}
                     />
                 </div>
             </div>

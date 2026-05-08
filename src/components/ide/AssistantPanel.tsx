@@ -10,12 +10,14 @@ import { defaultMessage } from '@/data/defaults'
 import RaisinIcon from '@/components/RaisinIcon'
 import ChatDisplay from '@/components/ide/ChatDisplay'
 import ChatInput from '@/components/ide/ChatInput'
+import AgentContextDisplay from '@/components/ide/AgentContextDisplay'
 
 export default function AssistantPanel({
     theme,
     file,
     cursorLine,
     fileContent,
+    textSelection,
 }: AssistantPanelProps) {
     const [input, setInput] = useState('')
 
@@ -48,6 +50,11 @@ export default function AssistantPanel({
                     setInput={setInput}
                     status={status}
                     sendMessage={sendMessage}
+                />
+                <AgentContextDisplay
+                    theme={theme}
+                    file={file}
+                    textSelection={textSelection}
                 />
             </div>
         </>

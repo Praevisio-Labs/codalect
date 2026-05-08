@@ -28,6 +28,7 @@ export interface AssistantPanelProps {
     file: File
     cursorLine: number
     fileContent: string
+    textSelection: TextSelection
 }
 
 export interface ChatDisplayProps {

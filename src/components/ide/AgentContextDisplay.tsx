@@ -1,3 +1,10 @@
+'use client'
+
+import { useState } from 'react'
+import {
+    DocumentMagnifyingGlassIcon,
+    EyeSlashIcon,
+} from '@heroicons/react/20/solid'
 import { AgentContextDisplayProps } from '@/types/components'
 
 export default function AgentContextDisplay({
@@ -5,23 +12,37 @@ export default function AgentContextDisplay({
     file,
     textSelection,
 }: AgentContextDisplayProps) {
+    const [isContextHidden, setIsContextHidden] = useState(false)
+    const linesHighlightedCount = textSelection.end - textSelection.start + 1
+
     return (
-        <div>
-            <div className="text-xs text-white p-2">
-                Temp Debug Block
-                <p className="text-xs text-white p-2">
-                    <span className="text-blue-400">File: </span>
-                    {file.name}
-                </p>
-                <p className="text-xs text-white p-2">
-                    <span className="text-blue-400">Highlighted: </span>
-                    {textSelection.content}
-                </p>
-                <p className="text-xs text-white p-2">
-                    <span className="text-blue-400">Lines: </span>
-                    {textSelection.isActive &&
-                        `${textSelection.start} - ${textSelection.end}`}
-                </p>
+        <div className={`${isContextHidden ? 'opacity-40' : 'opacity-100'}`}>
+            {isContextHidden ? (
+                <div
+                    onClick={() => setIsContextHidden(!isContextHidden)}
+                    className={`px-3 py-2 cursor-pointer`}>
+                    <DocumentMagnifyingGlassIcon
+                        className={`h-[lh] w-[lh] text-${theme}-font-tertiary`}
+                    />
+                </div>
+            ) : (
+                <div
+                    onClick={() => setIsContextHidden(!isContextHidden)}
+                    className={`px-3 py-2 cursor-pointer`}>
+                    <EyeSlashIcon
+                        className={`h-[lh] w-[lh] text-${theme}-font-tertiary`}
+                    />
+                </div>
+            )}
+            <div
+                className={`
+                    flex 
+                    text-xs text-${theme}-font-tertiary 
+                    p-2
+                `}>
+                {textSelection.isActive
+                    ? `${linesHighlightedCount} lines highlighted`
+                    : `${file.name}`}
             </div>
         </div>
     )
