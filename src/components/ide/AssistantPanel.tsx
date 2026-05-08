@@ -4,12 +4,12 @@ import { useState } from 'react'
 import { useChat } from '@ai-sdk/react'
 import { DefaultChatTransport } from 'ai'
 
-import { ArrowUpCircleIcon } from '@heroicons/react/24/outline'
 import { AssistantPanelProps } from '@/types/components'
-import { defaultMessage } from '@/data/placeholder'
+import { defaultMessage } from '@/data/defaults'
 
 import RaisinIcon from '@/components/RaisinIcon'
 import ChatDisplay from '@/components/ide/ChatDisplay'
+import ChatInput from '@/components/ide/ChatInput'
 
 export default function AssistantPanel({
     theme,
@@ -39,38 +39,16 @@ export default function AssistantPanel({
                     messages={messages}
                     status={status}
                 />
-                <form
-                    onSubmit={(e) => {
-                        e.preventDefault()
-                        if (input.trim()) {
-                            sendMessage(
-                                { text: input },
-                                {
-                                    body: {
-                                        fileName: file.name,
-                                        fileContent,
-                                        cursorLine,
-                                    },
-                                },
-                            )
-                            setInput('')
-                        }
-                    }}
-                    className={`flex-none w-[88%] flex rounded-sm overflow-hidden bg-${theme}-input my-4`}>
-                    <input
-                        type="text"
-                        value={input}
-                        onChange={(e) => setInput(e.target.value)}
-                        placeholder="Ask a question, I'm here to help..."
-                        className={`flex-1 text-xs text-${theme}-font-primary px-2 py-1`}
-                    />
-                    <button
-                        type="submit"
-                        disabled={status !== 'ready'}
-                        className={`bg-${theme}-accent-primary px-1`}>
-                        <ArrowUpCircleIcon className="h-5 w-5" />
-                    </button>
-                </form>
+                <ChatInput
+                    theme={theme}
+                    file={file}
+                    cursorLine={cursorLine}
+                    fileContent={fileContent}
+                    input={input}
+                    setInput={setInput}
+                    status={status}
+                    sendMessage={sendMessage}
+                />
             </div>
         </>
     )

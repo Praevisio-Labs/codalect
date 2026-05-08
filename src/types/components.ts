@@ -36,6 +36,17 @@ export interface ChatDisplayProps {
     status: string
 }
 
+export interface ChatInputProps {
+    theme: string
+    file: File
+    cursorLine: number
+    fileContent: string
+    input: string
+    setInput: (value: string) => void
+    status: string
+    sendMessage: (message: { text: string }, options: { body: any }) => void
+}
+
 export interface AgentContextDisplayProps {
     theme: string
     file: File
