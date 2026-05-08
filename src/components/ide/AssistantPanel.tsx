@@ -18,6 +18,8 @@ export default function AssistantPanel({
     cursorLine,
     fileContent,
     textSelection,
+    isContextHidden,
+    setIsContextHidden,
 }: AssistantPanelProps) {
     const [input, setInput] = useState('')
 
@@ -46,6 +48,7 @@ export default function AssistantPanel({
                     file={file}
                     cursorLine={cursorLine}
                     fileContent={fileContent}
+                    isContextHidden={isContextHidden}
                     input={input}
                     setInput={setInput}
                     status={status}
@@ -55,6 +58,8 @@ export default function AssistantPanel({
                     theme={theme}
                     file={file}
                     textSelection={textSelection}
+                    isContextHidden={isContextHidden}
+                    setIsContextHidden={setIsContextHidden}
                 />
             </div>
         </>

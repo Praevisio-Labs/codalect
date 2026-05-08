@@ -1,6 +1,3 @@
-'use client'
-
-import { useState } from 'react'
 import {
     DocumentMagnifyingGlassIcon,
     EyeSlashIcon,
@@ -11,35 +8,30 @@ export default function AgentContextDisplay({
     theme,
     file,
     textSelection,
+    isContextHidden,
+    setIsContextHidden,
 }: AgentContextDisplayProps) {
-    const [isContextHidden, setIsContextHidden] = useState(false)
+    // const [isContextHidden, setIsContextHidden] = useState(false)
     const linesHighlightedCount = textSelection.end - textSelection.start + 1
 
     return (
-        <div className={`${isContextHidden ? 'opacity-40' : 'opacity-100'}`}>
-            {isContextHidden ? (
-                <div
-                    onClick={() => setIsContextHidden(!isContextHidden)}
-                    className={`px-3 py-2 cursor-pointer`}>
-                    <DocumentMagnifyingGlassIcon
-                        className={`h-[lh] w-[lh] text-${theme}-font-tertiary`}
-                    />
-                </div>
-            ) : (
-                <div
-                    onClick={() => setIsContextHidden(!isContextHidden)}
-                    className={`px-3 py-2 cursor-pointer`}>
-                    <EyeSlashIcon
-                        className={`h-[lh] w-[lh] text-${theme}-font-tertiary`}
-                    />
-                </div>
-            )}
-            <div
-                className={`
-                    flex 
-                    text-xs text-${theme}-font-tertiary 
-                    p-2
-                `}>
+        <div
+            onClick={() => setIsContextHidden(!isContextHidden)}
+            className={`
+                items-center 
+                flex gap-1 mb-2
+                text-${theme}-font-secondary 
+                ${isContextHidden ? 'opacity-40' : 'opacity-100'}
+                cursor-pointer
+            `}>
+            <div className={`flex-none`}>
+                {isContextHidden ? (
+                    <EyeSlashIcon className={`h-4 w-4`} />
+                ) : (
+                    <DocumentMagnifyingGlassIcon className={`h-4 w-4`} />
+                )}
+            </div>
+            <div className={`flex-1 text-[10px]`}>
                 {textSelection.isActive
                     ? `${linesHighlightedCount} lines highlighted`
                     : `${file.name}`}

@@ -6,6 +6,7 @@ export default function ChatInput({
     file,
     cursorLine,
     fileContent,
+    isContextHidden,
     input,
     setInput,
     status,
@@ -16,16 +17,14 @@ export default function ChatInput({
             onSubmit={(e) => {
                 e.preventDefault()
                 if (input.trim()) {
-                    sendMessage(
-                        { text: input },
-                        {
-                            body: {
-                                fileName: file.name,
-                                fileContent,
-                                cursorLine,
-                            },
-                        },
-                    )
+                    const body = isContextHidden
+                        ? {}
+                        : {
+                              fileName: file.name,
+                              fileContent,
+                              cursorLine,
+                          }
+                    sendMessage({ text: input }, { body })
                     setInput('')
                 }
             }}

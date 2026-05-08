@@ -29,6 +29,8 @@ export interface AssistantPanelProps {
     cursorLine: number
     fileContent: string
     textSelection: TextSelection
+    isContextHidden: boolean
+    setIsContextHidden: (value: boolean) => void
 }
 
 export interface ChatDisplayProps {
@@ -42,6 +44,7 @@ export interface ChatInputProps {
     file: File
     cursorLine: number
     fileContent: string
+    isContextHidden: boolean
     input: string
     setInput: (value: string) => void
     status: string
@@ -52,6 +55,8 @@ export interface AgentContextDisplayProps {
     theme: string
     file: File
     textSelection: TextSelection
+    isContextHidden: boolean
+    setIsContextHidden: (value: boolean) => void
 }
 
 export interface ThemeProps {

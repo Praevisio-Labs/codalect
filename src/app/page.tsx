@@ -12,6 +12,7 @@ import AssistantPanel from '@/components/ide/AssistantPanel'
 
 function Page() {
     const [theme, setTheme] = useState('raisin')
+    const [isContextHidden, setIsContextHidden] = useState(false)
 
     const [cursorLine, setCursorLine] = useState(1)
     const [highlightedText, setHighlightedText] = useState({
@@ -79,6 +80,8 @@ function Page() {
                         cursorLine={cursorLine}
                         fileContent={activeContent}
                         textSelection={highlightedText}
+                        isContextHidden={isContextHidden}
+                        setIsContextHidden={setIsContextHidden}
                     />
                 </div>
             </div>
