@@ -54,16 +54,22 @@ export default function CodeEditor({
                     defaultLanguage={file.fileType}
                     className="overflow-hidden"
                     theme={editorTheme}
-                    // [Signature] onMount?: (editor: IStandaloneCodeEditor, monaco: Monaco) => void
                     onMount={handleMount}
-                    // [Signature] onChange?: (value: string | undefined, event: IModelContentChangedEvent) => void
                     onChange={(value) => {
                         if (onContentChange) {
                             onContentChange(value ?? '')
                         }
                     }}
                     options={{
-                        padding: { top: 16 },
+                        fontSize: 10,
+                        wordWrap: 'on',
+                        glyphMargin: false,
+                        cursorStyle: 'block',
+                        padding: { top: 12 },
+                        minimap: { enabled: false },
+                        bracketPairColorization: {
+                            enabled: true,
+                        },
                     }}
                 />
             </div>
