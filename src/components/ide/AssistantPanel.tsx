@@ -15,6 +15,7 @@ export default function AssistantPanel({
     theme,
     file,
     cursorLine,
+    fileContent,
 }: AssistantProps) {
     const [input, setInput] = useState('')
 
@@ -105,22 +106,22 @@ export default function AssistantPanel({
                     <div ref={scrollRef}></div>
                 </div>
                 <form
-                onSubmit={(e) => {
-                    e.preventDefault()
-                    if (input.trim()) {
-                        sendMessage(
-                            { text: input },
-                            {
-                                body: {
-                                    fileName: file.name,
-                                    fileContent: file.content,
-                                    cursorLine,
+                    onSubmit={(e) => {
+                        e.preventDefault()
+                        if (input.trim()) {
+                            sendMessage(
+                                { text: input },
+                                {
+                                    body: {
+                                        fileName: file.name,
+                                        fileContent,
+                                        cursorLine,
+                                    },
                                 },
-                            },
-                        )
-                        setInput('')
-                    }
-                }}
+                            )
+                            setInput('')
+                        }
+                    }}
                     className={`flex-none w-[88%] flex rounded-sm overflow-hidden bg-${theme}-input my-4`}>
                     <input
                         type="text"

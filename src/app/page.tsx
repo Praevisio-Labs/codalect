@@ -11,18 +11,27 @@ import CodeEditor from '@/components/ide/CodeEditor'
 import AssistantPanel from '@/components/ide/AssistantPanel'
 
 function Page() {
-    const searchParams = useSearchParams()
-    const moduleID = searchParams.get('module')
-
-    const workspace = moduleID
-        ? projectData.find((proj) => proj.id === moduleID)
-        : null
-    const workspaceFiles = workspace ? workspace.files : DEMO_FILES
-
-    const [selected, setSelected] = useState(workspaceFiles[0])
     const [theme, setTheme] = useState('raisin')
     const [cursorLine, setCursorLine] = useState(1)
     const [selectedText, setSelectedText] = useState('')
+    const [fileEdits, setFileEdits] = useState<Record<string, string>>({})
+
+    const searchParams = useSearchParams()
+    const moduleID = searchParams.get('module')
+    const workspace = moduleID
+        ? projectData.find((proj) => proj.id === moduleID)
+        : null
+
+    const workspaceFiles = workspace ? workspace.files : DEMO_FILES
+    const [selected, setSelected] = useState(workspaceFiles[0])
+    const activeContent = fileEdits[selected.name] ?? selected.content
+
+    function handleContentChange(content: string) {
+        setFileEdits((prev) => ({
+            ...prev,
+            [selected.name]: content,
+        }))
+    }
 
     return (
         <main
@@ -45,7 +54,7 @@ function Page() {
                 </div>
                 <div
                     className={`flex-4 h-full flex flex-col rounded-sm  overflow-hidden bg-${theme}-editor`}>
-                    {/* NTD: debug */}
+                    {/* NTD: remove debug block */}
                     <div className="text-xs text-white p-2">
                         Temp Debug Block
                         <p className="text-xs text-white p-2">
@@ -63,6 +72,7 @@ function Page() {
                         theme={theme}
                         onCursorChange={setCursorLine}
                         onSelectionChange={setSelectedText}
+                        onContentChange={handleContentChange}
                     />
                 </div>
                 <div
@@ -71,6 +81,7 @@ function Page() {
                         theme={theme}
                         file={selected}
                         cursorLine={cursorLine}
+                        fileContent={activeContent}
                     />
                 </div>
             </div>

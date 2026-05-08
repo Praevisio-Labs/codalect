@@ -6,6 +6,7 @@ export default function CodeEditor({
     theme,
     onCursorChange,
     onSelectionChange,
+    onContentChange,
 }: EditorProps) {
     const editorTheme = theme == 'light' ? 'vs' : 'vs-dark'
 
@@ -17,13 +18,15 @@ export default function CodeEditor({
             }
         })
         editor.onDidChangeCursorSelection((e) => {
-            if (!e.selection.isEmpty()) {
-                const model = editor.getModel()
-                if (!model) return
-                const selection = model.getValueInRange(e.selection)
-                if (onSelectionChange) {
-                    onSelectionChange(selection)
-                }
+            const model = editor.getModel()
+
+            if (!model) return
+            const selection = !e.selection.isEmpty()
+                ? model.getValueInRange(e.selection)
+                : ''
+
+            if (onSelectionChange) {
+                onSelectionChange(selection)
             }
         })
     }
@@ -43,11 +46,19 @@ export default function CodeEditor({
             <div className="flex-1 min-h-0">
                 <Editor
                     height="100%"
-                    value={file.content}
-                    language={file.fileType}
+                    path={file.name}
+                    defaultValue={file.content}
+                    defaultLanguage={file.fileType}
                     className="overflow-hidden"
                     theme={editorTheme}
+                    // [Signature] onMount?: (editor: IStandaloneCodeEditor, monaco: Monaco) => void
                     onMount={handleMount}
+                    // [Signature] onChange?: (value: string | undefined, event: IModelContentChangedEvent) => void
+                    onChange={(value) => {
+                        if (onContentChange) {
+                            onContentChange(value ?? '')
+                        }
+                    }}
                     options={{
                         padding: { top: 16 },
                     }}

@@ -9,23 +9,25 @@ export interface HeaderProps {
 }
 
 export interface FileTreeProps {
+    theme: string
     files: File[]
     selected: File
     onSelect: (file: File) => void
-    theme: string
 }
 
 export interface EditorProps {
-    file: File
     theme: string
+    file: File
     onCursorChange?: (line: number) => void
     onSelectionChange?: (text: string) => void
+    onContentChange?: (content: string) => void
 }
 
 export interface AssistantProps {
     theme: string
     file: File
     cursorLine: number
+    fileContent: string
 }
 
 export interface ThemeProps {
