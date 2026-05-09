@@ -1,5 +1,13 @@
-import { Link, File, Project, Skill, Aside, TextSelection } from './index'
 import { type UIMessage } from 'ai'
+import {
+    Link,
+    File,
+    Project,
+    Skill,
+    Aside,
+    TextSelection,
+    Persona,
+} from './index'
 
 export interface HeaderProps {
     theme: string
@@ -49,6 +57,7 @@ export interface ChatInputProps {
     setInput: (value: string) => void
     status: string
     sendMessage: (message: { text: string }, options: { body: any }) => void
+    selectedPersona: Persona
 }
 
 export interface ContextSelectProps {
@@ -61,8 +70,8 @@ export interface ContextSelectProps {
 
 export interface PersonaSelectProps {
     theme: string
-    selectedPersona?: string
-    setSelectedPersona?: (value: string) => void
+    selectedPersona: Persona
+    setSelectedPersona: (value: Persona) => void
 }
 
 export interface ThemeProps {
@@ -134,4 +143,5 @@ export interface StreamingResponseProps {
     fileName?: string
     fileContent?: string
     cursorLine?: number
+    selectedPersona: Persona
 }

@@ -3,9 +3,11 @@
 import { useState } from 'react'
 import { useChat } from '@ai-sdk/react'
 import { DefaultChatTransport } from 'ai'
+import {Persona} from '@/types/index'
 
 import { AssistantPanelProps } from '@/types/components'
 import { defaultMessage } from '@/data/defaults'
+import {personas} from '@/data/ai/personas'
 
 import RaisinIcon from '@/components/RaisinIcon'
 import ChatDisplay from '@/components/ide/ChatDisplay'
@@ -23,6 +25,7 @@ export default function AssistantPanel({
     setIsContextHidden,
 }: AssistantPanelProps) {
     const [input, setInput] = useState('')
+    const [selectedPersona, setSelectedPersona] = useState<Persona>(personas[0])
 
     const { messages, sendMessage, status } = useChat({
         messages: defaultMessage,
@@ -37,7 +40,11 @@ export default function AssistantPanel({
                     Assistant
                 </span>
                 <div className="flex-2">
-                    <PersonaSelect theme={theme} />
+                    <PersonaSelect
+                        theme={theme}
+                        selectedPersona={selectedPersona}
+                        setSelectedPersona={setSelectedPersona}
+                    />
                 </div>
             </div>
             <div className="flex-1 items-center flex flex-col overflow-hidden p-2">
@@ -59,6 +66,7 @@ export default function AssistantPanel({
                     setInput={setInput}
                     status={status}
                     sendMessage={sendMessage}
+                    selectedPersona={selectedPersona}
                 />
                 <ContextSelect
                     theme={theme}

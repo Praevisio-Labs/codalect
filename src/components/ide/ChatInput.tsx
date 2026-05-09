@@ -11,6 +11,7 @@ export default function ChatInput({
     setInput,
     status,
     sendMessage,
+    selectedPersona,
 }: ChatInputProps) {
     return (
         <form
@@ -23,6 +24,7 @@ export default function ChatInput({
                               fileName: file.name,
                               fileContent,
                               cursorLine,
+                              selectedPersona,
                           }
                     sendMessage({ text: input }, { body })
                     setInput('')

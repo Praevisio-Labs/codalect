@@ -21,6 +21,7 @@ export async function getStreamingResponse({
     fileName,
     fileContent,
     cursorLine,
+    selectedPersona,
 }: StreamingResponseProps) {
     const provider = process.env.AI_PROVIDER || 'openai'
     const selectedModel = selectModel(provider)
@@ -30,9 +31,7 @@ export async function getStreamingResponse({
     
 You are a coding assistant helping a learner understand their code.
 
-${systemGuardrail.raisin}
-
-${systemPersona.socrates}
+${systemPersona[selectedPersona.key] ?? systemPersona.socrates}
 
 The user is currently viewing: ${fileName ?? 'unknown file'} (cursor at line ${cursorLine ?? 1})
 
@@ -40,6 +39,8 @@ File contents:
 \`\`\`
 ${fileContent ?? ''}
 \`\`\`
+
+${systemGuardrail.raisin}
 
 ${outputFormat.markdown}
 

@@ -45,3 +45,10 @@ export type TextSelection = {
     start: number
     end: number
 }
+
+export interface Persona {
+    id: number
+    key: 'socrates' | 'plato' | 'aristotle' | 'epictetus' | 'pliny'
+    name: string
+    avatar: string
+}
