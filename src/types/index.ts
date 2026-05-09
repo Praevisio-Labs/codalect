@@ -51,4 +51,8 @@ export interface Persona {
     key: 'socrates' | 'plato' | 'aristotle' | 'epictetus' | 'pliny'
     name: string
     avatar: string
+    description: {
+        short: string
+        long: string
+    }
 }
