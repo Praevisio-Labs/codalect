@@ -61,8 +61,8 @@ export interface ContextSelectProps {
 
 export interface PersonaSelectProps {
     theme: string
-    selectedPersona: string
-    setSelectedPersona: (value: string) => void
+    selectedPersona?: string
+    setSelectedPersona?: (value: string) => void
 }
 
 export interface ThemeProps {

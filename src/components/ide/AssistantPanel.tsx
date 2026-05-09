@@ -11,6 +11,7 @@ import RaisinIcon from '@/components/RaisinIcon'
 import ChatDisplay from '@/components/ide/ChatDisplay'
 import ChatInput from '@/components/ide/ChatInput'
 import ContextSelect from '@/components/ide/ContextSelect'
+import PersonaSelect from '@/components/ide/PersonaSelect'
 
 export default function AssistantPanel({
     theme,
@@ -31,8 +32,13 @@ export default function AssistantPanel({
     return (
         <>
             <div
-                className={`bg-${theme}-page uppercase tracking-wider text-[10px] text-${theme}-font-primary p-2`}>
-                Assistant
+                className={`flex items-center gap-4 bg-${theme}-page uppercase tracking-wider text-[10px] p-2`}>
+                <span className={`flex-1 text-${theme}-font-primary`}>
+                    Assistant
+                </span>
+                <div className="flex-2">
+                    <PersonaSelect theme={theme} />
+                </div>
             </div>
             <div className="flex-1 items-center flex flex-col overflow-hidden p-2">
                 <RaisinIcon

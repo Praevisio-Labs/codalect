@@ -11,7 +11,6 @@ export default function ContextSelect({
     isContextHidden,
     setIsContextHidden,
 }: ContextSelectProps) {
-    // const [isContextHidden, setIsContextHidden] = useState(false)
     const linesHighlightedCount = textSelection.end - textSelection.start + 1
 
     return (
