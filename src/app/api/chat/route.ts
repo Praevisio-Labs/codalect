@@ -1,7 +1,5 @@
 import { getStreamingResponse } from '@/app/lib/ai'
 
-export const runtime = 'edge'
-
 export async function POST(request: Request) {
     const tRoute = Date.now()
     const { messages, fileName, fileContent, cursorLine, selectedPersona } =

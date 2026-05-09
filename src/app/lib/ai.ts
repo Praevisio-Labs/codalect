@@ -1,15 +1,15 @@
 import { streamText, convertToModelMessages } from 'ai'
 import { openai } from '@ai-sdk/openai'
+import { bedrock } from '@ai-sdk/amazon-bedrock'
 import { StreamingResponseProps } from '@/types/components'
 import { MODELS } from '@/data/ai/models'
 import { outputFormat, systemGuardrail, systemPersona } from '@/data/ai/prompts'
 
 const bedrockModel = MODELS.bedrock.haiku
-const openaiModel = process.env.OPENAI_MODEL ?? MODELS.openai.fast
+const openaiModel = MODELS.openai.fast
 
-async function selectModel(provider: string) {
+function selectModel(provider: string) {
     if (provider === 'bedrock') {
-        const { bedrock } = await import('@ai-sdk/amazon-bedrock')
         return bedrock(bedrockModel)
     } else {
         return openai(openaiModel)
@@ -26,7 +26,7 @@ export async function getStreamingResponse({
     const t0 = Date.now()
     const provider = process.env.AI_PROVIDER || 'openai'
     const modelName = provider === 'bedrock' ? bedrockModel : openaiModel
-    const selectedModel = await selectModel(provider)
+    const selectedModel = selectModel(provider)
     const convertedMessages = await convertToModelMessages(messages)
 
     const fileContext = fileName

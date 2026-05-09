@@ -37,8 +37,8 @@
 - [x] track user edits in memory and synchronize AI context injection, #37
 - [x] track selection bounds and conditionally inject highlighted text, #38
 - [x] add filename and selection bounds indicator to AI panel, #32
-- [ ] add persona selection and tune response, refine format guidelines, #33
-- [ ] measure time to first token and reduce response latency, #35
+- [x] add persona selection and tune response, refine format guidelines, #33
+- [x] measure time to first token and reduce response latency, #35
 - [ ] redesign chat input with auto-expanding textarea, #39 (refs #34)
 - [ ] consolidate color palette and design system, #40 (refs #34)
 - [ ] polish learn dashboard styling and theme colors, #41 (refs #34)
