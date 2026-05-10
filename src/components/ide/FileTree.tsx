@@ -8,8 +8,8 @@ export default function FileTree({
     onSelect,
     theme,
 }: FileTreeProps) {
-    const baseStyle = `border border-${theme}-accent-bright bg-${theme}-card text-${theme}-font-primary hover:opacity-60`
-    const highlightStyle = `border-y-2 border-${theme}-page -my-px bg-${theme}-font-primary text-${theme}-card`
+    const baseStyle = `border border-${theme}-accent-bright bg-${theme}-card-parent text-${theme}-font-primary hover:opacity-60`
+    const highlightStyle = `border-y-2 border-${theme}-page -my-px bg-${theme}-font-primary text-${theme}-card-parent`
 
     function handleSelect(file: File) {
         onSelect(file)

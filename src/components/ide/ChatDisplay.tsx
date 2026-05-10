@@ -23,7 +23,7 @@ export default function ChatDisplay({
         )
     const showLoadingIndicator = isStreaming && !lastAssistantHasText
 
-    const userStyle = `max-w-[85%] self-end rounded-sm bg-${theme}-message opacity-90 mt-6`
+    const userStyle = `max-w-[85%] self-end rounded-sm bg-${theme}-card-child opacity-90 mt-6`
     const assistantStyle = 'self-start mt-3'
 
     const scrollRef = useRef<HTMLDivElement>(null)
