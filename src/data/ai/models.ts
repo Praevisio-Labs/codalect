@@ -1,4 +1,58 @@
-export const MODELS = {
+export const DEMO_MODELS = [
+    {
+        name: 'GPT 5.5',
+        modelId: 'gpt-5.5-2026-04-23',
+    },
+    {
+        name: 'GPT 5.4 Mini',
+        modelId: 'gpt-5.4-mini-2026-03-17',
+    },
+    {
+        name: 'GPT 5.4 Nano',
+        modelId: 'gpt-5.4-nano-2026-03-17',
+    },
+]
+
+export const PROD_MODELS = [
+    {
+        name: 'Haiku 4.5',
+        modelId: 'us.anthropic.claude-haiku-4-5-20251001-v1:0',
+    },
+    {
+        name: 'Sonnet 4.6',
+        modelId: 'us.anthropic.claude-sonnet-4-6-v1:0',
+    },
+    {
+        name: 'Opus 4.7',
+        modelId: 'us.anthropic.claude-opus-4-7-v1:0',
+    },
+    {
+        name: 'Gemma 3 27B',
+        modelId: 'google.gemma-3-27b-it-v1:0',
+    },
+    {
+        name: 'Gemma 3 12B',
+        modelId: 'google.gemma-3-12b-it-v1:0',
+    },
+    {
+        name: 'Gemma 3 4B',
+        modelId: 'google.gemma-3-4b-it-v1:0',
+    },
+    {
+        name: 'Nova Premier',
+        modelId: 'us.amazon.nova-premier-v1:0',
+    },
+    {
+        name: 'Nova Pro',
+        modelId: 'us.amazon.nova-pro-v1:0',
+    },
+    {
+        name: 'Nova Lite',
+        modelId: 'us.amazon.nova-lite-v1:0',
+    },
+]
+
+export const ALL_MODELS = {
     bedrock: {
         opus: 'us.anthropic.claude-opus-4-7-v1:0',
         sonnet: 'us.anthropic.claude-sonnet-4-6-v1:0',
