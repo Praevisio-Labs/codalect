@@ -14,6 +14,7 @@ import ChatDisplay from '@/components/ide/ChatDisplay'
 import ChatInput from '@/components/ide/ChatInput'
 import ContextSelect from '@/components/ide/ContextSelect'
 import PersonaSelect from '@/components/ide/PersonaSelect'
+import PersonaDisplay from '@/components/ide/PersonaDisplay'
 
 export default function AssistantPanel({
     theme,
@@ -50,6 +51,10 @@ export default function AssistantPanel({
             <div className="flex-1 items-center flex flex-col overflow-hidden p-2">
                 <RaisinIcon
                     className={`flex-none h-8 w-8 text-${theme}-font-primary m-4`}
+                />
+                <PersonaDisplay
+                    theme={theme}
+                    selectedPersona={selectedPersona}
                 />
                 <ChatDisplay
                     theme={theme}

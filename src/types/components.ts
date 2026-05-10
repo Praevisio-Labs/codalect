@@ -41,6 +41,11 @@ export interface AssistantPanelProps {
     setIsContextHidden: (value: boolean) => void
 }
 
+export interface PersonaDisplayProps {
+    theme: string
+    selectedPersona: Persona
+}
+
 export interface ChatDisplayProps {
     theme: string
     messages: UIMessage[]
