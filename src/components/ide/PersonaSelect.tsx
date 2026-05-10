@@ -15,7 +15,6 @@ import { ChevronUpDownIcon } from '@heroicons/react/16/solid'
 import { CheckIcon } from '@heroicons/react/20/solid'
 
 export default function PersonaSelect({
-    theme,
     selectedPersona,
     setSelectedPersona,
 }: PersonaSelectProps) {

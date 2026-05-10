@@ -10,7 +10,6 @@ import LoadingIndicator from '@/components/ide/LoadingIndicator'
 import Markdown from '@/components/Markdown'
 
 export default function ChatDisplay({
-    theme,
     messages,
     status,
 }: ChatDisplayProps) {
@@ -23,7 +22,7 @@ export default function ChatDisplay({
         )
     const showLoadingIndicator = isStreaming && !lastAssistantHasText
 
-    const userStyle = `max-w-[85%] self-end rounded-sm bg-${theme}-card-child opacity-90 mt-6`
+    const userStyle = `max-w-[85%] self-end rounded-sm bg-card-child opacity-90 mt-6`
     const assistantStyle = 'self-start mt-3'
 
     const scrollRef = useRef<HTMLDivElement>(null)
@@ -51,7 +50,7 @@ export default function ChatDisplay({
                     return (
                         <div
                             key={msg.id}
-                            className={`text-xs text-${theme}-font-primary px-2.5 py-1 ${userStyle}`}>
+                            className={`text-xs text-font-primary px-2.5 py-1 ${userStyle}`}>
                             <span>{textContent}</span>
                         </div>
                     )
@@ -60,14 +59,13 @@ export default function ChatDisplay({
                 return (
                     <div key={msg.id} className={`px-2.5 ${assistantStyle}`}>
                         <Markdown
-                            theme={theme}
                             content={textContent}
                             size={'xs'}
                         />
                     </div>
                 )
             })}
-            <LoadingIndicator theme={theme} show={showLoadingIndicator} />
+            <LoadingIndicator show={showLoadingIndicator} />
             <div ref={scrollRef}></div>
         </div>
     )

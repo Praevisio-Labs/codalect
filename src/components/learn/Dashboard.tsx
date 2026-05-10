@@ -11,7 +11,7 @@ export default function Dashboard({
 }: DashboardProps) {
     return (
         <main
-            className={`flex flex-col w-full h-screen bg-${theme}-page overflow-hidden`}>
+            className={`flex flex-col w-full h-screen bg-page overflow-hidden`}>
             <Header
                 theme={theme}
                 setTheme={setTheme}
@@ -20,7 +20,7 @@ export default function Dashboard({
             />
             <div className="flex-none p-6 overflow-auto">
                 <h2
-                    className={`text-${theme}-font-tertiary text-4xl font-semibold mb-4`}>
+                    className={`text-font-tertiary text-4xl font-semibold mb-4`}>
                     Project Modules
                 </h2>
             </div>
@@ -28,7 +28,6 @@ export default function Dashboard({
                 {projectData.map((project, index) => (
                     <ModuleCard
                         key={index}
-                        theme={theme}
                         name={project.name}
                         description={project.description}
                         onClick={() => onClick(project.id)}

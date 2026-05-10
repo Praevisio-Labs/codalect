@@ -1,6 +1,5 @@
 'use client'
 
-import { useState } from 'react'
 import {
     Listbox,
     ListboxButton,
@@ -16,7 +15,6 @@ import { ChevronUpDownIcon } from '@heroicons/react/16/solid'
 import { CheckIcon } from '@heroicons/react/20/solid'
 
 export default function ModelSelect({
-    theme,
     selectedModel,
     setSelectedModel,
 }: ModelSelectProps) {

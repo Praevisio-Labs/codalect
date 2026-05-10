@@ -1,7 +1,6 @@
 import { ModuleProps } from '@/types/components'
 
 export default function ModuleCard({
-    theme,
     name,
     description,
     onClick,
@@ -13,9 +12,9 @@ export default function ModuleCard({
                     flex flex-col gap-4 p-4
                     justify-center items-center
                     w-50 h-50 
-                    text-${theme}-font-primary 
-                    rounded-lg border-2 border-${theme}-accent-bright 
-                    bg-${theme}-card-parent hover:opacity-60
+                    text-font-primary
+                    rounded-lg border-2 border-accent-bright
+                    bg-card-parent hover:opacity-60
                     cursor-pointer
                     `}>
             <span className="text-2xl font-medium">{name}</span>

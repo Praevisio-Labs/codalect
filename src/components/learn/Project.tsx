@@ -19,7 +19,7 @@ export default function Project({
         <main
             className={`
                 flex flex-col w-full h-screen
-                bg-${theme}-page text-${theme}-font-primary 
+                bg-page text-font-primary
                 overflow-hidden
                 `}>
             <Header
@@ -37,7 +37,7 @@ export default function Project({
                 className="flex-1 flex flex-col gap-12 p-3 overflow-y-auto"
                 style={scrollMask}>
                 <div id="project-overview">
-                    <Markdown theme={theme} content={project.overview} />
+                    <Markdown content={project.overview} />
                 </div>
                 <Aside
                     type="note"
@@ -55,25 +55,24 @@ export default function Project({
                     return (
                         <Skill
                             key={thisSkill.id}
-                            theme={theme}
                             content={thisSkill.content}
                         />
                     )
                 })}
                 <div id="exercise-instructions">
-                    <Markdown theme={theme} content={project.instructions} />
+                    <Markdown content={project.instructions} />
                 </div>
                 <div className="relative flex justify-center mb-6">
                     <div
-                        className={`bg-${theme}-panel rounded-xl py-[3px] px-[4px] border border-${theme}-page`}>
+                        className={`bg-panel rounded-xl py-[3px] px-[4px] border border-page`}>
                         <button
                             onClick={onClick}
                             className={`
-                                border border-${theme}-accent-bright
-                                text-${theme}-accent-bright
+                                border border-accent-bright
+                                text-accent-bright
                                 ${outfit.className} text-sm
                                 px-8 py-3 rounded-lg
-                                hover:bg-${theme}-accent-bright hover:text-${theme}-header
+                                hover:bg-accent-bright hover:text-header
                                 cursor-pointer
                                 `}>
                             Start Project

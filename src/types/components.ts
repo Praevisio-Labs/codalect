@@ -18,7 +18,6 @@ export interface HeaderProps {
 }
 
 export interface FileTreeProps {
-    theme: string
     files: File[]
     selected: File
     onSelect: (file: File) => void
@@ -33,7 +32,6 @@ export interface EditorProps {
 }
 
 export interface AssistantPanelProps {
-    theme: string
     file: File
     cursorLine: number
     fileContent: string
@@ -43,18 +41,15 @@ export interface AssistantPanelProps {
 }
 
 export interface PersonaDisplayProps {
-    theme: string
     selectedPersona: Persona
 }
 
 export interface ChatDisplayProps {
-    theme: string
     messages: UIMessage[]
     status: string
 }
 
 export interface ChatInputProps {
-    theme: string
     status: string
     input: string
     setInput: (value: string) => void
@@ -71,7 +66,6 @@ export interface ChatInputProps {
 }
 
 export interface ContextSelectProps {
-    theme: string
     file: File
     textSelection: TextSelection
     isContextHidden: boolean
@@ -79,13 +73,11 @@ export interface ContextSelectProps {
 }
 
 export interface PersonaSelectProps {
-    theme: string
     selectedPersona: Persona
     setSelectedPersona: (value: Persona) => void
 }
 
 export interface ModelSelectProps {
-    theme: string
     selectedModel: Model
     setSelectedModel: (value: Model) => void
 }
@@ -105,12 +97,10 @@ export interface FileIconProps {
 }
 
 export interface LoadingIndicatorProps {
-    theme: string
     show: boolean
 }
 
 export interface ModuleProps {
-    theme: string
     id?: string
     name?: string
     description?: string
@@ -133,13 +123,11 @@ export interface ProjectProps {
 }
 
 export interface SkillProps {
-    theme: string
     name?: string
     content: string
 }
 
 export interface MarkdownProps {
-    theme: string
     content: string
     size?: 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl'
 }

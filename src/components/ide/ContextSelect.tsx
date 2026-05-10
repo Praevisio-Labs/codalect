@@ -5,7 +5,6 @@ import {
 import { ContextSelectProps } from '@/types/components'
 
 export default function ContextSelect({
-    theme,
     file,
     textSelection,
     isContextHidden,
@@ -20,7 +19,7 @@ export default function ContextSelect({
                 flex items-center gap-1
                 cursor-pointer
                 text-[10px]
-                text-${theme}-font-secondary
+                text-font-secondary
                 ${isContextHidden ? 'opacity-40' : 'opacity-100'}
             `}>
             {isContextHidden ? (

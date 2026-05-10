@@ -13,8 +13,8 @@ export default function Header({
         <div
             className={`
             flex justify-between
-            ${sora.className} text-${theme}-font-primary 
-            bg-${theme}-header p-2
+            ${sora.className} text-font-primary
+            bg-header p-2
             `}>
             <h1 className={`text-2xl`}>Raisin.IDE</h1>
             <div className="flex gap-5">
@@ -22,7 +22,7 @@ export default function Header({
                     href={path}
                     className={`
                     flex gap-1 items-center
-                    border-1 border-${theme}-accent-dark
+                    border-1 border-accent-dark
                     rounded-sm bg-none 
                     ${outfit.className} text-xs
                     px-3
