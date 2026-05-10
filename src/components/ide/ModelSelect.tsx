@@ -41,7 +41,7 @@ export default function ModelSelect({
 
                 <ListboxOptions
                     transition
-                    className="absolute z-10 mt-1 max-h-56 w-full overflow-auto rounded-sm bg-white py-1 text-[10px] normal-case shadow-lg outline-1 outline-black/5 data-leave:transition data-leave:duration-100 data-leave:ease-in data-closed:data-leave:opacity-0 dark:bg-gray-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
+                    className="absolute z-10 bottom-full mb-1 max-h-56 min-w-[10rem] right-0 overflow-auto rounded-sm bg-white py-1 text-[10px] normal-case shadow-lg outline-1 outline-black/5 data-leave:transition data-leave:duration-100 data-leave:ease-in data-closed:data-leave:opacity-0 dark:bg-gray-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
                     {models.map((model) => (
                         <ListboxOption
                             key={model.modelId}

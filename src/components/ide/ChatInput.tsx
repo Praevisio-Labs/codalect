@@ -45,32 +45,51 @@ export default function ChatInput({
     return (
         <form
             onSubmit={handleSubmit}
-            className={`flex-none w-[88%] flex rounded-sm overflow-hidden bg-${theme}-input my-4`}>
+            className={`
+                flex-none w-[88%] flex my-4
+                flex flex-col
+                rounded-sm
+                bg-${theme}-input 
+                ring-1 ring-transparent
+                focus-within:ring-${theme}-accent-primary
+                transition
+            `}>
             <textarea
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={handleKeyDown}
                 placeholder="Ask a question, I'm here to help..."
-                className={`flex-1 text-xs text-${theme}-font-primary px-2 py-1`}
+                className={`
+                    field-sizing-content
+                    max-h-20
+                    resize-none outline-none
+                    bg-transparent
+                    text-xs text-${theme}-font-primary
+                    px-2 pt-2 pb-1
+                `}
             />
-            <button
-                type="submit"
-                disabled={status !== 'ready'}
-                className={`bg-${theme}-accent-primary px-1`}>
-                <ArrowUpCircleIcon className="h-5 w-5" />
-            </button>
-            <ContextSelect
-                theme={theme}
-                file={file}
-                textSelection={textSelection}
-                isContextHidden={isContextHidden}
-                setIsContextHidden={setIsContextHidden}
-            />
-            <ModelSelect
-                theme={theme}
-                selectedModel={selectedModel}
-                setSelectedModel={setSelectedModel}
-            />
+            <div className="flex items-center gap-2 px-2 pb-1">
+                <div className="flex-1 min-w-0">
+                    <ContextSelect
+                        theme={theme}
+                        file={file}
+                        textSelection={textSelection}
+                        isContextHidden={isContextHidden}
+                        setIsContextHidden={setIsContextHidden}
+                    />
+                </div>
+                <ModelSelect
+                    theme={theme}
+                    selectedModel={selectedModel}
+                    setSelectedModel={setSelectedModel}
+                />
+                <button
+                    type="submit"
+                    disabled={status !== 'ready'}
+                    className={`bg-${theme}-accent-primary px-1 py-0.5 rounded-sm`}>
+                    <ArrowUpCircleIcon className="h-5 w-5" />
+                </button>
+            </div>
         </form>
     )
 }

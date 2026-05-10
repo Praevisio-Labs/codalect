@@ -17,24 +17,20 @@ export default function ContextSelect({
         <div
             onClick={() => setIsContextHidden(!isContextHidden)}
             className={`
-                items-center 
-                flex gap-1 mb-2
-                text-${theme}-font-secondary 
-                ${isContextHidden ? 'opacity-40' : 'opacity-100'}
+                flex items-center gap-1
                 cursor-pointer
+                text-[10px]
+                text-${theme}-font-secondary
+                ${isContextHidden ? 'opacity-40' : 'opacity-100'}
             `}>
-            <div className={`flex-none`}>
-                {isContextHidden ? (
-                    <EyeSlashIcon className={`h-4 w-4`} />
-                ) : (
-                    <DocumentMagnifyingGlassIcon className={`h-4 w-4`} />
-                )}
-            </div>
-            <div className={`flex-1 text-[10px]`}>
-                {textSelection.isActive
-                    ? `${linesHighlightedCount} lines highlighted`
-                    : `${file.name}`}
-            </div>
+            {isContextHidden ? (
+                <EyeSlashIcon className="h-4 w-4" />
+            ) : (
+                <DocumentMagnifyingGlassIcon className="h-4 w-4" />
+            )}
+            {textSelection.isActive
+                ? `${linesHighlightedCount} lines highlighted`
+                : file.name}
         </div>
     )
 }
