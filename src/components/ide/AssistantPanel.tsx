@@ -38,7 +38,7 @@ export default function AssistantPanel({
     return (
         <>
             <div
-                className={`flex items-center gap-4 h-9 px-2 bg-${theme}-page uppercase tracking-wider text-[10px]`}>
+                className={`flex items-center gap-4 h-9 px-2 bg-${theme}-header uppercase tracking-wider text-[10px]`}>
                 <span className={`flex-1 text-${theme}-font-primary`}>
                     Assistant
                 </span>

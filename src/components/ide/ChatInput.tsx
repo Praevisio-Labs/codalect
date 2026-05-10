@@ -51,7 +51,7 @@ export default function ChatInput({
                 rounded-sm
                 bg-${theme}-input 
                 ring-1 ring-transparent
-                focus-within:ring-${theme}-accent-primary
+                focus-within:ring-${theme}-accent-bright
                 transition
             `}>
             <textarea
@@ -86,7 +86,7 @@ export default function ChatInput({
                 <button
                     type="submit"
                     disabled={status !== 'ready'}
-                    className={`bg-${theme}-accent-primary px-1 py-0.5 rounded-sm`}>
+                    className={`bg-${theme}-accent-bright px-1 py-0.5 rounded-sm`}>
                     <ArrowUpCircleIcon className="h-5 w-5" />
                 </button>
             </div>

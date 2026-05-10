@@ -37,7 +37,7 @@ export default function CodeEditor({
     return (
         <>
             <div
-                className={`flex items-center gap-1 h-9 px-2 bg-${theme}-page uppercase tracking-wider text-[10px] text-${theme}-font-primary`}>
+                className={`flex items-center gap-1 h-9 px-2 bg-${theme}-header uppercase tracking-wider text-[10px] text-${theme}-font-primary`}>
                 Files
                 <span className="normal-case tracking-normal text-[11px] opacity-60">
                     {' > '}

@@ -14,7 +14,7 @@ export default function ModuleCard({
                     justify-center items-center
                     w-50 h-50 
                     text-${theme}-font-primary 
-                    rounded-lg border-2 border-${theme}-accent-primary 
+                    rounded-lg border-2 border-${theme}-accent-bright 
                     bg-${theme}-card hover:opacity-60
                     cursor-pointer
                     `}>

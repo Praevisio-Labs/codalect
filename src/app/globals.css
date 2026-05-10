@@ -2,60 +2,60 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  --color-raisin-page: #240046;
+  --color-raisin-header: #240046;
   --color-raisin-editor: #5A189A;
   --color-raisin-panel: #3C096C;
   --color-raisin-input: #560D9B;
-  --color-raisin-gap: #7B2CBF;
+  --color-raisin-page: #7B2CBF;
   --color-raisin-font-primary: #FF9E00;
   --color-raisin-font-secondary: #FF8300;
   --color-raisin-font-tertiary: #FF6200;
-  --color-raisin-accent-primary: #FF6D00;
-  --color-raisin-accent-secondary: #CC5700;
-  --color-raisin-accent-tertiary: #FF9A4E;
+  --color-raisin-accent-bright: #FF6D00;
+  --color-raisin-accent-neutral: #CC5700;
+  --color-raisin-accent-dark: #FF9A4E;
   --color-raisin-card: #5A189A;
   --color-raisin-message: #7011CA;
   
-  --color-dark-page: #030712;
+  --color-dark-header: #030712;
   --color-dark-editor: #0D1116;
   --color-dark-panel: #020408;
   --color-dark-input: #112345;
-  --color-dark-gap: #161B22;
+  --color-dark-page: #161B22;
   --color-dark-font-primary: #EDEDED;
   --color-dark-font-secondary: #A1A1A1;
   --color-dark-font-tertiary: #A684FF;
-  --color-dark-accent-primary: #0065D7;
-  --color-dark-accent-secondary: #0059BE;
-  --color-dark-accent-tertiary: #7D8597;
+  --color-dark-accent-bright: #0065D7;
+  --color-dark-accent-neutral: #0059BE;
+  --color-dark-accent-dark: #7D8597;
   --color-dark-card: #0D1116;
   --color-dark-message: #0C1831;
   
-  --color-light-page: #252422;
+  --color-light-header: #252422;
   --color-light-editor: #CCC5B9;
   --color-light-panel: #FFFCF2;
   --color-light-input: #FFFFFE;
-  --color-light-gap: #F5F5F5;
+  --color-light-page: #F5F5F5;
   --color-light-font-primary: #EB5E28;
   --color-light-font-secondary: #403D39;
   --color-light-font-tertiary: #252422;
-  --color-light-accent-primary: #EB5E28;
-  --color-light-accent-secondary: #252422;
-  --color-light-accent-tertiary: #CD4713;
+  --color-light-accent-bright: #EB5E28;
+  --color-light-accent-neutral: #252422;
+  --color-light-accent-dark: #CD4713;
   --color-light-card: #F4F1DE;
   --color-light-message: #FFF0C0;
 }
 
 /* raisin */
-@source inline("bg-raisin-page bg-raisin-editor bg-raisin-panel bg-raisin-input bg-raisin-gap bg-raisin-card bg-raisin-font-primary bg-raisin-accent-primary bg-raisin-message text-raisin-font-primary text-raisin-font-secondary text-raisin-font-tertiary text-raisin-card text-raisin-page border-raisin-accent-primary border-raisin-accent-secondary border-raisin-gap hover:bg-raisin-accent-primary hover:text-raisin-page ring-raisin-accent-primary focus-within:ring-raisin-accent-primary");
-@source inline("prose-p:text-raisin-font-secondary prose-headings:text-raisin-font-tertiary prose-strong:text-raisin-font-primary prose-code:text-raisin-accent-primary prose-li:text-raisin-font-secondary prose-a:text-raisin-accent-primary");
+@source inline("bg-raisin-header bg-raisin-editor bg-raisin-panel bg-raisin-input bg-raisin-page bg-raisin-card bg-raisin-font-primary bg-raisin-accent-bright bg-raisin-message text-raisin-font-primary text-raisin-font-secondary text-raisin-font-tertiary text-raisin-card text-raisin-header border-raisin-accent-bright border-raisin-accent-neutral border-raisin-page hover:bg-raisin-accent-bright hover:text-raisin-header ring-raisin-accent-bright focus-within:ring-raisin-accent-bright");
+@source inline("prose-p:text-raisin-font-secondary prose-headings:text-raisin-font-tertiary prose-strong:text-raisin-font-primary prose-code:text-raisin-accent-bright prose-li:text-raisin-font-secondary prose-a:text-raisin-accent-bright");
 
 /* dark */
-@source inline("bg-dark-page bg-dark-editor bg-dark-panel bg-dark-input bg-dark-gap bg-dark-card bg-dark-font-primary bg-dark-accent-primary bg-dark-message text-dark-font-primary text-dark-font-secondary text-dark-font-tertiary text-dark-card text-dark-page border-dark-accent-primary border-dark-accent-secondary border-dark-gap hover:bg-dark-accent-primary hover:text-dark-page ring-dark-accent-primary focus-within:ring-dark-accent-primary");
-@source inline("prose-p:text-dark-font-secondary prose-headings:text-dark-font-tertiary prose-strong:text-dark-font-primary prose-code:text-dark-accent-primary prose-li:text-dark-font-secondary prose-a:text-dark-accent-primary");
+@source inline("bg-dark-header bg-dark-editor bg-dark-panel bg-dark-input bg-dark-page bg-dark-card bg-dark-font-primary bg-dark-accent-bright bg-dark-message text-dark-font-primary text-dark-font-secondary text-dark-font-tertiary text-dark-card text-dark-header border-dark-accent-bright border-dark-accent-neutral border-dark-page hover:bg-dark-accent-bright hover:text-dark-header ring-dark-accent-bright focus-within:ring-dark-accent-bright");
+@source inline("prose-p:text-dark-font-secondary prose-headings:text-dark-font-tertiary prose-strong:text-dark-font-primary prose-code:text-dark-accent-bright prose-li:text-dark-font-secondary prose-a:text-dark-accent-bright");
 
 /* light */
-@source inline("bg-light-page bg-light-editor bg-light-panel bg-light-input bg-light-gap bg-light-card bg-light-font-primary bg-light-accent-primary bg-light-message text-light-font-primary text-light-font-secondary text-light-font-tertiary text-light-card text-light-page border-light-accent-primary border-light-accent-secondary border-light-gap hover:bg-light-accent-primary hover:text-light-page ring-light-accent-primary focus-within:ring-light-accent-primary");
-@source inline("prose-p:text-light-font-secondary prose-headings:text-light-font-tertiary prose-strong:text-light-font-primary prose-code:text-light-accent-primary prose-li:text-light-font-secondary prose-a:text-light-accent-primary");
+@source inline("bg-light-header bg-light-editor bg-light-panel bg-light-input bg-light-page bg-light-card bg-light-font-primary bg-light-accent-bright bg-light-message text-light-font-primary text-light-font-secondary text-light-font-tertiary text-light-card text-light-header border-light-accent-bright border-light-accent-neutral border-light-page hover:bg-light-accent-bright hover:text-light-header ring-light-accent-bright focus-within:ring-light-accent-bright");
+@source inline("prose-p:text-light-font-secondary prose-headings:text-light-font-tertiary prose-strong:text-light-font-primary prose-code:text-light-accent-bright prose-li:text-light-font-secondary prose-a:text-light-accent-bright");
 
 /* tailwind typography */
 @source inline("text-xs text-sm text-base text-lg text-xl text-2xl");

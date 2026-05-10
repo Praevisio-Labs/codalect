@@ -17,9 +17,9 @@ export default function Markdown({
                 prose-p:text-${theme}-font-secondary
                 prose-headings:text-${theme}-font-tertiary
                 prose-strong:text-${theme}-font-primary
-                prose-code:text-${theme}-accent-primary
+                prose-code:text-${theme}-accent-bright
                 prose-li:text-${theme}-font-secondary
-                prose-a:text-${theme}-accent-primary
+                prose-a:text-${theme}-accent-bright
                 prose-hr:border-${theme}-font-secondary 
                 prose-hr:opacity-20 prose-hr:my-10 prose-hr:mx-75
             `}>

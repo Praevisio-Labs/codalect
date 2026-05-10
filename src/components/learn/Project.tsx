@@ -19,7 +19,7 @@ export default function Project({
         <main
             className={`
                 flex flex-col w-full h-screen
-                bg-${theme}-gap text-${theme}-font-primary 
+                bg-${theme}-page text-${theme}-font-primary 
                 overflow-hidden
                 `}>
             <Header
@@ -65,15 +65,15 @@ export default function Project({
                 </div>
                 <div className="relative flex justify-center mb-6">
                     <div
-                        className={`bg-${theme}-panel rounded-xl py-[3px] px-[4px] border border-${theme}-gap`}>
+                        className={`bg-${theme}-panel rounded-xl py-[3px] px-[4px] border border-${theme}-page`}>
                         <button
                             onClick={onClick}
                             className={`
-                                border border-${theme}-accent-primary
-                                text-${theme}-accent-primary
+                                border border-${theme}-accent-bright
+                                text-${theme}-accent-bright
                                 ${outfit.className} text-sm
                                 px-8 py-3 rounded-lg
-                                hover:bg-${theme}-accent-primary hover:text-${theme}-page
+                                hover:bg-${theme}-accent-bright hover:text-${theme}-header
                                 cursor-pointer
                                 `}>
                             Start Project

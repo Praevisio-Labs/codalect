@@ -45,7 +45,7 @@ function Page() {
 
     return (
         <main
-            className={`flex flex-col w-full h-screen bg-${theme}-gap overflow-hidden`}>
+            className={`flex flex-col w-full h-screen bg-${theme}-page overflow-hidden`}>
             <Header
                 theme={theme}
                 setTheme={setTheme}
