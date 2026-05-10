@@ -2,66 +2,60 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  --color-raisin-header: #240046;
-  --color-raisin-page: #7B2CBF;
-  --color-raisin-panel: #3C096C;
-  --color-raisin-editor: #5A189A;
-  --color-raisin-input: #560D9B;
-  --color-raisin-card-parent: #5A189A;
-  --color-raisin-card-child: #7011CA;
-  --color-raisin-font-apex: #FF9E00;
-  --color-raisin-font-primary: #FF9E00;
-  --color-raisin-font-secondary: #FF8300;
-  --color-raisin-font-tertiary: #FF6200;
-  --color-raisin-accent-apex: #FF6D00;
-  --color-raisin-accent-bright: #FF6D00;
-  --color-raisin-accent-neutral: #CC5700;
-  --color-raisin-accent-dark: #FF9A4E;
-  
-  --color-dark-header: #030712;
-  --color-dark-page: #161B22;
-  --color-dark-panel: #020408;
-  --color-dark-editor: #0D1116;
-  --color-dark-input: #112345;
-  --color-dark-card-parent: #0D1116;
-  --color-dark-card-child: #0C1831;
-  --color-dark-font-apex: #EDEDED;
-  --color-dark-font-primary: #EDEDED;
-  --color-dark-font-secondary: #A1A1A1;
-  --color-dark-font-tertiary: #A684FF;
-  --color-dark-accent-apex: #0065D7;
-  --color-dark-accent-bright: #0065D7;
-  --color-dark-accent-neutral: #0059BE;
-  --color-dark-accent-dark: #7D8597;
-  
-  --color-light-header: #252422;
-  --color-light-page: #F5F5F5;
-  --color-light-panel: #FFFCF2;
-  --color-light-editor: #CCC5B9;
-  --color-light-input: #FFFFFE;
-  --color-light-card-parent: #F4F1DE;
-  --color-light-card-child: #FFF0C0;
-  --color-light-font-apex: #EB5E28;
-  --color-light-font-primary: #EB5E28;
-  --color-light-font-secondary: #403D39;
-  --color-light-font-tertiary: #252422;
-  --color-light-accent-apex: #EB5E28;
-  --color-light-accent-bright: #EB5E28;
-  --color-light-accent-neutral: #252422;
-  --color-light-accent-dark: #CD4713;
+  --color-header:         #240046;
+  --color-page:           #7B2CBF;
+  --color-panel:          #3C096C;
+  --color-editor:         #5A189A;
+  --color-input:          #560D9B;
+  --color-card-parent:    #5A189A;
+  --color-card-child:     #7011CA;
+  --color-font-apex:      #FF9E00;
+  --color-font-primary:   #FF9E00;
+  --color-font-secondary: #FF8300;
+  --color-font-tertiary:  #FF6200;
+  --color-accent-apex:    #FF6D00;
+  --color-accent-bright:  #FF6D00;
+  --color-accent-neutral: #CC5700;
+  --color-accent-dark:    #FF9A4E;
 }
 
-/* raisin */
-@source inline("bg-raisin-header bg-raisin-editor bg-raisin-panel bg-raisin-input bg-raisin-page bg-raisin-card-parent bg-raisin-font-primary bg-raisin-accent-bright bg-raisin-card-child text-raisin-font-primary text-raisin-font-secondary text-raisin-font-tertiary text-raisin-card-parent text-raisin-header border-raisin-accent-bright border-raisin-accent-neutral border-raisin-page hover:bg-raisin-accent-bright hover:text-raisin-header ring-raisin-accent-bright focus-within:ring-raisin-accent-bright");
-@source inline("prose-p:text-raisin-font-secondary prose-headings:text-raisin-font-tertiary prose-strong:text-raisin-font-primary prose-code:text-raisin-accent-bright prose-li:text-raisin-font-secondary prose-a:text-raisin-accent-bright");
+@layer base {
+  [data-theme="dark"] {
+    --color-header:         #030712;
+    --color-page:           #161B22;
+    --color-panel:          #020408;
+    --color-editor:         #0D1116;
+    --color-input:          #112345;
+    --color-card-parent:    #0D1116;
+    --color-card-child:     #0C1831;
+    --color-font-apex:      #EDEDED;
+    --color-font-primary:   #EDEDED;
+    --color-font-secondary: #A1A1A1;
+    --color-font-tertiary:  #A684FF;
+    --color-accent-apex:    #0065D7;
+    --color-accent-bright:  #0065D7;
+    --color-accent-neutral: #0059BE;
+    --color-accent-dark:    #7D8597;
+  }
 
-/* dark */
-@source inline("bg-dark-header bg-dark-editor bg-dark-panel bg-dark-input bg-dark-page bg-dark-card-parent bg-dark-font-primary bg-dark-accent-bright bg-dark-card-child text-dark-font-primary text-dark-font-secondary text-dark-font-tertiary text-dark-card-parent text-dark-header border-dark-accent-bright border-dark-accent-neutral border-dark-page hover:bg-dark-accent-bright hover:text-dark-header ring-dark-accent-bright focus-within:ring-dark-accent-bright");
-@source inline("prose-p:text-dark-font-secondary prose-headings:text-dark-font-tertiary prose-strong:text-dark-font-primary prose-code:text-dark-accent-bright prose-li:text-dark-font-secondary prose-a:text-dark-accent-bright");
-
-/* light */
-@source inline("bg-light-header bg-light-editor bg-light-panel bg-light-input bg-light-page bg-light-card-parent bg-light-font-primary bg-light-accent-bright bg-light-card-child text-light-font-primary text-light-font-secondary text-light-font-tertiary text-light-card-parent text-light-header border-light-accent-bright border-light-accent-neutral border-light-page hover:bg-light-accent-bright hover:text-light-header ring-light-accent-bright focus-within:ring-light-accent-bright");
-@source inline("prose-p:text-light-font-secondary prose-headings:text-light-font-tertiary prose-strong:text-light-font-primary prose-code:text-light-accent-bright prose-li:text-light-font-secondary prose-a:text-light-accent-bright");
+  [data-theme="light"] {
+    --color-header:         #252422;
+    --color-page:           #F5F5F5;
+    --color-panel:          #FFFCF2;
+    --color-editor:         #CCC5B9;
+    --color-input:          #FFFFFE;
+    --color-card-parent:    #F4F1DE;
+    --color-card-child:     #FFF0C0;
+    --color-font-apex:      #EB5E28;
+    --color-font-primary:   #EB5E28;
+    --color-font-secondary: #403D39;
+    --color-font-tertiary:  #252422;
+    --color-accent-apex:    #EB5E28;
+    --color-accent-bright:  #EB5E28;
+    --color-accent-neutral: #252422;
+    --color-accent-dark:    #CD4713;
+  }
+}
 
 /* tailwind typography */
 @source inline("text-xs text-sm text-base text-lg text-xl text-2xl");

@@ -18,7 +18,6 @@ import PersonaSelect from '@/components/ide/PersonaSelect'
 import PersonaDisplay from '@/components/ide/PersonaDisplay'
 
 export default function AssistantPanel({
-    theme,
     file,
     cursorLine,
     fileContent,
@@ -38,13 +37,12 @@ export default function AssistantPanel({
     return (
         <>
             <div
-                className={`flex items-center gap-4 h-9 px-2 bg-${theme}-header uppercase tracking-wider text-[10px]`}>
-                <span className={`flex-1 text-${theme}-font-primary`}>
+                className={`flex items-center gap-4 h-9 px-2 bg-header uppercase tracking-wider text-[10px]`}>
+                <span className={`flex-1 text-font-primary`}>
                     Assistant
                 </span>
                 <div className="w-1/2">
                     <PersonaSelect
-                        theme={theme}
                         selectedPersona={selectedPersona}
                         setSelectedPersona={setSelectedPersona}
                     />
@@ -52,20 +50,16 @@ export default function AssistantPanel({
             </div>
             <div className="flex-1 items-center flex flex-col overflow-hidden p-2">
                 <RaisinIcon
-                    className={`flex-none h-8 w-8 text-${theme}-font-primary m-4`}
+                    className={`flex-none h-8 w-8 text-font-primary m-4`}
                 />
                 <PersonaDisplay
-                    theme={theme}
                     selectedPersona={selectedPersona}
                 />
                 <ChatDisplay
-                    theme={theme}
                     messages={messages}
                     status={status}
                 />
                 <ChatInput
-                    // rendering
-                    theme={theme}
                     status={status}
                     // user query
                     input={input}

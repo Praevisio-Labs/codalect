@@ -5,7 +5,6 @@ import 'highlight.js/styles/atom-one-dark.css'
 import { MarkdownProps } from '@/types/components'
 
 export default function Markdown({
-    theme,
     content,
     size = 'sm',
 }: MarkdownProps) {
@@ -14,13 +13,13 @@ export default function Markdown({
             className={`
                 max-w-none py-2 text-${size}
                 prose prose-sm
-                prose-p:text-${theme}-font-secondary
-                prose-headings:text-${theme}-font-tertiary
-                prose-strong:text-${theme}-font-primary
-                prose-code:text-${theme}-accent-bright
-                prose-li:text-${theme}-font-secondary
-                prose-a:text-${theme}-accent-bright
-                prose-hr:border-${theme}-font-secondary 
+                prose-p:text-font-secondary
+                prose-headings:text-font-tertiary
+                prose-strong:text-font-primary
+                prose-code:text-accent-bright
+                prose-li:text-font-secondary
+                prose-a:text-accent-bright
+                prose-hr:border-font-secondary
                 prose-hr:opacity-20 prose-hr:my-10 prose-hr:mx-75
             `}>
             <ReactMarkdown
