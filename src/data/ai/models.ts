@@ -35,7 +35,7 @@ export const PROD_MODELS: Model[] = [
         name: 'Opus 4.7',
         modelId: 'us.anthropic.claude-opus-4-7-v1:0',
         description: {
-            short: 'Most capable for complex work',
+            short: 'Most capable',
             medium: 'Most capable for complex work',
             long: 'Bedrock lists a 1M token context window, 128K max output tokens, reasoning support, and a January 2026 knowledge cutoff. The model supports text and image input with text output, exposes Messages, Converse, and Invoke APIs, and has default quotas of 10M TPM on bedrock-mantle and 15M TPM on bedrock-runtime per supported region.',
         },
@@ -44,7 +44,7 @@ export const PROD_MODELS: Model[] = [
         name: 'Sonnet 4.6',
         modelId: 'us.anthropic.claude-sonnet-4-6-v1:0',
         description: {
-            short: 'Best for everyday tasks',
+            short: 'Everyday tasks',
             medium: 'Best for everyday tasks',
             long: 'Bedrock lists a 1M token context window, 64K max output tokens, reasoning support, and an August 2025 knowledge cutoff. It supports prompt caching with 1,024 minimum tokens, up to 4 cache checkpoints, 5-minute or 1-hour TTLs, and cache checkpoints in system, messages, and tools.',
         },
@@ -53,7 +53,7 @@ export const PROD_MODELS: Model[] = [
         name: 'Haiku 4.5',
         modelId: 'us.anthropic.claude-haiku-4-5-20251001-v1:0',
         description: {
-            short: 'Fastest for quick answers',
+            short: 'Quick answers',
             medium: 'Fastest for quick answers',
             long: 'Bedrock lists a 200K token context window, 64K max output tokens, reasoning support, and a February 2025 knowledge cutoff. It supports text and image input with text output through Invoke and Converse, with response streaming, guardrails, structured outputs, client-side tool calling, and Bedrock Agents available.',
         },

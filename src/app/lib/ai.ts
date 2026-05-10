@@ -2,11 +2,11 @@ import { streamText, convertToModelMessages } from 'ai'
 import { openai } from '@ai-sdk/openai'
 import { bedrock } from '@ai-sdk/amazon-bedrock'
 import { StreamingResponseProps } from '@/types/components'
-import { MODELS } from '@/data/ai/models'
+import { ALL_MODELS } from '@/data/ai/models'
 import { outputFormat, systemGuardrail, systemPersona } from '@/data/ai/prompts'
 
-const bedrockModel = MODELS.bedrock.haiku
-const openaiModel = MODELS.openai.fast
+const bedrockModel = ALL_MODELS.bedrock.haiku
+const openaiModel = ALL_MODELS.openai.fast
 
 function selectModel(provider: string) {
     if (provider === 'bedrock') {
