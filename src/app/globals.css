@@ -2,10 +2,10 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  --color-header:         #100422;
-  --color-page:           #240046;
-  --color-panel:          #3C096C;
-  --color-editor:         #3C096C;
+  --color-header:         #10002b;
+  --color-page:           #3C096C;
+  --color-panel:          #240046;
+  --color-editor:         #240046;
   --color-input:          #570D9B;
   --color-message:     #7111CA;
   --color-button:    #FF6D00;
@@ -13,13 +13,13 @@
   --color-highlight:    #E38349;
   --color-font-apex:      #FF9F00;
   --color-font-primary:   #FF9F00;
-  --color-font-secondary: #BE5857;
-  --color-font-tertiary:  #9C446E;
-  --color-font-paragraph:  #F5ECFD;
+  --color-font-secondary: #FFC900;
+  --color-font-tertiary:  #DABFFF;
+  --color-font-paragraph:  #F1DEDE;
   --color-accent-apex:    #FF6D00;
-  --color-accent-bright:  #CA11C7;
-  --color-accent-muted: #9B0D98;
-  --color-accent-dark:    #460045;
+  --color-accent-bright:  #B100E8;
+  --color-accent-muted: #8415EC;
+  --color-accent-dark:    #6F2DBD;
 }
 
 @layer base {
