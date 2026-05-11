@@ -13,7 +13,7 @@ export default function Header({
         <div
             className={`
             flex justify-between
-            ${sora.className} text-font-primary
+            ${sora.className} text-font-apex
             bg-header p-2
             `}>
             <h1 className={`text-2xl`}>Raisin.IDE</h1>
@@ -21,12 +21,12 @@ export default function Header({
                 <Link
                     href={path}
                     className={`
-                    flex gap-1 items-center
-                    border-1 border-accent-dark
+                    flex gap-1 items-center px-3
+                    border-1 border-ring
                     rounded-sm bg-none 
                     ${outfit.className} text-xs
-                    px-3
-                    hover:underline cursor-pointer
+                    hover:underline hover:bg-button transition 
+                    cursor-pointer
                     `}>
                     {linkText}
                 </Link>

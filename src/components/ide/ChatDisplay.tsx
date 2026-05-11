@@ -19,7 +19,7 @@ export default function ChatDisplay({ messages, status }: ChatDisplayProps) {
         )
     const showLoadingIndicator = isStreaming && !lastAssistantHasText
 
-    const userStyle = `max-w-[85%] self-end rounded-sm bg-message opacity-90 mt-6`
+    const userStyle = `max-w-[85%] self-end rounded-sm bg-message mt-6`
     const assistantStyle = 'self-start mt-3'
 
     const scrollRef = useRef<HTMLDivElement>(null)
@@ -41,23 +41,24 @@ export default function ChatDisplay({ messages, status }: ChatDisplayProps) {
                     .map((part) => part.text)
                     .join('')
 
-                if (!textContent) return null // prevent first empty msg from rendering
+                if (!textContent.trim()) return null // prevent first empty msg from rendering
 
-                if (msg.role === 'user') {
-                    return (
-                        <div
-                            key={msg.id}
-                            className={`text-xs text-font-primary px-2.5 py-1 ${userStyle}`}>
-                            <span>{textContent}</span>
-                        </div>
-                    )
-                }
-
-                return (
-                    <div key={msg.id} className={`px-2.5 ${assistantStyle}`}>
-                        <Markdown content={textContent} size={'xs'} />
-                    </div>
-                )
+            return (
+                <div
+                    key={msg.id}
+                    className={`
+                        py-1 px-2.5 
+                        text-xs text-font-primary 
+                        ${ msg.role === 'user' 
+                            ? userStyle
+                            : assistantStyle }
+                    `}>
+                    {msg.role === 'user'
+                        ? <span>{textContent}</span>
+                        : <Markdown content={textContent} size={'xs'} />
+                    }
+                </div>
+            )
             })}
             <LoadingIndicator show={showLoadingIndicator} />
             <div ref={scrollRef}></div>

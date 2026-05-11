@@ -19,8 +19,8 @@ export default function ContextSelect({
                 flex items-center gap-1
                 cursor-pointer
                 text-[10px]
-                text-font-secondary
-                ${isContextHidden ? 'opacity-40' : 'opacity-100'}
+                text-font-primary
+                ${isContextHidden ? 'opacity-40' : 'opacity-80'}
             `}>
             {isContextHidden ? (
                 <EyeSlashIcon className="h-4 w-4" />
