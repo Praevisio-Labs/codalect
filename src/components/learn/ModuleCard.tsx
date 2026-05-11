@@ -5,17 +5,21 @@ import { CalendarDaysIcon, ClockIcon } from '@heroicons/react/24/outline'
 export default function ModuleCard({ project, onClick }: ModuleProps) {
     const teacherId = project.teachers[0]
     const teacher = teachers.find((person) => person.id === teacherId)
+    const isComingSoon = project.comingSoon === true
+    const cardStateClasses = isComingSoon
+        ? 'opacity-70 cursor-default'
+        : 'hover:opacity-60 cursor-pointer'
 
     return (
         <div
-            onClick={onClick}
+            onClick={isComingSoon ? undefined : onClick}
             className={`
                     flex flex-col gap-4 p-6
                     w-full min-w-0
                     text-font-primary
                     rounded-lg border-2 border-accent-bright
-                    bg-highlight hover:opacity-60
-                    cursor-pointer
+                    bg-highlight
+                    ${cardStateClasses}
                     `}>
             {/* Original boilerplate from HyperUI - https://hyperui.dev/components/marketing/cards/*/}
             <div className="w-full sm:flex sm:items-start sm:justify-between sm:gap-4 lg:gap-6">
@@ -42,23 +46,33 @@ export default function ModuleCard({ project, onClick }: ModuleProps) {
                 </div>
             </div>
 
-            <div className="mt-auto flex items-center gap-4 text-xs text-gray-700">
-                <div className="flex items-center gap-2">
-                    <CalendarDaysIcon
-                        className="size-5 text-gray-700"
-                        aria-hidden="true"
-                    />
-                    <span>31/06/2025</span>
-                </div>
-
-                <div className="flex items-center gap-2">
+            {isComingSoon ? (
+                <div className="mt-auto flex items-center gap-2 text-xs text-gray-700">
                     <ClockIcon
                         className="size-5 text-gray-700"
                         aria-hidden="true"
                     />
-                    <span>12 minutes</span>
+                    <span>Coming soon...</span>
                 </div>
-            </div>
+            ) : (
+                <div className="mt-auto flex items-center gap-4 text-xs text-gray-700">
+                    <div className="flex items-center gap-2">
+                        <CalendarDaysIcon
+                            className="size-5 text-gray-700"
+                            aria-hidden="true"
+                        />
+                        <span>April 21, 2026</span>
+                    </div>
+
+                    <div className="flex items-center gap-2">
+                        <ClockIcon
+                            className="size-5 text-gray-700"
+                            aria-hidden="true"
+                        />
+                        <span>92 minutes</span>
+                    </div>
+                </div>
+            )}
         </div>
     )
 }
