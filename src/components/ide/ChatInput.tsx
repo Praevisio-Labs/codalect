@@ -63,8 +63,8 @@ export default function ChatInput({
                     max-h-20
                     resize-none outline-none
                     bg-transparent
-                    text-xs text-font-primary
-                    placeholder:text-[10px] placeholder:text-font-tertiary
+                    text-xs text-font-paragraph
+                    placeholder:text-[10px] placeholder:text-font-paragraph
                     px-2 pt-2 pb-1
                 `}
             />
@@ -84,7 +84,7 @@ export default function ChatInput({
                 <button
                     type="submit"
                     disabled={status !== 'ready'}
-                    className={`bg-accent-bright px-1 py-0.5 rounded-sm`}>
+                    className={`bg-button px-1 py-0.5 rounded-sm`}>
                     <ArrowUpCircleIcon className="h-4.5 w-4.5" />
                 </button>
             </div>

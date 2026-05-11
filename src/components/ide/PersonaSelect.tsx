@@ -38,7 +38,7 @@ export default function PersonaSelect({
                     </span>
                     <ChevronUpDownIcon
                         aria-hidden="true"
-                        className="col-start-1 row-start-1 size-5 self-center justify-self-end text-font-tertiary sm:size-4"
+                        className="col-start-1 row-start-1 size-5 self-center justify-self-end text-font-paragraph sm:size-4"
                     />
                 </ListboxButton>
 
@@ -60,7 +60,7 @@ export default function PersonaSelect({
                                     <span className="block truncate font-normal group-data-selected:font-semibold">
                                         {person.name}
                                     </span>
-                                    <span className="block truncate text-[9px] text-font-tertiary">
+                                    <span className="block truncate text-[9px] text-font-paragraph">
                                         {person.description.short}
                                     </span>
                                 </div>

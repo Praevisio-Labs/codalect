@@ -13,17 +13,17 @@ export default function ThemeSelect({ theme, setTheme }: ThemeProps) {
             <div
                 onClick={() => handleThemeChange('dark')}
                 className={`rounded-sm bg-page px-3 py-2 cursor-pointer ${theme === 'dark' ? 'opacity-100' : 'opacity-40'}`}>
-                <MoonIcon className={`h-4 w-4 text-font-primary`} />
+                <MoonIcon className={`h-4 w-4 text-accent-apex`} />
             </div>
             <div
                 onClick={() => handleThemeChange('raisin')}
                 className={`rounded-sm bg-page px-3 py-2 cursor-pointer ${theme === 'raisin' ? 'opacity-100' : 'opacity-40'}`}>
-                <RaisinIcon className={`h-4 w-4 text-font-primary`} />
+                <RaisinIcon className={`h-4 w-4 text-accent-apex`} />
             </div>
             <div
                 onClick={() => handleThemeChange('light')}
                 className={`rounded-sm bg-page px-3 py-2 cursor-pointer ${theme === 'light' ? 'opacity-100' : 'opacity-40'}`}>
-                <SunIcon className={`h-4 w-4 text-font-primary`} />
+                <SunIcon className={`h-4 w-4 text-accent-apex`} />
             </div>
         </div>
     )
