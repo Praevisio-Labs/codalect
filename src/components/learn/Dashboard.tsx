@@ -11,7 +11,7 @@ export default function Dashboard({
 }: DashboardProps) {
     return (
         <main
-            className={`flex flex-col w-full h-screen bg-page overflow-hidden`}>
+            className={`flex flex-col w-full h-screen bg-panel overflow-hidden`}>
             <Header
                 theme={theme}
                 setTheme={setTheme}
