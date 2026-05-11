@@ -43,7 +43,10 @@
 - [x] add model select and redesign chat input component, #39 (refs #34)
 - [x] consolidate color palette and design system, #40 (refs #34)
 - [x] finalize v2 colors for all 3 themes and polish visual hiearchy, #41 (refs #34)
-- [ ] extend modules data, restyle dashboard, and polish projects page, #45 (refs #34)
-- [ ] standardize typography and responsive layout, #42 (refs #34)
-- [ ] add favicon, footer, and component polish, #43 (refs #34)
-- [ ] design system, chat input, and dashboard polish for AI Eng Singapore 2026, #34
+- [x] extend modules data, restyle dashboard, and polish projects page, #45 (refs #34)
+- [x] design system, chat input, and dashboard polish for AI Eng Singapore 2026, #34
+
+<!-- Deferred -->
+## Backlog
+- [ ] standardize typography and responsive layout, #42 (refs #34, deferred)
+- [ ] add favicon, footer, and component polish, #43 (refs #34, deferred)

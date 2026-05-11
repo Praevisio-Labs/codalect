@@ -22,6 +22,7 @@
     --color-accent-bright:  #B100E8;
     --color-accent-muted:   #8415EC;
     --color-accent-dark:    #6F2DBD;
+    --color-accent-contra:  #3C096C;
 }
 
 @layer base {
@@ -46,6 +47,7 @@
         --color-accent-bright:  #0B7FFF;
         --color-accent-muted:   #004EA4;
         --color-accent-dark:    #2A55A6;
+        --color-accent-contra:  #161B22;
     }
 
     [data-theme='light'] {
@@ -69,6 +71,7 @@
         --color-accent-bright:  #463F3A;
         --color-accent-muted:   #8A817C;
         --color-accent-dark:    #BCB8B1;
+        --color-accent-contra:  #403D39;
     }
 }
 
