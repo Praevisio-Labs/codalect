@@ -19,7 +19,7 @@ export default function ContextSelect({
                 flex items-center gap-1
                 cursor-pointer
                 text-[10px]
-                text-font-tertiary
+                text-font-paragraph
                 ${isContextHidden ? 'opacity-40' : 'opacity-80'}
             `}>
             {isContextHidden ? (

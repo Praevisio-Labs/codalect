@@ -48,7 +48,7 @@ export default function ChatDisplay({ messages, status }: ChatDisplayProps) {
                     key={msg.id}
                     className={`
                         py-1 px-2.5 
-                        text-xs text-font-primary 
+                        text-xs text-font-paragraph 
                         ${ msg.role === 'user' 
                             ? userStyle
                             : assistantStyle }

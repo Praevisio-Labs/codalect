@@ -25,7 +25,7 @@ export default function ModelSelect({
     return (
         <Listbox value={selectedModel} onChange={handleChange}>
             <div className="relative">
-                <ListboxButton className="grid w-full cursor-default grid-cols-1 rounded-sm bg-page/50 py-1 pr-2 pl-3 text-left text-font-paragraph normal-case outline-1 -outline-offset-1 outline-accent-dark text-[10px]">
+                <ListboxButton className="grid w-full cursor-default grid-cols-1 rounded-sm bg-panel/50 py-1 pr-2 pl-3 text-left text-font-paragraph normal-case outline-1 -outline-offset-1 outline-accent-dark text-[10px]">
                     <span className="col-start-1 row-start-1 flex items-center gap-3 pr-6">
                         <span className="block truncate">
                             {selectedModel.name}
@@ -33,7 +33,7 @@ export default function ModelSelect({
                     </span>
                     <ChevronUpDownIcon
                         aria-hidden="true"
-                        className="col-start-1 row-start-1 size-5 self-center justify-self-end text-font-tertiary sm:size-4"
+                        className="col-start-1 row-start-1 size-5 self-center justify-self-end text-font-paragraph sm:size-4"
                     />
                 </ListboxButton>
 
@@ -50,7 +50,7 @@ export default function ModelSelect({
                                     <span className="block truncate font-normal group-data-selected:font-semibold">
                                         {model.name}
                                     </span>
-                                    <span className="block truncate text-[9px] text-font-tertiary">
+                                    <span className="block truncate text-[9px] text-font-paragraph">
                                         {model.description.short}
                                     </span>
                                 </div>

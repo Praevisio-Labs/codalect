@@ -3,8 +3,8 @@ import type { File } from '@/types/index'
 import { FileTreeProps } from '@/types/components'
 
 export default function FileTree({ files, selected, onSelect }: FileTreeProps) {
-    const baseStyle = `border border-accent-bright bg-highlight text-font-primary hover:opacity-60`
-    const highlightStyle = `border-y-2 border-page -my-px bg-font-primary text-highlight`
+    const baseStyle = `border border-accent-muted bg-card text-font-apex hover:opacity-60`
+    const highlightStyle = `border-y-2 border-page -my-px bg-highlight text-card`
 
     function handleSelect(file: File) {
         onSelect(file)
@@ -13,7 +13,7 @@ export default function FileTree({ files, selected, onSelect }: FileTreeProps) {
     return (
         <>
             <div
-                className={`flex items-center h-9 px-2 bg-header uppercase tracking-wider text-[10px] text-font-primary`}>
+                className={`flex items-center h-9 px-2 bg-header uppercase tracking-wider text-[10px] text-font-apex`}>
                 Explorer
             </div>
             <ul className="flex flex-col gap-1">
