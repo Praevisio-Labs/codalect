@@ -1,6 +1,6 @@
 import type { Teacher } from '@/types/index'
 
-export const teachersData: Teacher[] = [
+export const teachers: Teacher[] = [
     {
         id: 'lao-tzu',
         name: 'Lao Tzu',
