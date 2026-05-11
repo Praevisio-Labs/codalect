@@ -28,6 +28,11 @@ export type Project = {
     instructions: string
     outcomes: string
     skills: string[]
+    domains: Domain[]
+    level: Level
+    duration: string
+    teachers: string[]
+    comingSoon?: boolean
     files: File[]
 }
 
@@ -66,3 +71,28 @@ export interface Model {
         long: string
     }
 }
+
+export interface Teacher {
+    id: string
+    name: string
+    avatar: string
+    description: {
+        short: string
+        long: string
+    }
+}
+export type Domain =
+    | 'frontend'
+    | 'backend'
+    | 'full-stack'
+    | 'devops'
+    | 'data'
+    | 'ai'
+    | 'agents'
+    | 'rag'
+    | 'tool-calling'
+    | 'security'
+    | 'testing'
+    | 'mobile'
+
+export type Level = 'Beginner' | 'Intermediate' | 'Advanced'
