@@ -9,8 +9,6 @@ export default function Dashboard({
     setTheme,
     onClick,
 }: DashboardProps) {
-    const project = projectData[0]
-
     return (
         <main
             className={`flex flex-col w-full h-screen bg-page overflow-hidden`}>
@@ -26,14 +24,16 @@ export default function Dashboard({
                     Project Modules
                 </h2>
             </div>
-            <div className="flex-1 flex justify-center items-center gap-5">
-                {projectData.map((project) => (
-                    <ModuleCard
-                        key={project.id}
-                        project={project}
-                        onClick={() => onClick(project.id)}
-                    />
-                ))}
+            <div className="flex-1 overflow-y-auto px-6 pb-6">
+                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                    {projectData.map((project) => (
+                        <ModuleCard
+                            key={project.id}
+                            project={project}
+                            onClick={() => onClick(project.id)}
+                        />
+                    ))}
+                </div>
             </div>
         </main>
     )
