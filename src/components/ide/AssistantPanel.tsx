@@ -38,9 +38,7 @@ export default function AssistantPanel({
         <>
             <div
                 className={`flex items-center gap-4 h-9 px-2 bg-header uppercase tracking-wider text-[10px]`}>
-                <span className={`flex-1 text-font-primary`}>
-                    Assistant
-                </span>
+                <span className={`flex-1 text-font-apex`}>Assistant</span>
                 <div className="w-1/2">
                     <PersonaSelect
                         selectedPersona={selectedPersona}
@@ -50,15 +48,10 @@ export default function AssistantPanel({
             </div>
             <div className="flex-1 items-center flex flex-col overflow-hidden p-2">
                 <RaisinIcon
-                    className={`flex-none h-8 w-8 text-font-primary m-4`}
+                    className={`flex-none h-8 w-8 text-font-apex m-4`}
                 />
-                <PersonaDisplay
-                    selectedPersona={selectedPersona}
-                />
-                <ChatDisplay
-                    messages={messages}
-                    status={status}
-                />
+                <PersonaDisplay selectedPersona={selectedPersona} />
+                <ChatDisplay messages={messages} status={status} />
                 <ChatInput
                     status={status}
                     // user query
