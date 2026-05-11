@@ -64,6 +64,7 @@ export default function ChatInput({
                     resize-none outline-none
                     bg-transparent
                     text-xs text-font-primary
+                    placeholder:text-[10px] placeholder:text-font-tertiary
                     px-2 pt-2 pb-1
                 `}
             />
