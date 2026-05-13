@@ -1,6 +1,6 @@
 import type { Skill } from '@/types/index'
 
-export const js: Skill = {
+export const javascript: Skill = {
     id: 'js',
     name: 'JavaScript',
     content: `## JavaScript Refresher
