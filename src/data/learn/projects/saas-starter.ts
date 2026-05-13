@@ -2,16 +2,16 @@ import type { Project } from '@/types/index'
 
 export const saasStarter: Project = {
     id: 'saas-starter',
-    name: 'SaaS Starter',
+    name: 'AI Chat Starter',
     description:
-        'Assemble the core pieces of a subscription-ready SaaS app with routing, data models, billing, and account flows.',
+        'Build a streaming AI chat app with the Vercel AI SDK, custom personas, and a polished chat UI.',
     overview: '',
     instructions: '',
     outcomes: '',
-    skills: ['next', 'prisma', 'stripe'],
-    domains: ['full-stack'],
-    level: 'Advanced',
-    duration: '16 hrs',
+    skills: ['next', 'ai-sdk', 'open-ai'],
+    domains: ['full-stack', 'ai'],
+    level: 'Intermediate',
+    duration: '8 hrs',
     teachers: ['confucius', 'kant'],
     comingSoon: true,
     files: [],

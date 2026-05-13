@@ -2,16 +2,16 @@ import type { Project } from '@/types/index'
 
 export const restApiWithAuth: Project = {
     id: 'rest-api-with-auth',
-    name: 'REST API with Auth',
+    name: 'Full-Stack Auth App',
     description:
-        'Create a secure API with routes, authentication middleware, database persistence, and protected resources.',
+        'Build a Next.js app with Supabase authentication, protected routes, and user profile management.',
     overview: '',
     instructions: '',
     outcomes: '',
-    skills: ['node', 'express', 'postgres'],
-    domains: ['backend', 'security'],
+    skills: ['next', 'supabase', 'typescript'],
+    domains: ['full-stack', 'security'],
     level: 'Intermediate',
-    duration: '12 hrs',
+    duration: '10 hrs',
     teachers: ['kant', 'confucius'],
     comingSoon: true,
     files: [],

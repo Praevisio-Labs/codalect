@@ -2,16 +2,16 @@ import type { Project } from '@/types/index'
 
 export const collabWhiteboard: Project = {
     id: 'collab-whiteboard',
-    name: 'Collab Whiteboard',
+    name: 'Real-Time Chat',
     description:
-        'Build a shared drawing surface with real-time updates, optimistic interaction, and persistent collaboration state.',
+        'Build a real-time group chat app using Supabase Realtime — messages appear instantly across all connected clients.',
     overview: '',
     instructions: '',
     outcomes: '',
-    skills: ['next', 'websockets', 'redis'],
+    skills: ['next', 'supabase', 'tailwind'],
     domains: ['full-stack'],
-    level: 'Advanced',
-    duration: '14 hrs',
+    level: 'Intermediate',
+    duration: '8 hrs',
     teachers: ['montessori', 'feynman', 'nietzsche'],
     comingSoon: true,
     files: [],

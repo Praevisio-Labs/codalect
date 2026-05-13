@@ -8,8 +8,8 @@ import { collabWhiteboard } from './collab-whiteboard'
 import { eCommerceStorefront } from './e-commerce-storefront'
 import { ragChatbot } from './rag-chatbot'
 import { toolCallingAgent } from './tool-calling-agent'
-import { evalsHarness } from './evals-harness'
-import { containerOrchestration } from './container-orchestration'
+import { personalPortfolio } from './personal-portfolio'
+import { bedrockAiApp } from './bedrock-ai-app'
 
 export const projectData = [
     spaApp,
@@ -22,6 +22,6 @@ export const projectData = [
     eCommerceStorefront,
     ragChatbot,
     toolCallingAgent,
-    evalsHarness,
-    containerOrchestration,
+    personalPortfolio,
+    bedrockAiApp,
 ]

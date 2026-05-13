@@ -2,13 +2,13 @@ import type { Project } from '@/types/index'
 
 export const reactComponentLibrary: Project = {
     id: 'react-component-library',
-    name: 'React Component Library',
+    name: 'TypeScript UI Kit',
     description:
-        'Design and document a reusable component system with typed props, examples, and shared visual patterns.',
+        'Build a set of typed, reusable React components — buttons, inputs, modals — with consistent props and Tailwind styling.',
     overview: '',
     instructions: '',
     outcomes: '',
-    skills: ['react', 'typescript', 'storybook'],
+    skills: ['react', 'typescript', 'tailwind'],
     domains: ['frontend'],
     level: 'Intermediate',
     duration: '8 hrs',
