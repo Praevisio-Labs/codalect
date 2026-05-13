@@ -9,6 +9,7 @@ import Header from '@/components/Header'
 import FileTree from '@/components/ide/FileTree'
 import CodeEditor from '@/components/ide/CodeEditor'
 import AssistantPanel from '@/components/ide/AssistantPanel'
+import CollapsiblePanel from '@/components/ide/CollapsiblePanel'
 
 function Page() {
     const [theme, setTheme] = useState('raisin')
@@ -48,25 +49,26 @@ function Page() {
     }
 
     return (
-        <main
-            className={`flex flex-col w-full h-screen bg-page overflow-hidden`}>
+        <main className={`flex flex-col w-full h-dvh bg-page overflow-hidden`}>
             <Header
                 theme={theme}
                 setTheme={setTheme}
                 path="/learn"
                 linkText="Learn"
             />
-            <div className="flex-1 flex gap-1 p-1 overflow-hidden">
-                <div
-                    className={`flex-1 h-full rounded-sm rounded-bl-xl overflow-hidden bg-panel`}>
+            <div className="flex-1 min-h-0 flex flex-col gap-1 p-1 overflow-y-auto md:flex-row md:overflow-hidden">
+                <CollapsiblePanel
+                    title="Explorer"
+                    className="order-1 rounded-sm overflow-hidden bg-panel md:order-1 md:h-full md:flex-1 md:rounded-bl-lg"
+                    contentClassName="max-md:max-h-56 max-md:overflow-y-auto">
                     <FileTree
                         files={workspaceFiles}
                         selected={selectedFile}
                         onSelect={setSelectedFile}
                     />
-                </div>
+                </CollapsiblePanel>
                 <div
-                    className={`flex-4 h-full flex flex-col rounded-sm overflow-hidden bg-editor`}>
+                    className={`order-2 h-[62dvh] min-h-[360px] flex flex-col rounded-sm overflow-hidden bg-editor md:order-2 md:h-full md:min-h-0 md:flex-[4_4_0%]`}>
                     <CodeEditor
                         file={selectedFile}
                         theme={theme}
@@ -75,8 +77,10 @@ function Page() {
                         onContentChange={handleContentChange}
                     />
                 </div>
-                <div
-                    className={`flex-3 h-full flex flex-col gap-2 rounded-sm rounded-br-xl overflow-hidden bg-panel`}>
+                <CollapsiblePanel
+                    title="Assistant"
+                    className="order-3 rounded-sm overflow-hidden bg-panel md:h-full md:flex-[3_3_0%] md:rounded-br-lg"
+                    contentClassName="max-md:h-[56dvh] max-md:overflow-hidden">
                     <AssistantPanel
                         file={selectedFile}
                         cursorLine={cursorLine}
@@ -85,7 +89,7 @@ function Page() {
                         isContextHidden={isContextHidden}
                         setIsContextHidden={setIsContextHidden}
                     />
-                </div>
+                </CollapsiblePanel>
             </div>
         </main>
     )
