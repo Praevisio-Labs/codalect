@@ -21,13 +21,13 @@ export default function ModuleCard({ project, onClick }: ModuleProps) {
                     ${cardStateClasses}
                     `}>
             <div className="flex items-start md:gap-8">
-                <div className="hidden md:flex md:size-14 md:shrink-0 md:items-center md:justify-center md:rounded-full md:border-2 md:border-accent-muted">
-                    <ProjectIcon className="size-4 md:size-6xp text-font-primary" />
+                <div className="hidden md:flex size-14 shrink-0 items-center justify-center rounded-full border-2 border-accent-bright bg-accent-contra">
+                    <ProjectIcon className="size-4 md:size-6 text-font-primary" />
                 </div>
 
                 <div className="flex-1 min-w-0">
                     <div className="flex items-center justify-between">
-                        <strong className="rounded-sm border border-accent-muted px-3 py-1.5 text-[10px] font-medium text-font-secondary">
+                        <strong className="rounded-sm border border-accent-muted px-3 py-1.5 text-[10px] md:text-xs font-medium text-font-secondary">
                             {project.level}
                         </strong>
                         <div className="flex items-center gap-1 text-font-secondary">

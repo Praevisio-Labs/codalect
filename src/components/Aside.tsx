@@ -9,27 +9,27 @@ import { AsideProps } from '@/types/components'
 function styleLookup(type: Aside) {
     if (type === 'warning') {
         return {
-            border: 'border-amber-400',
-            bg: 'bg-amber-950/30',
+            border: 'border-accent-apex',
+            bg: 'bg-accent-apex/10',
             label: 'Warning',
-            labelColor: 'text-amber-300',
+            labelColor: 'text-accent-apex',
             Icon: ExclamationTriangleIcon,
         }
     }
     if (type === 'tip') {
         return {
-            border: 'border-emerald-400',
-            bg: 'bg-emerald-950/30',
+            border: 'border-font-secondary',
+            bg: 'bg-font-secondary/10',
             label: 'Tip',
-            labelColor: 'text-emerald-300',
+            labelColor: 'text-font-secondary',
             Icon: LightBulbIcon,
         }
     }
     return {
-        border: 'border-blue-400',
-        bg: 'bg-blue-950/30',
+        border: 'border-accent-bright',
+        bg: 'bg-accent-bright/10',
         label: 'Note',
-        labelColor: 'text-blue-300',
+        labelColor: 'text-accent-bright',
         Icon: InformationCircleIcon,
     }
 }
@@ -50,11 +50,11 @@ export default function Aside({ type, content, link }: AsideProps) {
                     className={`font-semibold text-xs uppercase tracking-wide ${labelColor}`}>
                     {label}
                 </span>
-                <p className="text-slate-300 leading-relaxed">{content}</p>
+                <p className="text-font-paragraph leading-relaxed">{content}</p>
                 {link && (
                     <a
                         href={link.href}
-                        className="underline cursor-pointer text-slate-300">
+                        className="underline cursor-pointer text-font-paragraph">
                         {link.text}
                     </a>
                 )}
