@@ -20,12 +20,12 @@ export default function Dashboard({
             />
             <div className="flex-none p-6 overflow-auto">
                 <h2
-                    className={`text-font-tertiary text-4xl font-semibold mb-4`}>
+                    className={`text-font-apex text-xl md:text-3xl font-semibold mb-4`}>
                     Project Modules
                 </h2>
             </div>
             <div className="flex-1 overflow-y-auto px-6 pb-6">
-                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 xl:grid-cols-3">
                     {projectData.map((project) => (
                         <ModuleCard
                             key={project.id}

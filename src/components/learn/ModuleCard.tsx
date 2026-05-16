@@ -1,14 +1,13 @@
+import { RocketLaunchIcon, ClockIcon } from '@heroicons/react/24/outline'
 import { ModuleProps } from '@/types/components'
-import { teachers } from '@/data/learn/teachers'
-import { CalendarDaysIcon, ClockIcon } from '@heroicons/react/24/outline'
+import { domainLabels, skillLabels, projectIcons } from '@/data/lookups'
 
 export default function ModuleCard({ project, onClick }: ModuleProps) {
-    const teacherId = project.teachers[0]
-    const teacher = teachers.find((person) => person.id === teacherId)
-    const isComingSoon = project.comingSoon === true
+    const isComingSoon = project.isReleased === false
     const cardStateClasses = isComingSoon
         ? 'opacity-70 cursor-default'
         : 'hover:opacity-60 cursor-pointer'
+    const ProjectIcon = projectIcons[project.id] ?? RocketLaunchIcon
 
     return (
         <div
@@ -16,63 +15,54 @@ export default function ModuleCard({ project, onClick }: ModuleProps) {
             className={`
                     flex flex-col gap-4 p-6
                     w-full min-w-0
-                    text-font-primary
                     rounded-lg border-2 border-accent-muted
                     bg-input
+                    text-font-paragraph
                     ${cardStateClasses}
                     `}>
-            {/* Original boilerplate from HyperUI - https://hyperui.dev/components/marketing/cards/*/}
-            <div className="w-full sm:flex sm:items-start sm:justify-between sm:gap-4 lg:gap-6">
-                <div className="sm:order-last sm:shrink-0">
-                    <img
-                        alt={`Image of ${teacher?.name ?? 'Teacher'}`}
-                        src={teacher?.avatar}
-                        className="size-20 rounded-full object-cover"
-                    />
+            <div className="flex items-start md:gap-8">
+                <div className="hidden md:flex size-14 shrink-0 items-center justify-center rounded-full border-2 border-accent-bright bg-accent-contra">
+                    <ProjectIcon className="size-4 md:size-6 text-font-primary" />
                 </div>
 
-                <div className="mt-4 sm:mt-0 sm:flex-1">
-                    <h3 className="text-lg font-medium text-pretty text-font-apex">
+                <div className="flex-1 min-w-0">
+                    <div className="flex items-center justify-between">
+                        <strong className="rounded-sm border border-accent-muted px-3 py-1.5 text-[10px] md:text-xs font-medium text-font-secondary">
+                            {project.level}
+                        </strong>
+                        <div className="flex items-center gap-1 text-font-secondary">
+                            <ClockIcon className="size-4" aria-hidden="true" />
+                            <span className="text-xs font-medium">
+                                {project.duration}
+                            </span>
+                        </div>
+                    </div>
+
+                    <h3 className="mt-4 text-lg font-medium text-font-apex md:text-xl">
                         {project.name}
                     </h3>
 
-                    <p className="mt-1 text-sm text-font-paragraph">
-                        By {teacher?.name ?? 'Unknown Teacher'}
-                    </p>
-
-                    <p className="mt-4 line-clamp-2 text-sm text-pretty text-font-paragraph">
+                    <p className="mt-1 line-clamp-3 text-sm text-pretty text-font-paragraph">
                         {project.description}
                     </p>
+                    <div className="mt-4 flex flex-wrap gap-1">
+                        {project.domains.map((domain) => (
+                            <span
+                                key={domain}
+                                className="rounded-full border border-accent-muted px-2.5 py-0.5 text-xs whitespace-nowrap text-font-secondary">
+                                {domainLabels[domain] ?? domain}
+                            </span>
+                        ))}
+                        {project.skills.map((skill) => (
+                            <span
+                                key={skill}
+                                className="rounded-full border border-accent-muted px-2.5 py-0.5 text-xs whitespace-nowrap text-font-secondary">
+                                {skillLabels[skill] ?? skill}
+                            </span>
+                        ))}
+                    </div>
                 </div>
             </div>
-
-            {isComingSoon ? (
-                <div className="mt-auto flex items-center gap-2 text-xs text-font-secondary">
-                    <ClockIcon
-                        className="size-5 text-font-secondary"
-                        aria-hidden="true"
-                    />
-                    <span>Coming soon...</span>
-                </div>
-            ) : (
-                <div className="mt-auto flex items-center gap-4 text-xs text-font-secondary">
-                    <div className="flex items-center gap-2">
-                        <CalendarDaysIcon
-                            className="size-5 text-font-secondary"
-                            aria-hidden="true"
-                        />
-                        <span>April 21, 2026</span>
-                    </div>
-
-                    <div className="flex items-center gap-2">
-                        <ClockIcon
-                            className="size-5 text-font-secondary"
-                            aria-hidden="true"
-                        />
-                        <span>92 minutes</span>
-                    </div>
-                </div>
-            )}
         </div>
     )
 }

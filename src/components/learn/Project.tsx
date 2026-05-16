@@ -19,7 +19,7 @@ export default function Project({
         <main
             className={`
                 flex flex-col w-full h-screen
-                bg-page text-font-primary
+                bg-panel text-font-paragraph
                 overflow-hidden
                 `}>
             <Header
@@ -29,7 +29,8 @@ export default function Project({
                 linkText="Modules"
             />
             <div className="flex-none text-center pt-4">
-                <h2 className={`${sora.className} text-xl font-bold mb-4`}>
+                <h2
+                    className={`${sora.className} text-xl md:text-2xl text-font-apex font-bold mb-4`}>
                     {project.name}
                 </h2>
             </div>
@@ -53,10 +54,7 @@ export default function Project({
                     )
                     if (!thisSkill) return null
                     return (
-                        <Skill
-                            key={thisSkill.id}
-                            content={thisSkill.content}
-                        />
+                        <Skill key={thisSkill.id} content={thisSkill.content} />
                     )
                 })}
                 <div id="exercise-instructions">

@@ -33,7 +33,7 @@ export type Project = {
     level: Level
     duration: string
     teachers: string[]
-    comingSoon?: boolean
+    isReleased?: boolean
     files: File[]
 }
 

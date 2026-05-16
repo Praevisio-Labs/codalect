@@ -50,8 +50,9 @@
 
 - [x] reorg learning content file structure and import/export logic, #48
 - [x] refactor three-panel IDE for responsiveness at mobile sizes, #42 
-- [ ] generate v1 content for all skills and projects, #47
-- [ ] wire up model select component to backend API routes, 49
+- [x] generate v1 content for all skills and projects, #47
+- [ ] redesign learn dashboard with refactored HyperUI components, #51
+- [ ] wire up model select component to backend API routes, #49
 
 <!-- Deferred -->
 ## Backlog
