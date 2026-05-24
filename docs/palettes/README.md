@@ -1,4 +1,4 @@
-## Raisin.IDE's 3-Theme Palettes
+## Codalect's 3-Theme Palettes
 
 ### Design Process
 

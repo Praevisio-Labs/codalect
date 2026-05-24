@@ -41,7 +41,7 @@ ${systemPersona[selectedPersona.key] ?? systemPersona.socrates}
 
 ${fileContext}
 
-${systemGuardrail.raisin}
+${systemGuardrail.codalect}
 
 ${outputFormat.markdown}
 

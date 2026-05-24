@@ -1,10 +1,10 @@
 <br>
 
-<div id="raisin-logo" align="center">
+<div id="codalect-logo" align="center">
 
-<img src="./public/logo/logo-color.svg" alt="Raisin.IDE Logo" width="50"/>  
+<img src="./public/brandmark.svg" alt="Codalect Logo" width="70"/>  
 
-<h3>Raisin.IDE</h3>
+<h3>Codalect</h3>
 </div>
 
 <div id="tagline" align="center">
@@ -13,7 +13,7 @@
 
 <br>
 
-> **Live Demo:** https://raisin-ide.vercel.app/
+> **Live Demo:** [codalect.com](https://www.codalect.com/)
 
 ### An Uphill Battle
 
@@ -41,16 +41,16 @@ While the terms *professional coder* and *beginner coder* sound similar, that ov
 
 ### The Necessary Battle
 
-Raisin.IDE is a bet on the fact that for this latter group of folks, a solution tailored to their needs will deliver indispensable value. 
+Codalect is a bet on the fact that for this latter group of folks, a solution tailored to their needs will deliver indispensable value. 
 
-Raisin.IDE is also a bet that learning to code will still be important despite how the role of coders will change in the age of AI.
+Codalect is also a bet that learning to code will still be important despite how the role of coders will change in the age of AI.
 
 Read our full thesis here: [blog.stackademic.com](https://blog.stackademic.com/rethinking-coding-education-for-the-ai-era-054b40a350d5).
 
 <br>
 
-<div id="praevisio-logo" align="left">
+<div id="praevisio-slogan" align="left">
 
-<img src="./public/brand/brand-slogan.png" alt="Praevisio.Labs Logo" width="250"/>  
+<img src="./public/praevisio/brand-slogan.png" alt="Praevisio.Labs Slogan" width="250"/>  
 
 </div>

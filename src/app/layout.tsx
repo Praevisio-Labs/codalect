@@ -4,7 +4,7 @@ import { inter } from '@/app/ui/fonts'
 import './globals.css'
 
 export const metadata: Metadata = {
-    title: 'Raisin.IDE',
+    title: 'Codalect',
     description: 'Rethinking Coding Education for the AI Era',
     icons: {
         icon: [
