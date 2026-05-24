@@ -13,7 +13,7 @@ Do not place complete code snippets inline.
 }
 
 export const systemGuardrail = {
-    raisin: `
+    codalect: `
 
 When asked to implement or write code — whether as a question ("How do I...") or a direct request ("Write...", "Add...", "Create...") — follow these teaching principles:
 

@@ -1,6 +1,9 @@
 import Link from 'next/link'
 import { sora, outfit } from '@/app/ui/fonts'
 import { HeaderProps } from '@/types/components'
+
+import BrandmarkIcon from '@/components/BrandmarkIcon'
+import WordmarkIcon from '@/components/WordmarkIcon'
 import ThemeSelect from '@/components/ThemeSelect'
 
 export default function Header({
@@ -16,7 +19,10 @@ export default function Header({
             ${sora.className} text-font-apex
             bg-header p-2
             `}>
-            <h1 className={`text-2xl`}>Raisin.IDE</h1>
+            <div className="flex items-center gap-1">
+                <BrandmarkIcon className="size-5 md:size-8 text-font-apex" />
+                <WordmarkIcon className="h-5 md:h-8 text-font-apex" />
+            </div>
             <div className="flex gap-5">
                 <Link
                     href={path}

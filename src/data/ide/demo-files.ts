@@ -90,10 +90,10 @@ h1 {
 
 <br/>
 
-<div id="raisin-logo" align="center">
+<div id="codalect-logo" align="center">
     <br />
-    <img src="./public/brand-slogan.png" alt="Raisin.IDE Logo" width="300"/>
-    <h3>Raisin.IDE</h3>
+    <img src="./public/brand-slogan.png" alt="Codalect Logo" width="300"/>
+    <h3>Codalect</h3>
 </div>
 
 <div id="tagline" align="center">
@@ -102,11 +102,11 @@ h1 {
 
 </div>
 
-> **Live Demo:** https://raisin-ide.vercel.app/
+> **Live Demo:** https://www.codalect.com/
 
 ## Overview
 
-Raisin.IDE is a web-based coding environment designed specifically for learners. Unlike professional AI coding tools optimized for task completion, Raisin.IDE focuses on knowledge acquisition and understanding.
+Codalect is a web-based coding environment designed specifically for learners. Unlike professional AI coding tools optimized for task completion, Codalect focuses on knowledge acquisition and understanding.
 
 ## Features
 
@@ -124,8 +124,8 @@ Raisin.IDE is a web-based coding environment designed specifically for learners.
 ### Installation
 
 \`\`\`bash
-git clone https://github.com/yourusername/raisin-ide.git
-cd raisin-ide
+git clone https://github.com/yourusername/codalect.git
+cd codalect
 npm install
 \`\`\`
 

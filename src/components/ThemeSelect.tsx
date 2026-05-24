@@ -1,5 +1,5 @@
 import { MoonIcon, SunIcon } from '@heroicons/react/24/outline'
-import RaisinIcon from '@/components/RaisinIcon'
+import BrandmarkIcon from '@/components/BrandmarkIcon'
 import { ThemeProps } from '@/types/components'
 
 export default function ThemeSelect({ theme, setTheme }: ThemeProps) {
@@ -18,7 +18,7 @@ export default function ThemeSelect({ theme, setTheme }: ThemeProps) {
             <div
                 onClick={() => handleThemeChange('raisin')}
                 className={`rounded-sm bg-accent-contra px-3 py-2 cursor-pointer ${theme === 'raisin' ? 'opacity-100' : 'opacity-40'}`}>
-                <RaisinIcon className={`h-4 w-4 text-font-apex`} />
+                <BrandmarkIcon className={`h-4 w-4 text-font-apex`} />
             </div>
             <div
                 onClick={() => handleThemeChange('light')}

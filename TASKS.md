@@ -52,6 +52,7 @@
 - [x] refactor three-panel IDE for responsiveness at mobile sizes, #42 
 - [x] generate v1 content for all skills and projects, #47
 - [x] redesign learn dashboard with refactored HyperUI components, #51
+- [x] add assets and apply Codalect rebranding across all surfaces, #62
 
 ## Sprint 5: Socratic constraint layer + automated evals
 
@@ -65,4 +66,3 @@
 ## Planned Improvements 
 
 - [ ] wire up model select component to backend API routes, #49
-- [ ] add assets and apply Codalect rebranding across all surfaces, #62

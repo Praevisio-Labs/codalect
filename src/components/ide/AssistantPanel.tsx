@@ -11,7 +11,7 @@ import { defaultMessage } from '@/data/defaults'
 import { personas } from '@/data/ai/personas'
 import { DEMO_MODELS as models } from '@/data/ai/models'
 
-import RaisinIcon from '@/components/RaisinIcon'
+import BrandmarkIcon from '@/components/BrandmarkIcon'
 import ChatDisplay from '@/components/ide/ChatDisplay'
 import ChatInput from '@/components/ide/ChatInput'
 import PersonaSelect from '@/components/ide/PersonaSelect'
@@ -54,7 +54,7 @@ export default function AssistantPanel({
             </div>
             <div className="flex-1 min-h-0 items-center flex flex-col overflow-hidden p-2">
                 <div className="w-full flex gap-10 md:gap-2 self-start md:items-center md:flex-col">
-                    <RaisinIcon
+                    <BrandmarkIcon
                         className={`flex-none size-8 text-font-apex m-4 max-md:hidden`}
                     />
                     <div className="w-1/3 md:hidden">
