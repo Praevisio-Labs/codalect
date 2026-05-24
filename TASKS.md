@@ -52,4 +52,17 @@
 - [x] refactor three-panel IDE for responsiveness at mobile sizes, #42 
 - [x] generate v1 content for all skills and projects, #47
 - [x] redesign learn dashboard with refactored HyperUI components, #51
+
+## Sprint 5: Socratic constraint layer + automated evals
+
+- [ ] replace Persona type with Task and ConstraintLevel data layer, #56
+- [ ] redesign system prompt with Socratic base layers and task overlays, #57
+- [ ] add TaskSelect pills and refactor PersonaSelect into ConstraintSelect, #58
+- [ ] author per-mode adversarial test sets and eval methodology doc, #59
+- [ ] build standalone eval pipeline with Bedrock agent and LLM-as-Judge, #60
+- [ ] publish eval results, head-to-head comparisons, and matrix artifacts, #61
+
+## Planned Improvements 
+
 - [ ] wire up model select component to backend API routes, #49
+- [ ] add assets and apply Codalect rebranding across all surfaces, #62
