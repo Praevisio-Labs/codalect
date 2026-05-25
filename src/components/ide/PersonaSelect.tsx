@@ -10,7 +10,7 @@ import {
 import { Persona } from '@/types/index'
 import { PersonaSelectProps } from '@/types/components'
 
-import { personas } from '@/data/ai/personas'
+import { personas } from '../../../!dev/archive/code/personas'
 import { ChevronUpDownIcon } from '@heroicons/react/16/solid'
 import { CheckIcon } from '@heroicons/react/20/solid'
 

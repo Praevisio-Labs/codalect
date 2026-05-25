@@ -1,4 +1,4 @@
-import BrandmarkIcon from '@/components/BrandmarkIcon'
+import BrandmarkIcon from '@/components/icons/BrandmarkIcon'
 import { LoadingIndicatorProps } from '@/types/components'
 
 export default function LoadingIndicator({ show }: LoadingIndicatorProps) {

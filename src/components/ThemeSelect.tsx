@@ -1,5 +1,5 @@
 import { MoonIcon, SunIcon } from '@heroicons/react/24/outline'
-import BrandmarkIcon from '@/components/BrandmarkIcon'
+import BrandmarkIcon from '@/components/icons/BrandmarkIcon'
 import { ThemeProps } from '@/types/components'
 
 export default function ThemeSelect({ theme, setTheme }: ThemeProps) {

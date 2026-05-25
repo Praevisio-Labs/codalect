@@ -8,10 +8,10 @@ import { Persona, Model } from '@/types/index'
 import { AssistantPanelProps } from '@/types/components'
 
 import { defaultMessage } from '@/data/defaults'
-import { personas } from '@/data/ai/personas'
+import { personas } from '../../../!dev/archive/code/personas'
 import { DEMO_MODELS as models } from '@/data/ai/models'
 
-import BrandmarkIcon from '@/components/BrandmarkIcon'
+import BrandmarkIcon from '@/components/icons/BrandmarkIcon'
 import ChatDisplay from '@/components/ide/ChatDisplay'
 import ChatInput from '@/components/ide/ChatInput'
 import PersonaSelect from '@/components/ide/PersonaSelect'

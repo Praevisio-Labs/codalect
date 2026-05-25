@@ -2,8 +2,8 @@ import Link from 'next/link'
 import { sora, outfit } from '@/app/ui/fonts'
 import { HeaderProps } from '@/types/components'
 
-import BrandmarkIcon from '@/components/BrandmarkIcon'
-import WordmarkIcon from '@/components/WordmarkIcon'
+import BrandmarkIcon from '@/components/icons/BrandmarkIcon'
+import WordmarkIcon from '@/components/icons/WordmarkIcon'
 import ThemeSelect from '@/components/ThemeSelect'
 
 export default function Header({
