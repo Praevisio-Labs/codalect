@@ -74,6 +74,7 @@ export interface ChatInputProps {
     isContextHidden: boolean
     setIsContextHidden: (value: boolean) => void
     selectedTask: Task
+    setSelectedTask: (value: Task) => void
     selectedConstraint: Constraint
     selectedModel: Model
     setSelectedModel: (value: Model) => void

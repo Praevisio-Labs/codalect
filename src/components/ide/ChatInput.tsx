@@ -3,6 +3,7 @@ import { ArrowUpCircleIcon } from '@heroicons/react/24/outline'
 
 import ContextSelect from '@/components/ide/ContextSelect'
 import ModelSelect from '@/components/ide/ModelSelect'
+import TaskSelect from '@/components/ide/TaskSelect'
 
 export default function ChatInput({
     status,
@@ -15,7 +16,9 @@ export default function ChatInput({
     textSelection,
     isContextHidden,
     setIsContextHidden,
-    selectedPersona,
+    selectedTask,
+    setSelectedTask,
+    selectedConstraint,
     selectedModel,
     setSelectedModel,
 }: ChatInputProps) {
@@ -23,12 +26,13 @@ export default function ChatInput({
         e?.preventDefault()
         if (input.trim()) {
             const body = isContextHidden
-                ? { selectedPersona }
+                ? { selectedTask, selectedConstraint }
                 : {
                       fileName: file.name,
                       fileContent,
                       cursorLine,
-                      selectedPersona,
+                      selectedTask,
+                      selectedConstraint,
                   }
             sendMessage({ text: input }, { body })
             setInput('')
@@ -78,6 +82,10 @@ export default function ChatInput({
                         setIsContextHidden={setIsContextHidden}
                     />
                 </div>
+                <TaskSelect
+                    selectedTask={selectedTask}
+                    setSelectedTask={setSelectedTask}
+                />
                 <ModelSelect
                     selectedModel={selectedModel}
                     setSelectedModel={setSelectedModel}
