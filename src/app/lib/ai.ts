@@ -1,9 +1,15 @@
-import { streamText, convertToModelMessages } from 'ai'
 import { openai } from '@ai-sdk/openai'
 import { bedrock } from '@ai-sdk/amazon-bedrock'
+import { streamText, convertToModelMessages } from 'ai'
 import { StreamingResponseProps } from '@/types/components'
+
+import {
+    outputFormat,
+    systemModifiers,
+    constraintLevels,
+    taskTypes,
+} from '@/data/ai/prompts'
 import { ALL_MODELS } from '@/data/ai/models'
-import { outputFormat, systemGuardrail, systemPersona } from '@/data/ai/prompts'
 
 const bedrockModel = ALL_MODELS.bedrock.haiku
 const openaiModel = ALL_MODELS.openai.fast
@@ -21,7 +27,8 @@ export async function getStreamingResponse({
     fileName,
     fileContent,
     cursorLine,
-    selectedPersona,
+    selectedTask,
+    selectedConstraint,
 }: StreamingResponseProps) {
     const t0 = Date.now()
     const provider = process.env.AI_PROVIDER || 'openai'
@@ -35,13 +42,20 @@ export async function getStreamingResponse({
 
     const systemPrompt = `
 
-You are a coding assistant helping an intermediate learner improve their skills.
+${systemModifiers.role}
 
-${systemPersona[selectedPersona.key] ?? systemPersona.socrates}
+${systemModifiers.guardrail}
 
-${fileContext}
+${systemModifiers.precedence}
 
-${systemGuardrail.codalect}
+${taskTypes[selectedTask.key]}
+
+${constraintLevels[selectedConstraint.level]}
+
+**File Context:**
+\`\`\`
+${fileContext ?? 'None'}
+\`\`\`
 
 ${outputFormat.markdown}
 
@@ -61,7 +75,7 @@ ${outputFormat.markdown}
             if (firstChunkLogged) return
             firstChunkLogged = true
             console.log(
-                `[chat] ttft=${Date.now() - t0}ms preStream=${tPreStream}ms model=${modelName} provider=${provider} persona=${selectedPersona.key} msgCount=${messages.length} sysChars=${systemPrompt.length}`,
+                `[chat] ttft=${Date.now() - t0}ms preStream=${tPreStream}ms model=${modelName} provider=${provider} task=${selectedTask.key} constraint=${selectedConstraint.level}  msgCount=${messages.length} sysChars=${systemPrompt.length}`,
             )
         },
     })
