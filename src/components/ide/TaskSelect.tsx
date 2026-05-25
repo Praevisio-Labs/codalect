@@ -28,16 +28,25 @@ export default function TaskSelect({
                         key={task.key}
                         type="button"
                         onClick={() => setSelectedTask(task)}
-                        title={task.name}
                         className={`
-                px-2 py-0.5 rounded-sm cursor-pointer transition
-                ${
-                    isActive
-                        ? 'bg-accent-muted text-font-apex'
-                        : 'text-font-paragraph hover:bg-accent-muted/40'
-                }
-            `}>
-                        <Icon className="size-3 md:size-4" />
+                            group relative
+                            px-2 py-0.5 rounded-sm cursor-pointer transition
+                            ${isActive ? 'bg-accent-muted text-font-apex' : 'text-font-paragraph hover:bg-accent-muted/40'}
+                        `}>
+                        <Icon className="size-4" />
+                        <span
+                            className="
+                            absolute -top-7 left-1/2 -translate-x-1/2
+                            px-1.5 py-0.5 rounded-sm
+                            bg-panel text-font-apex text-[9px] whitespace-nowrap
+                            opacity-0 group-hover:opacity-100
+                            transition-opacity duration-150
+                            pointer-events-none
+                        ">
+                            {task.name}
+                            {' · '}
+                            {task.description.short}
+                        </span>
                     </button>
                 )
             })}

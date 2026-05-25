@@ -13,7 +13,7 @@ export const tasks: Task[] = [
         key: 'build',
         name: 'Build',
         description: {
-            short: 'Incremental implementation',
+            short: 'Incremental execution',
             long: 'Walks an implementation step by step. Pseudocode and partial snippets only.',
         },
     },
@@ -21,7 +21,7 @@ export const tasks: Task[] = [
         key: 'learn',
         name: 'Learn',
         description: {
-            short: 'Teach concepts',
+            short: 'Teaches concepts',
             long: 'Minimal illustrative snippets paired with prediction questions.',
         },
     },

@@ -36,11 +36,11 @@ export default function ConstraintSelect({
         <Listbox value={selectedConstraint} onChange={setSelectedConstraint}>
             <div className="relative">
                 <ListboxButton className="grid w-full cursor-default grid-cols-1 rounded-sm bg-page/50 py-1 pr-2 pl-3 text-left text-font-paragraph normal-case outline-1 -outline-offset-1 outline-none text-[10px]">
-                    <span className="col-start-1 row-start-1 flex items-center gap-3 pr-6">
-                        <Jalapenos count={selectedConstraint.level} />
+                    <span className="col-start-1 row-start-1 flex items-center justify-between gap-3 pr-6">
                         <span className="block truncate">
                             {selectedConstraint.name}
                         </span>
+                        <Jalapenos count={selectedConstraint.level} />
                     </span>
                     <ChevronUpDownIcon
                         aria-hidden="true"
@@ -55,8 +55,7 @@ export default function ConstraintSelect({
                             key={heatLevel.level}
                             value={heatLevel}
                             className="group relative cursor-default py-1 pr-9 pl-3 text-font-paragraph select-none data-focus:bg-accent-muted data-focus:text-font-paragraph data-focus:outline-hidden">
-                            <div className="flex items-center gap-2">
-                                <Jalapenos count={heatLevel.level} />
+                            <div className="flex items-center justify-between gap-2">
                                 <div className="flex flex-col">
                                     <span className="block truncate font-normal group-data-selected:font-semibold">
                                         {heatLevel.name}
@@ -65,6 +64,7 @@ export default function ConstraintSelect({
                                         {heatLevel.description.short}
                                     </span>
                                 </div>
+                                <Jalapenos count={heatLevel.level} />
                             </div>
                             <span className="absolute top-0 right-0 flex items-start pt-1 pr-4 text-accent-bright group-not-data-selected:hidden group-data-focus:text-font-paragraph">
                                 <CheckIcon

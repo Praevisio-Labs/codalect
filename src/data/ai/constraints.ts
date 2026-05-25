@@ -3,7 +3,7 @@ import { Constraint } from '@/types/index'
 export const constraintLevels: Constraint[] = [
     {
         level: 1,
-        name: 'Mild',
+        name: 'Low Constraint',
         description: {
             short: 'Looser hints',
             long: 'Allows direct hints and partial snippets. Still refuses complete solutions.',
@@ -11,7 +11,7 @@ export const constraintLevels: Constraint[] = [
     },
     {
         level: 2,
-        name: 'Medium',
+        name: 'Medium Constraint',
         description: {
             short: 'Balanced guidance',
             long: 'Pseudocode and partial snippets; asks at least one question per turn.',
@@ -19,7 +19,7 @@ export const constraintLevels: Constraint[] = [
     },
     {
         level: 3,
-        name: 'Spicy',
+        name: 'High Constraint',
         description: {
             short: 'Strict Socratic',
             long: 'Questions only. No code, no pseudocode, no direct answers.',

@@ -73,29 +73,29 @@ export default function ChatInput({
                     px-2 pt-2 pb-1
                 `}
             />
-            <div className="flex items-center gap-1.5 px-1.5 pb-1">
-                <div className="flex-1 min-w-0">
-                    <ContextSelect
-                        file={file}
-                        textSelection={textSelection}
-                        isContextHidden={isContextHidden}
-                        setIsContextHidden={setIsContextHidden}
-                    />
-                </div>
+            <div className="flex items-center justify-between px-1.5 pb-1">
                 <TaskSelect
                     selectedTask={selectedTask}
                     setSelectedTask={setSelectedTask}
                 />
-                <ModelSelect
-                    selectedModel={selectedModel}
-                    setSelectedModel={setSelectedModel}
+                <ContextSelect
+                    file={file}
+                    textSelection={textSelection}
+                    isContextHidden={isContextHidden}
+                    setIsContextHidden={setIsContextHidden}
                 />
-                <button
-                    type="submit"
-                    disabled={status !== 'ready'}
-                    className={`bg-button px-1 py-0.5 rounded-sm`}>
-                    <ArrowUpCircleIcon className="h-4.5 w-4.5" />
-                </button>
+                <div className="flex items-center gap-1.5">
+                    <ModelSelect
+                        selectedModel={selectedModel}
+                        setSelectedModel={setSelectedModel}
+                    />
+                    <button
+                        type="submit"
+                        disabled={status !== 'ready'}
+                        className={`bg-button px-1 py-0.5 rounded-sm`}>
+                        <ArrowUpCircleIcon className="h-4.5 w-4.5" />
+                    </button>
+                </div>
             </div>
         </form>
     )
