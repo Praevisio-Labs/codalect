@@ -56,7 +56,7 @@
 
 ## Sprint 5: Socratic constraint layer + automated evals
 
-- [ ] replace Persona type with Task and ConstraintLevel data layer, #56
+- [x] replace Persona type with Task and ConstraintLevel data layer, #56
 - [ ] redesign system prompt with Socratic base layers and task overlays, #57
 - [ ] add TaskSelect pills and refactor PersonaSelect into ConstraintSelect, #58
 - [ ] author per-mode adversarial test sets and eval methodology doc, #59
