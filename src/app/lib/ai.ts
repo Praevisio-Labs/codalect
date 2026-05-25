@@ -5,9 +5,9 @@ import { StreamingResponseProps } from '@/types/components'
 
 import {
     outputFormat,
-    systemModifiers,
-    constraintLevels,
-    taskTypes,
+    systemUniversal,
+    systemConstraintLevel,
+    systemTaskType,
 } from '@/data/ai/prompts'
 import { ALL_MODELS } from '@/data/ai/models'
 
@@ -42,15 +42,15 @@ export async function getStreamingResponse({
 
     const systemPrompt = `
 
-${systemModifiers.role}
+${systemUniversal.role}
 
-${systemModifiers.guardrail}
+${systemUniversal.guardrail}
 
-${systemModifiers.precedence}
+${systemUniversal.precedence}
 
-${taskTypes[selectedTask.key]}
+${systemTaskType[selectedTask.key]}
 
-${constraintLevels[selectedConstraint.level]}
+${systemConstraintLevel[selectedConstraint.level]}
 
 **File Context:**
 \`\`\`
