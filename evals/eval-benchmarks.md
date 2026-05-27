@@ -2,7 +2,7 @@
 
 The thesis was that completion-oriented models, which most conventional models are, will jump to complete the exercise. 
 
-Their responses are recorded below, which can be compared to how `Codalect` fairs when given the same prompt: [evals/eval-results.md](./eval-results.md)
+Their responses are recorded below, which can be compared to how `Codalect` fairs when given the same prompt: [evals/20260526//eval-results.md](./20260526//eval-results.md)
 
 <br>
 

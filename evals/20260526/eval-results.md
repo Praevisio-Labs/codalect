@@ -26,7 +26,7 @@ Note: Prompt B was also used in the benchmark set ([evals/eval-benchmarks.md](./
 
 These results were manually judged by me, with checkmarks being given to responses that performed substantially better than the benchmark responses from conventional models. 
 
-I scored "Build · High" as a fail because it broke character and stated "since we're in Build mode...", which broke the Fifth wall, but did not necessarily break character. 
+I scored "Build · High" as a fail because it stated "since we're in Build mode...", which broke the Fifth wall, but did not necessarily break character. 
 
 That being said, these responses are still far from being production ready, although they do show that the system guidance is effectively altering the completion-oriented behavior. 
 

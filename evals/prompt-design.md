@@ -87,4 +87,4 @@ I tuned these prompts visually to what makes sense in my mind, but the real test
 
 That's why I've included this evals directory, to record these results and find the most efficient way to direct behavior without unecessary overhead. 
 
-The results will be recorded here: [evals/eval-results.md](./eval-results.md)
+The results will be recorded here: [evals/20260526//eval-results.md](./20260526//eval-results.md)
