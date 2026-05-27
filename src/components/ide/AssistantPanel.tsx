@@ -4,18 +4,24 @@ import { useState } from 'react'
 import { useChat } from '@ai-sdk/react'
 import { DefaultChatTransport } from 'ai'
 
-import { Persona, Model } from '@/types/index'
+import { Task, Constraint, Model } from '@/types/index'
 import { AssistantPanelProps } from '@/types/components'
 
 import { defaultMessage } from '@/data/defaults'
-import { personas } from '@/data/ai/personas'
+import { tasks } from '@/data/ai/tasks'
+import { constraintLevels } from '@/data/ai/constraints'
 import { DEMO_MODELS as models } from '@/data/ai/models'
 
-import BrandmarkIcon from '@/components/BrandmarkIcon'
+import BrandmarkIcon from '@/components/icons/BrandmarkIcon'
 import ChatDisplay from '@/components/ide/ChatDisplay'
 import ChatInput from '@/components/ide/ChatInput'
-import PersonaSelect from '@/components/ide/PersonaSelect'
-import PersonaDisplay from '@/components/ide/PersonaDisplay'
+import ConstraintSelect from '@/components/ide/ConstraintSelect'
+import ConstraintDisplay from '@/components/ide/ConstraintDisplay'
+
+const defaultTask = tasks.find((t: Task) => t.key === 'build')!
+const defaultConstraint = constraintLevels.find(
+    (l: Constraint) => l.level === 2,
+)!
 
 export default function AssistantPanel({
     file,
@@ -26,7 +32,9 @@ export default function AssistantPanel({
     setIsContextHidden,
 }: AssistantPanelProps) {
     const [input, setInput] = useState('')
-    const [selectedPersona, setSelectedPersona] = useState<Persona>(personas[0])
+    const [selectedTask, setSelectedTask] = useState<Task>(defaultTask)
+    const [selectedConstraint, setSelectedConstraint] =
+        useState<Constraint>(defaultConstraint)
     const [selectedModel, setSelectedModel] = useState<Model>(models[0])
 
     const { messages, sendMessage, status } = useChat({
@@ -46,9 +54,9 @@ export default function AssistantPanel({
                 `}>
                 <span className={`flex-1 text-font-apex`}>Assistant</span>
                 <div className="w-1/2">
-                    <PersonaSelect
-                        selectedPersona={selectedPersona}
-                        setSelectedPersona={setSelectedPersona}
+                    <ConstraintSelect
+                        selectedConstraint={selectedConstraint}
+                        setSelectedConstraint={setSelectedConstraint}
                     />
                 </div>
             </div>
@@ -58,31 +66,32 @@ export default function AssistantPanel({
                         className={`flex-none size-8 text-font-apex m-4 max-md:hidden`}
                     />
                     <div className="w-1/3 md:hidden">
-                        <PersonaSelect
-                            selectedPersona={selectedPersona}
-                            setSelectedPersona={setSelectedPersona}
+                        <ConstraintSelect
+                            selectedConstraint={selectedConstraint}
+                            setSelectedConstraint={setSelectedConstraint}
                         />
                     </div>
                     <div className="flex-1 min-w-0 text-end md:text-center">
-                        <PersonaDisplay selectedPersona={selectedPersona} />
+                        <ConstraintDisplay
+                            selectedConstraint={selectedConstraint}
+                        />
                     </div>
                 </div>
                 <ChatDisplay messages={messages} status={status} />
                 <ChatInput
                     status={status}
-                    // user query
                     input={input}
                     setInput={setInput}
                     sendMessage={sendMessage}
-                    // dynamic context
                     file={file}
                     fileContent={fileContent}
                     cursorLine={cursorLine}
                     textSelection={textSelection}
                     isContextHidden={isContextHidden}
                     setIsContextHidden={setIsContextHidden}
-                    // interactive elements
-                    selectedPersona={selectedPersona}
+                    selectedTask={selectedTask}
+                    setSelectedTask={setSelectedTask}
+                    selectedConstraint={selectedConstraint}
                     selectedModel={selectedModel}
                     setSelectedModel={setSelectedModel}
                 />

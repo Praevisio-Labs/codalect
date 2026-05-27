@@ -56,12 +56,12 @@
 
 ## Sprint 5: Socratic constraint layer + automated evals
 
-- [ ] replace Persona type with Task and ConstraintLevel data layer, #56
-- [ ] redesign system prompt with Socratic base layers and task overlays, #57
-- [ ] add TaskSelect pills and refactor PersonaSelect into ConstraintSelect, #58
-- [ ] author per-mode adversarial test sets and eval methodology doc, #59
-- [ ] build standalone eval pipeline with Bedrock agent and LLM-as-Judge, #60
-- [ ] publish eval results, head-to-head comparisons, and matrix artifacts, #61
+- [x] replace Persona type with Task and ConstraintLevel data layer, #56
+- [x] redesign system prompt with Socratic base layers and task overlays, #57
+- [x] add TaskSelect pills and refactor PersonaSelect into ConstraintSelect, #58
+- [x] author per-mode adversarial test sets and eval methodology doc, #59
+- [x] build standalone eval pipeline with Bedrock agent and LLM-as-Judge, #60
+- [x] publish eval results, head-to-head comparisons, and matrix artifacts, #61
 
 ## Planned Improvements 
 

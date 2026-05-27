@@ -3,6 +3,7 @@ import { ArrowUpCircleIcon } from '@heroicons/react/24/outline'
 
 import ContextSelect from '@/components/ide/ContextSelect'
 import ModelSelect from '@/components/ide/ModelSelect'
+import TaskSelect from '@/components/ide/TaskSelect'
 
 export default function ChatInput({
     status,
@@ -15,7 +16,9 @@ export default function ChatInput({
     textSelection,
     isContextHidden,
     setIsContextHidden,
-    selectedPersona,
+    selectedTask,
+    setSelectedTask,
+    selectedConstraint,
     selectedModel,
     setSelectedModel,
 }: ChatInputProps) {
@@ -23,12 +26,13 @@ export default function ChatInput({
         e?.preventDefault()
         if (input.trim()) {
             const body = isContextHidden
-                ? { selectedPersona }
+                ? { selectedTask, selectedConstraint }
                 : {
                       fileName: file.name,
                       fileContent,
                       cursorLine,
-                      selectedPersona,
+                      selectedTask,
+                      selectedConstraint,
                   }
             sendMessage({ text: input }, { body })
             setInput('')
@@ -69,25 +73,29 @@ export default function ChatInput({
                     px-2 pt-2 pb-1
                 `}
             />
-            <div className="flex items-center gap-1.5 px-1.5 pb-1">
-                <div className="flex-1 min-w-0">
-                    <ContextSelect
-                        file={file}
-                        textSelection={textSelection}
-                        isContextHidden={isContextHidden}
-                        setIsContextHidden={setIsContextHidden}
-                    />
-                </div>
-                <ModelSelect
-                    selectedModel={selectedModel}
-                    setSelectedModel={setSelectedModel}
+            <div className="flex items-center justify-between px-1.5 pb-1">
+                <TaskSelect
+                    selectedTask={selectedTask}
+                    setSelectedTask={setSelectedTask}
                 />
-                <button
-                    type="submit"
-                    disabled={status !== 'ready'}
-                    className={`bg-button px-1 py-0.5 rounded-sm`}>
-                    <ArrowUpCircleIcon className="h-4.5 w-4.5" />
-                </button>
+                <ContextSelect
+                    file={file}
+                    textSelection={textSelection}
+                    isContextHidden={isContextHidden}
+                    setIsContextHidden={setIsContextHidden}
+                />
+                <div className="flex items-center gap-1.5">
+                    <ModelSelect
+                        selectedModel={selectedModel}
+                        setSelectedModel={setSelectedModel}
+                    />
+                    <button
+                        type="submit"
+                        disabled={status !== 'ready'}
+                        className={`bg-button px-1 py-0.5 rounded-sm`}>
+                        <ArrowUpCircleIcon className="h-4.5 w-4.5" />
+                    </button>
+                </div>
             </div>
         </form>
     )

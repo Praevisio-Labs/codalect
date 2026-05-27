@@ -1,4 +1,4 @@
-import FileIcon from '@/components/FileIcon'
+import FileIcon from '@/components/icons/FileIcon'
 import type { File } from '@/types/index'
 import { FileTreeProps } from '@/types/components'
 

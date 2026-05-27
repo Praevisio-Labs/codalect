@@ -52,11 +52,18 @@ export type TextSelection = {
     end: number
 }
 
-export interface Persona {
-    id: number
-    key: 'socrates' | 'plato' | 'aristotle' | 'epictetus' | 'pliny'
+export interface Task {
+    key: 'scope' | 'build' | 'learn'
     name: string
-    avatar: string
+    description: {
+        short: string
+        long: string
+    }
+}
+
+export interface Constraint {
+    level: 1 | 2 | 3
+    name: string
     description: {
         short: string
         long: string
@@ -73,15 +80,6 @@ export interface Model {
     }
 }
 
-export interface Teacher {
-    id: string
-    name: string
-    avatar: string
-    description: {
-        short: string
-        long: string
-    }
-}
 export type Domain =
     | 'frontend'
     | 'backend'

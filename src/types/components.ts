@@ -8,7 +8,8 @@ import {
     Skill,
     Aside,
     TextSelection,
-    Persona,
+    Task,
+    Constraint,
     Model,
 } from './index'
 
@@ -42,8 +43,18 @@ export interface AssistantPanelProps {
     setIsContextHidden: (value: boolean) => void
 }
 
-export interface PersonaDisplayProps {
-    selectedPersona: Persona
+export interface TaskSelectProps {
+    selectedTask: Task
+    setSelectedTask: (value: Task) => void
+}
+
+export interface ConstraintDisplayProps {
+    selectedConstraint: Constraint
+}
+
+export interface ConstraintSelectProps {
+    selectedConstraint: Constraint
+    setSelectedConstraint: (value: Constraint) => void
 }
 
 export interface ChatDisplayProps {
@@ -62,7 +73,9 @@ export interface ChatInputProps {
     textSelection: TextSelection
     isContextHidden: boolean
     setIsContextHidden: (value: boolean) => void
-    selectedPersona: Persona
+    selectedTask: Task
+    setSelectedTask: (value: Task) => void
+    selectedConstraint: Constraint
     selectedModel: Model
     setSelectedModel: (value: Model) => void
 }
@@ -72,11 +85,6 @@ export interface ContextSelectProps {
     textSelection: TextSelection
     isContextHidden: boolean
     setIsContextHidden: (value: boolean) => void
-}
-
-export interface PersonaSelectProps {
-    selectedPersona: Persona
-    setSelectedPersona: (value: Persona) => void
 }
 
 export interface ModelSelectProps {
@@ -145,7 +153,8 @@ export interface StreamingResponseProps {
     fileName?: string
     fileContent?: string
     cursorLine?: number
-    selectedPersona: Persona
+    selectedTask: Task
+    selectedConstraint: Constraint
 }
 
 export interface CollapsiblePanelProps {
