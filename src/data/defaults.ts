@@ -7,7 +7,7 @@ export const defaultMessage = [
         parts: [
             {
                 type: 'text',
-                text: 'Hi! What are we building today?',
+                text: "Hi! I'm Codalect, how can I help?",
             },
         ],
     },

@@ -51,7 +51,7 @@ export default function ChatInput({
             onSubmit={handleSubmit}
             className={`
                 flex-none w-[88%] flex my-4
-                flex flex-col
+                flex flex-col gap-1
                 rounded-sm
                 bg-input
                 ring-1 ring-transparent
@@ -62,14 +62,13 @@ export default function ChatInput({
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={handleKeyDown}
-                placeholder="Ask a question, I'm here to help..."
+                placeholder="Ask a question..."
                 className={`
                     field-sizing-content
                     max-h-20
                     resize-none outline-none
                     bg-transparent
-                    text-base sm:text-xs text-font-paragraph
-                    placeholder:text-[10px] placeholder:text-font-paragraph
+                    text-xs text-font-paragraph
                     px-2 pt-2 pb-1
                 `}
             />
