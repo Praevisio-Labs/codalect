@@ -34,15 +34,7 @@ export default function ContextSelect({
                     ? `${linesHighlightedCount} lines highlighted`
                     : file.name}
             </span>
-            <span
-                className="
-                absolute -top-7 left-1/2 -translate-x-1/2
-                px-1.5 py-0.5 rounded-sm
-                bg-panel text-font-apex text-[9px] whitespace-nowrap
-                opacity-0 group-hover:opacity-100
-                transition-opacity duration-150
-                pointer-events-none
-            ">
+            <span className="absolute -top-7 left-1/2 -translate-x-1/2 px-1.5 py-0.5 rounded-sm bg-panel text-font-apex text-[9px] whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-150 pointer-events-none">
                 {tooltipText}
             </span>
         </div>
