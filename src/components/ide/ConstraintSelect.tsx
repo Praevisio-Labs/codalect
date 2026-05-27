@@ -22,7 +22,7 @@ function Jalapenos({ count }: { count: 1 | 2 | 3 }) {
     return (
         <span aria-label={ariaLabel} className="flex gap-0.5">
             {indices.map((index) => (
-                <HeatIcon key={index} className="size-3 md:size-4" />
+                <HeatIcon key={index} className="size-2.5 md:size-3" />
             ))}
         </span>
     )
@@ -36,7 +36,7 @@ export default function ConstraintSelect({
         <Listbox value={selectedConstraint} onChange={setSelectedConstraint}>
             <div className="relative">
                 <ListboxButton className="grid w-full cursor-default grid-cols-1 rounded-sm bg-page/50 py-1 pr-2 pl-3 text-left text-font-paragraph normal-case outline-1 -outline-offset-1 outline-none text-[10px]">
-                    <span className="col-start-1 row-start-1 flex items-center justify-between gap-3 pr-6">
+                    <span className="col-start-1 row-start-1 flex items-center justify-between gap-3 pr-5">
                         <span className="block truncate">
                             {selectedConstraint.name}
                         </span>
@@ -54,19 +54,19 @@ export default function ConstraintSelect({
                         <ListboxOption
                             key={heatLevel.level}
                             value={heatLevel}
-                            className="group relative cursor-default py-1 pr-9 pl-3 text-font-paragraph select-none data-focus:bg-accent-muted data-focus:text-font-paragraph data-focus:outline-hidden">
-                            <div className="flex items-center justify-between gap-2">
-                                <div className="flex flex-col">
-                                    <span className="block truncate font-normal group-data-selected:font-semibold">
-                                        {heatLevel.name}
-                                    </span>
+                            className="group relative cursor-default py-1 pr-8 pl-3 text-font-paragraph select-none data-focus:bg-accent-muted data-focus:text-font-paragraph data-focus:outline-hidden">
+                            <div className="flex flex-col">
+                                <span className="block truncate font-normal group-data-selected:font-semibold">
+                                    {heatLevel.name}
+                                </span>
+                                <div className="flex items-center justify-between gap-2">
                                     <span className="block truncate text-[9px] text-font-paragraph">
                                         {heatLevel.description.short}
                                     </span>
+                                    <Jalapenos count={heatLevel.level} />
                                 </div>
-                                <Jalapenos count={heatLevel.level} />
                             </div>
-                            <span className="absolute top-0 right-0 flex items-start pt-1 pr-4 text-accent-bright group-not-data-selected:hidden group-data-focus:text-font-paragraph">
+                            <span className="absolute top-0 right-0 flex items-start pt-1 pr-2 text-accent-bright group-not-data-selected:hidden group-data-focus:text-font-paragraph">
                                 <CheckIcon
                                     aria-hidden="true"
                                     className="size-3"
