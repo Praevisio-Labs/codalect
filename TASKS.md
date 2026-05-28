@@ -68,7 +68,7 @@
 
 ## Sprint 6: In-browser preview/console + editable VFS
 
-- [ ] install @codesandbox/sandpack-react and confirm no conflicts, #67
+- [x] install @codesandbox/sandpack-react and confirm no conflicts, #67
 - [ ] migrate file state from page.tsx Record to Sandpack files store, #68
 - [ ] refactor assistant file/cursor/selection context for Sandpack store, #69
 - [ ] build slide-out preview + console drawer with branded toggle, #70
