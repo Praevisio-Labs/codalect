@@ -40,7 +40,6 @@ By the time you finish, you should be able to:
     domains: ['ai', 'rag', 'agents'],
     level: 'Intermediate',
     duration: '12 hrs',
-    teachers: ['feynman'],
     isReleased: true,
     files: [
         {

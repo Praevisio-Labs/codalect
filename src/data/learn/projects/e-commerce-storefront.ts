@@ -50,7 +50,6 @@ By the time you finish, you should be able to:
     domains: ['frontend', 'full-stack'],
     level: 'Intermediate',
     duration: '12 hrs',
-    teachers: ['cs-lewis', 'lao-tzu'],
     isReleased: true,
     files: [
         {

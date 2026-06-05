@@ -52,7 +52,6 @@ By the time you finish, you should be able to:
     domains: ['ai', 'full-stack'],
     level: 'Advanced',
     duration: '10 hrs',
-    teachers: ['kant', 'lao-tzu', 'feynman'],
     isReleased: true,
     files: [
         {

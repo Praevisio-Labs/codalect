@@ -32,7 +32,6 @@ export type Project = {
     domains: Domain[]
     level: Level
     duration: string
-    teachers: string[]
     isReleased?: boolean
     files: File[]
 }

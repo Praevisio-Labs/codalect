@@ -46,7 +46,6 @@ By the time you finish, you should be able to:
     domains: ['full-stack'],
     level: 'Intermediate',
     duration: '8 hrs',
-    teachers: ['montessori', 'feynman', 'nietzsche'],
     isReleased: true,
     files: [
         {

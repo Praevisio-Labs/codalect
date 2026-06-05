@@ -44,7 +44,6 @@ By the time you finish, you should be able to:
     domains: ['ai', 'agents'],
     level: 'Advanced',
     duration: '10 hrs',
-    teachers: ['nietzsche', 'kant', 'lao-tzu'],
     isReleased: true,
     files: [
         {

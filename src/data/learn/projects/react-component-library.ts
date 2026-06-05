@@ -45,7 +45,6 @@ By the time you finish, you should be able to:
     domains: ['frontend'],
     level: 'Intermediate',
     duration: '8 hrs',
-    teachers: ['montessori'],
     isReleased: true,
     files: [
         {

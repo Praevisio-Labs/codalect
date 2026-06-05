@@ -37,7 +37,6 @@ By the time you finish, you should be able to:
     domains: ['full-stack', 'security'],
     level: 'Intermediate',
     duration: '10 hrs',
-    teachers: ['kant', 'confucius'],
     isReleased: true,
     files: [
         {

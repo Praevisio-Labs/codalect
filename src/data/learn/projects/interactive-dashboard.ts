@@ -43,7 +43,6 @@ By the time you finish, you should be able to:
     domains: ['full-stack', 'data'],
     level: 'Intermediate',
     duration: '10 hrs',
-    teachers: ['feynman', 'cs-lewis', 'lao-tzu'],
     isReleased: true,
     files: [
         {

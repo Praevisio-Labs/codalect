@@ -46,7 +46,6 @@ By the time you finish, you should be able to:
     domains: ['full-stack', 'ai'],
     level: 'Intermediate',
     duration: '8 hrs',
-    teachers: ['confucius', 'kant'],
     isReleased: true,
     files: [
         {

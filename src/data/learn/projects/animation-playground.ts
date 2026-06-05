@@ -43,7 +43,6 @@ By the time you finish, you should be able to:
     domains: ['frontend'],
     level: 'Beginner',
     duration: '6 hrs',
-    teachers: ['nietzsche', 'montessori'],
     isReleased: true,
     files: [
         {

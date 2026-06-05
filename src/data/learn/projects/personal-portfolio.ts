@@ -44,7 +44,6 @@ By the time you finish, you should be able to:
     domains: ['frontend'],
     level: 'Beginner',
     duration: '6 hrs',
-    teachers: ['cs-lewis', 'lao-tzu'],
     isReleased: true,
     files: [
         {
