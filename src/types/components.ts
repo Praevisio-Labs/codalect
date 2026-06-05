@@ -31,7 +31,6 @@ export interface EditorProps {
     file: File
     onCursorChange?: (line: number) => void
     onHighlightChange?: (data: TextSelection) => void
-    onContentChange?: (content: string) => void
 }
 
 export interface AssistantPanelProps {

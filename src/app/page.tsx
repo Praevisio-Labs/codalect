@@ -2,7 +2,11 @@
 
 import { useState, useEffect, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
-import { SandpackProvider } from '@codesandbox/sandpack-react'
+import {
+    SandpackProvider,
+    useSandpack,
+    useActiveCode,
+} from '@codesandbox/sandpack-react'
 
 import { DEMO_FILES } from '@/data/ide/demo-files'
 import { projectData } from '@/data/learn/projects'
@@ -17,10 +21,10 @@ import CollapsiblePanel from '@/components/ide/CollapsiblePanel'
 // Inner component - NTD: migrate to own file
 
 import type { File } from '@/types/index'
+import type { SandpackFile } from '@codesandbox/sandpack-react'
 
 interface IDEPanelsProps {
     theme: string
-    workspaceFiles: File[]
     isContextHidden: boolean
     setIsContextHidden: (v: boolean) => void
     isFileTreeOpen: boolean
@@ -31,7 +35,6 @@ interface IDEPanelsProps {
 
 function IDEPanels({
     theme,
-    workspaceFiles,
     isContextHidden,
     setIsContextHidden,
     isFileTreeOpen,
@@ -39,6 +42,9 @@ function IDEPanels({
     isAssistantPanelOpen,
     setIsAssistantPanelOpen,
 }: IDEPanelsProps) {
+    const { sandpack } = useSandpack()
+    const { code } = useActiveCode()
+
     const [cursorLine, setCursorLine] = useState(1)
     const [highlightedText, setHighlightedText] = useState({
         isActive: false,
@@ -47,16 +53,19 @@ function IDEPanels({
         end: 0,
     })
 
-    const [selectedFile, setSelectedFile] = useState(workspaceFiles[0])
-    const [fileEdits, setFileEdits] = useState<Record<string, string>>({})
+    const files: File[] = sandpack.visibleFiles.map((path) => ({
+        path,
+        content: (sandpack.files[path] as SandpackFile).code,
+    }))
 
-    const activeContent = highlightedText.isActive
-        ? highlightedText.content
-        : (fileEdits[selectedFile.path] ?? selectedFile.content)
-
-    function handleContentChange(content: string) {
-        setFileEdits((prev) => ({ ...prev, [selectedFile.path]: content }))
+    const activeFile: File = {
+        path: sandpack.activeFile,
+        content: code,
     }
+
+    const assistantFileContent = highlightedText.isActive
+        ? highlightedText.content
+        : code
 
     return (
         <div
@@ -78,9 +87,9 @@ function IDEPanels({
                         ${isFileTreeOpen ? 'max-md:h-2/10' : ''}
                     `}>
                 <FileTree
-                    files={workspaceFiles}
-                    selected={selectedFile}
-                    onSelect={setSelectedFile}
+                    files={files}
+                    selected={activeFile}
+                    onSelect={(file) => sandpack.setActiveFile(file.path)}
                 />
             </CollapsiblePanel>
             {/* Monaco Editor */}
@@ -93,11 +102,10 @@ function IDEPanels({
                         flex flex-col
                     `}>
                 <CodeEditor
-                    file={selectedFile}
+                    file={activeFile}
                     theme={theme}
                     onCursorChange={setCursorLine}
                     onHighlightChange={setHighlightedText}
-                    onContentChange={handleContentChange}
                 />
             </div>
             {/* Assistant Panel */}
@@ -114,9 +122,9 @@ function IDEPanels({
                         
                     `}>
                 <AssistantPanel
-                    file={selectedFile}
+                    file={activeFile}
                     cursorLine={cursorLine}
-                    fileContent={activeContent}
+                    fileContent={assistantFileContent}
                     textSelection={highlightedText}
                     isContextHidden={isContextHidden}
                     setIsContextHidden={setIsContextHidden}
@@ -171,7 +179,6 @@ function Page() {
                 }}>
                 <IDEPanels
                     theme={theme}
-                    workspaceFiles={workspaceFiles}
                     isContextHidden={isContextHidden}
                     setIsContextHidden={setIsContextHidden}
                     isFileTreeOpen={isFileTreeOpen}

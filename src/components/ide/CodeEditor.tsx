@@ -1,4 +1,5 @@
 import Editor, { OnMount } from '@monaco-editor/react'
+import { useActiveCode, useSandpack } from '@codesandbox/sandpack-react'
 import { EditorProps } from '@/types/components'
 
 export default function CodeEditor({
@@ -6,23 +7,20 @@ export default function CodeEditor({
     theme,
     onCursorChange,
     onHighlightChange,
-    onContentChange,
 }: EditorProps) {
-    const editorTheme = theme == 'light' ? 'vs' : 'vs-dark'
+    const { code, updateCode } = useActiveCode()
+    const { sandpack } = useSandpack()
 
-    // note shape: (editor: IStandaloneCodeEditor, monaco: Monaco)
+    const editorTheme = theme === 'light' ? 'vs' : 'vs-dark'
+
     const handleMount: OnMount = (editor) => {
         editor.onDidChangeCursorPosition((e) => {
-            if (onCursorChange) {
-                onCursorChange(e.position.lineNumber)
-            }
+            if (onCursorChange) onCursorChange(e.position.lineNumber)
         })
         editor.onDidChangeCursorSelection((e) => {
             const model = editor.getModel()
-
             if (!model) return
             const isEmpty = e.selection.isEmpty()
-
             if (onHighlightChange) {
                 onHighlightChange({
                     isActive: !isEmpty,
@@ -55,17 +53,13 @@ export default function CodeEditor({
             <div className="flex-1 min-h-0">
                 <Editor
                     height="100%"
-                    path={file.path}
-                    defaultValue={file.content}
-
+                    key={sandpack.activeFile}
+                    path={sandpack.activeFile}
+                    defaultValue={code}
                     className="overflow-hidden"
                     theme={editorTheme}
                     onMount={handleMount}
-                    onChange={(value) => {
-                        if (onContentChange) {
-                            onContentChange(value ?? '')
-                        }
-                    }}
+                    onChange={(value) => updateCode(value || '')}
                     options={{
                         fontSize: 10,
                         wordWrap: 'on',
@@ -73,9 +67,7 @@ export default function CodeEditor({
                         cursorStyle: 'block',
                         padding: { top: 12 },
                         minimap: { enabled: false },
-                        bracketPairColorization: {
-                            enabled: true,
-                        },
+                        bracketPairColorization: { enabled: true },
                     }}
                 />
             </div>
