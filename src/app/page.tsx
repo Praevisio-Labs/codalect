@@ -2,145 +2,17 @@
 
 import { useState, useEffect, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
-import {
-    SandpackProvider,
-    useSandpack,
-    useActiveCode,
-} from '@codesandbox/sandpack-react'
+import { SandpackProvider } from '@codesandbox/sandpack-react'
 
 import { DEMO_FILES } from '@/data/ide/demo-files'
 import { projectData } from '@/data/learn/projects'
 import { loadFiles } from '@/app/utils/sandpack'
 
 import Header from '@/components/Header'
-import FileTree from '@/components/ide/FileTree'
-import CodeEditor from '@/components/ide/CodeEditor'
-import AssistantPanel from '@/components/ide/AssistantPanel'
-import CollapsiblePanel from '@/components/ide/CollapsiblePanel'
-
-// Inner component - NTD: migrate to own file
-
-import type { File } from '@/types/index'
-import type { SandpackFile } from '@codesandbox/sandpack-react'
-
-interface IDEPanelsProps {
-    theme: string
-    isContextHidden: boolean
-    setIsContextHidden: (v: boolean) => void
-    isFileTreeOpen: boolean
-    setIsFileTreeOpen: (v: boolean) => void
-    isAssistantPanelOpen: boolean
-    setIsAssistantPanelOpen: (v: boolean) => void
-}
-
-function IDEPanels({
-    theme,
-    isContextHidden,
-    setIsContextHidden,
-    isFileTreeOpen,
-    setIsFileTreeOpen,
-    isAssistantPanelOpen,
-    setIsAssistantPanelOpen,
-}: IDEPanelsProps) {
-    const { sandpack } = useSandpack()
-    const { code } = useActiveCode()
-
-    const [cursorLine, setCursorLine] = useState(1)
-    const [highlightedText, setHighlightedText] = useState({
-        isActive: false,
-        content: '',
-        start: 0,
-        end: 0,
-    })
-
-    const files: File[] = sandpack.visibleFiles.map((path) => ({
-        path,
-        content: (sandpack.files[path] as SandpackFile).code,
-    }))
-
-    const activeFile: File = {
-        path: sandpack.activeFile,
-        content: code,
-    }
-
-    const assistantFileContent = highlightedText.isActive
-        ? highlightedText.content
-        : code
-
-    return (
-        <div
-            className={`
-                    h-full gap-1 p-1
-                    overflow-hidden
-                    flex flex-col md:flex-row
-                `}>
-            {/* File Tree */}
-            <CollapsiblePanel
-                title="Explorer"
-                isOpen={isFileTreeOpen}
-                onToggle={() => setIsFileTreeOpen(!isFileTreeOpen)}
-                className={`
-                        order-1 
-                        rounded-sm md:rounded-bl-lg
-                        overflow-hidden bg-panel
-                        flex-none md:h-full md:flex-1
-                        ${isFileTreeOpen ? 'max-md:h-2/10' : ''}
-                    `}>
-                <FileTree
-                    files={files}
-                    selected={activeFile}
-                    onSelect={(file) => sandpack.setActiveFile(file.path)}
-                />
-            </CollapsiblePanel>
-            {/* Monaco Editor */}
-            <div
-                className={`
-                        order-2 
-                        flex-1 md:flex-[4_4_0%]
-                        max-md:min-h-3/10 md:h-full md:min-h-0
-                        overflow-hidden rounded-sm bg-editor
-                        flex flex-col
-                    `}>
-                <CodeEditor
-                    file={activeFile}
-                    theme={theme}
-                    onCursorChange={setCursorLine}
-                    onHighlightChange={setHighlightedText}
-                />
-            </div>
-            {/* Assistant Panel */}
-            <CollapsiblePanel
-                title="Assistant"
-                isOpen={isAssistantPanelOpen}
-                onToggle={() => setIsAssistantPanelOpen(!isAssistantPanelOpen)}
-                className={`
-                        order-3
-                        rounded-sm md:rounded-br-lg
-                        overflow-hidden bg-panel
-                        flex-none md:h-full md:flex-[3_3_0%]
-                        ${isAssistantPanelOpen ? 'max-md:h-4/10' : ''}
-                        
-                    `}>
-                <AssistantPanel
-                    file={activeFile}
-                    cursorLine={cursorLine}
-                    fileContent={assistantFileContent}
-                    textSelection={highlightedText}
-                    isContextHidden={isContextHidden}
-                    setIsContextHidden={setIsContextHidden}
-                />
-            </CollapsiblePanel>
-        </div>
-    )
-}
-
-// 3-panel IDE extracted
+import IDEPanels from '@/components/ide/IDEPanels'
 
 function Page() {
     const [theme, setTheme] = useState('raisin')
-    const [isContextHidden, setIsContextHidden] = useState(false)
-    const [isFileTreeOpen, setIsFileTreeOpen] = useState(false)
-    const [isAssistantPanelOpen, setIsAssistantPanelOpen] = useState(false)
 
     useEffect(() => {
         document.documentElement.dataset.theme = theme
@@ -160,14 +32,12 @@ function Page() {
                 overflow-hidden bg-page 
                 flex flex-col 
             `}>
-            {/* Page Header */}
             <Header
                 theme={theme}
                 setTheme={setTheme}
                 path="/learn"
                 linkText="Learn"
             />
-            {/* Sandpack wrapper */}
             <SandpackProvider
                 key={moduleID ?? 'sandbox'}
                 template="react-ts"
@@ -177,15 +47,7 @@ function Page() {
                     activeFile: workspaceFiles[0]?.path,
                     visibleFiles: workspaceFiles.map((file) => file.path),
                 }}>
-                <IDEPanels
-                    theme={theme}
-                    isContextHidden={isContextHidden}
-                    setIsContextHidden={setIsContextHidden}
-                    isFileTreeOpen={isFileTreeOpen}
-                    setIsFileTreeOpen={setIsFileTreeOpen}
-                    isAssistantPanelOpen={isAssistantPanelOpen}
-                    setIsAssistantPanelOpen={setIsAssistantPanelOpen}
-                />
+                <IDEPanels theme={theme} />
             </SandpackProvider>
         </main>
     )

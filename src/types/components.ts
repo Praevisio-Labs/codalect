@@ -26,6 +26,10 @@ export interface FileTreeProps {
     onSelect: (file: File) => void
 }
 
+export interface IDEPanelsProps {
+    theme: string
+}
+
 export interface EditorProps {
     theme: string
     file: File
