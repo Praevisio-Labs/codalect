@@ -16,8 +16,7 @@ export type Link = {
 }
 
 export type File = {
-    name: string
-    fileType: Language
+    path: string
     content: string
 }
 

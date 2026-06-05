@@ -36,8 +36,7 @@ By the time you finish, you should be able to:
     isReleased: true,
     files: [
         {
-            name: 'index.html',
-            fileType: 'html',
+            path: '/index.html',
             content: `<!DOCTYPE html>
 <html lang="en">
     <head>
@@ -65,8 +64,7 @@ By the time you finish, you should be able to:
 </html>`,
         },
         {
-            name: 'app.js',
-            fileType: 'javascript',
+            path: '/app.js',
             content: `const form = document.getElementById('todo-form')
 const input = document.getElementById('todo-input')
 const list = document.getElementById('todo-list')
@@ -124,8 +122,7 @@ form.addEventListener('submit', (event) => {
 })`,
         },
         {
-            name: 'styles.css',
-            fileType: 'css',
+            path: '/styles.css',
             content: `* {
     box-sizing: border-box;
 }

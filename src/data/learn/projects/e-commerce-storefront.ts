@@ -53,8 +53,7 @@ By the time you finish, you should be able to:
     isReleased: true,
     files: [
         {
-            name: 'app/layout.tsx',
-            fileType: 'typescript',
+            path: '/app/layout.tsx',
             content: `import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { CartProvider } from '@/lib/cart'
@@ -85,8 +84,7 @@ export default function RootLayout({
 `,
         },
         {
-            name: 'app/page.tsx',
-            fileType: 'typescript',
+            path: '/app/page.tsx',
             content: `import { products } from '@/lib/products'
 import { ProductCard } from '@/components/ProductCard'
 import { CartButton } from '@/components/CartButton'
@@ -114,16 +112,14 @@ export default function HomePage() {
 `,
         },
         {
-            name: 'app/globals.css',
-            fileType: 'css',
+            path: '/app/globals.css',
             content: `@tailwind base;
 @tailwind components;
 @tailwind utilities;
 `,
         },
         {
-            name: 'components/ProductCard.tsx',
-            fileType: 'typescript',
+            path: '/components/ProductCard.tsx',
             content: `import Link from 'next/link'
 import type { Product } from '@/lib/products'
 
@@ -159,8 +155,7 @@ export function ProductCard({ product }: ProductCardProps) {
 `,
         },
         {
-            name: 'components/CartButton.tsx',
-            fileType: 'typescript',
+            path: '/components/CartButton.tsx',
             content: `'use client'
 
 import { useState } from 'react'
@@ -192,8 +187,7 @@ export function CartButton() {
 `,
         },
         {
-            name: 'components/CartDrawer.tsx',
-            fileType: 'typescript',
+            path: '/components/CartDrawer.tsx',
             content: `'use client'
 
 import { useCart } from '@/lib/cart'
@@ -259,8 +253,7 @@ export function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
 `,
         },
         {
-            name: 'components/ProductDetail.tsx',
-            fileType: 'typescript',
+            path: '/components/ProductDetail.tsx',
             content: `'use client'
 
 import { useState } from 'react'
@@ -322,8 +315,7 @@ export function ProductDetail({ product }: ProductDetailProps) {
 `,
         },
         {
-            name: 'lib/cart.tsx',
-            fileType: 'typescript',
+            path: '/lib/cart.tsx',
             content: `'use client'
 
 import { createContext, useContext, useState, type ReactNode } from 'react'
@@ -398,8 +390,7 @@ export function useCart(): CartContextType {
 `,
         },
         {
-            name: 'lib/products.ts',
-            fileType: 'typescript',
+            path: '/lib/products.ts',
             content: `export type Product = {
     id: string
     name: string
@@ -464,8 +455,7 @@ export function getProduct(id: string): Product | undefined {
 `,
         },
         {
-            name: 'app/products/[id]/page.tsx',
-            fileType: 'typescript',
+            path: '/app/products/[id]/page.tsx',
             content: `import { notFound } from 'next/navigation'
 import { getProduct, products } from '@/lib/products'
 import { ProductDetail } from '@/components/ProductDetail'

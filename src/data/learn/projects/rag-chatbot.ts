@@ -43,8 +43,7 @@ By the time you finish, you should be able to:
     isReleased: true,
     files: [
         {
-            name: 'docs/sample.txt',
-            fileType: 'text',
+            path: '/docs/sample.txt',
             content: `Introduction to Vector Databases
 
 Vector databases are specialized data stores designed to handle high-dimensional vector embeddings. Unlike traditional databases that store structured data in rows and columns, vector databases store numerical representations of data — typically arrays of floating-point numbers — and enable fast similarity search across millions or billions of vectors.
@@ -57,8 +56,7 @@ In a RAG system, vector databases serve as the knowledge layer. Documents are sp
 `,
         },
         {
-            name: 'README.md',
-            fileType: 'markdown',
+            path: '/README.md',
             content: `# RAG Chatbot
 
 A retrieval-augmented generation chatbot that answers questions based on your documents.
@@ -94,8 +92,7 @@ A retrieval-augmented generation chatbot that answers questions based on your do
 `,
         },
         {
-            name: 'ingest.py',
-            fileType: 'python',
+            path: '/ingest.py',
             content: `"""
 ingest.py — Load documents, chunk them, embed them, and store in Pinecone.
 Run this script once (or whenever your documents change) to build the index.
@@ -199,8 +196,7 @@ if __name__ == "__main__":
 `,
         },
         {
-            name: 'retrieve.py',
-            fileType: 'python',
+            path: '/retrieve.py',
             content: `"""
 retrieve.py — Semantic search over the Pinecone index.
 """
@@ -227,8 +223,7 @@ def retrieve(query: str, index, k: int = 4) -> list[dict]:
 `,
         },
         {
-            name: 'chatbot.py',
-            fileType: 'python',
+            path: '/chatbot.py',
             content: `"""
 chatbot.py — Interactive RAG chatbot.
 Retrieves relevant document chunks before each answer.
@@ -309,8 +304,7 @@ if __name__ == "__main__":
 `,
         },
         {
-            name: 'requirements.txt',
-            fileType: 'text',
+            path: '/requirements.txt',
             content: `openai==1.30.1
 pinecone==4.1.0
 python-dotenv==1.0.1

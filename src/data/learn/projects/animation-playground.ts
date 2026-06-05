@@ -46,16 +46,14 @@ By the time you finish, you should be able to:
     isReleased: true,
     files: [
         {
-            name: 'app/globals.css',
-            fileType: 'css',
+            path: '/app/globals.css',
             content: `@tailwind base;
 @tailwind components;
 @tailwind utilities;
 `,
         },
         {
-            name: 'app/page.tsx',
-            fileType: 'typescript',
+            path: '/app/page.tsx',
             content: `'use client'
 
 import { StaggerList } from '@/components/StaggerList'
@@ -84,8 +82,7 @@ export default function AnimationPlaygroundPage() {
 `,
         },
         {
-            name: 'components/StaggerList.tsx',
-            fileType: 'typescript',
+            path: '/components/StaggerList.tsx',
             content: `'use client'
 
 import { motion } from 'framer-motion'
@@ -134,8 +131,7 @@ export function StaggerList() {
 `,
         },
         {
-            name: 'components/DraggableCard.tsx',
-            fileType: 'typescript',
+            path: '/components/DraggableCard.tsx',
             content: `'use client'
 
 import { motion, useMotionValue, useTransform } from 'framer-motion'
@@ -177,8 +173,7 @@ export function DraggableCard() {
 `,
         },
         {
-            name: 'components/TransitionModal.tsx',
-            fileType: 'typescript',
+            path: '/components/TransitionModal.tsx',
             content: `'use client'
 
 import { useState } from 'react'

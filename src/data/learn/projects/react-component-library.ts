@@ -48,8 +48,7 @@ By the time you finish, you should be able to:
     isReleased: true,
     files: [
         {
-            name: 'lib/cn.ts',
-            fileType: 'typescript',
+            path: '/lib/cn.ts',
             content: `// Utility for conditionally joining class names.
 // TODO: Implement a function that takes any number of arguments,
 // filters out falsy values (false, null, undefined, ''),
@@ -67,8 +66,7 @@ export function cn(...inputs: (string | boolean | null | undefined)[]): string {
 `,
         },
         {
-            name: 'app/page.tsx',
-            fileType: 'typescript',
+            path: '/app/page.tsx',
             content: `'use client'
 
 import { useState } from 'react'
@@ -189,8 +187,7 @@ export default function DemoPage() {
 `,
         },
         {
-            name: 'components/Button.tsx',
-            fileType: 'typescript',
+            path: '/components/Button.tsx',
             content: `'use client'
 
 import React from 'react'
@@ -249,8 +246,7 @@ export function Button({
 `,
         },
         {
-            name: 'components/TextInput.tsx',
-            fileType: 'typescript',
+            path: '/components/TextInput.tsx',
             content: `'use client'
 
 import React, { useId } from 'react'
@@ -319,8 +315,7 @@ export function TextInput({
 `,
         },
         {
-            name: 'components/Modal.tsx',
-            fileType: 'typescript',
+            path: '/components/Modal.tsx',
             content: `'use client'
 
 import React, { useEffect } from 'react'

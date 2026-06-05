@@ -103,7 +103,7 @@ export interface LogoProps {
 }
 
 export interface FileIconProps {
-    fileType: string
+    filepath: string
 }
 
 export interface LoadingIndicatorProps {

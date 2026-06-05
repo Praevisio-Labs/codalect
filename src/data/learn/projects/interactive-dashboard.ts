@@ -46,8 +46,7 @@ By the time you finish, you should be able to:
     isReleased: true,
     files: [
         {
-            name: 'app/layout.tsx',
-            fileType: 'typescript',
+            path: '/app/layout.tsx',
             content: `import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
@@ -74,8 +73,7 @@ export default function RootLayout({
 `,
         },
         {
-            name: 'app/page.tsx',
-            fileType: 'typescript',
+            path: '/app/page.tsx',
             content: `import { Suspense } from 'react'
 import { getMetrics } from '@/lib/data'
 import { Dashboard } from '@/components/Dashboard'
@@ -101,16 +99,14 @@ export default async function DashboardPage() {
 `,
         },
         {
-            name: 'app/globals.css',
-            fileType: 'css',
+            path: '/app/globals.css',
             content: `@tailwind base;
 @tailwind components;
 @tailwind utilities;
 `,
         },
         {
-            name: 'components/MetricCard.tsx',
-            fileType: 'typescript',
+            path: '/components/MetricCard.tsx',
             content: `import type { Metric } from '@/lib/data'
 
 type MetricCardProps = {
@@ -137,8 +133,7 @@ export function MetricCard({ metric }: MetricCardProps) {
 `,
         },
         {
-            name: 'lib/data.ts',
-            fileType: 'typescript',
+            path: '/lib/data.ts',
             content: `import { createClient } from './supabase'
 
 export type Metric = {
@@ -183,8 +178,7 @@ export async function getMetricsFiltered(params: FilterParams): Promise<Metric[]
 `,
         },
         {
-            name: 'components/Dashboard.tsx',
-            fileType: 'typescript',
+            path: '/components/Dashboard.tsx',
             content: `'use client'
 
 import { useState, useTransition } from 'react'
@@ -277,8 +271,7 @@ function MetricCard({ metric }: { metric: Metric }) {
 `,
         },
         {
-            name: 'lib/actions.ts',
-            fileType: 'typescript',
+            path: '/lib/actions.ts',
             content: `'use server'
 
 import { getMetricsFiltered } from './data'
@@ -292,8 +285,7 @@ export async function fetchFiltered(params: FilterParams): Promise<Metric[]> {
 `,
         },
         {
-            name: 'lib/supabase.ts',
-            fileType: 'typescript',
+            path: '/lib/supabase.ts',
             content: `import { createBrowserClient } from '@supabase/ssr'
 
 // Initializes a Supabase client for use in Client Components and Server Actions.

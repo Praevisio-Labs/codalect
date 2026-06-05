@@ -34,8 +34,8 @@ export default function FileTree({ files, selected, onSelect }: FileTreeProps) {
                             cursor-pointer
                             ${selected === file ? highlightStyle : baseStyle}
                             `}>
-                        <FileIcon fileType={file.fileType} />
-                        {file.name}
+                        <FileIcon filepath={file.path} />
+                        {file.path.slice(1)}
                     </li>
                 ))}
             </ul>

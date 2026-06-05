@@ -41,12 +41,12 @@ function Page() {
 
     const activeContent = highlightedText.isActive
         ? highlightedText.content
-        : (fileEdits[selectedFile.name] ?? selectedFile.content)
+        : (fileEdits[selectedFile.path] ?? selectedFile.content)
 
     function handleContentChange(content: string) {
         setFileEdits((prev) => ({
             ...prev,
-            [selectedFile.name]: content,
+            [selectedFile.path]: content,
         }))
     }
 

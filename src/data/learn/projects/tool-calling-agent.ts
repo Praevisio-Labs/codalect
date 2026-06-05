@@ -47,8 +47,7 @@ By the time you finish, you should be able to:
     isReleased: true,
     files: [
         {
-            name: 'app/layout.tsx',
-            fileType: 'typescript',
+            path: '/app/layout.tsx',
             content: `import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
@@ -75,8 +74,7 @@ export default function RootLayout({
 `,
         },
         {
-            name: 'app/page.tsx',
-            fileType: 'typescript',
+            path: '/app/page.tsx',
             content: `import { AgentChat } from '@/components/AgentChat'
 
 // Entry point — renders the AgentChat component. Complete, no TODOs.
@@ -86,16 +84,14 @@ export default function HomePage() {
 `,
         },
         {
-            name: 'app/globals.css',
-            fileType: 'css',
+            path: '/app/globals.css',
             content: `@tailwind base;
 @tailwind components;
 @tailwind utilities;
 `,
         },
         {
-            name: 'lib/tools.ts',
-            fileType: 'typescript',
+            path: '/lib/tools.ts',
             content: `import { tool } from 'ai'
 import { z } from 'zod'
 
@@ -174,8 +170,7 @@ export const agentTools = { getWeather, calculate, searchWeb }
 `,
         },
         {
-            name: 'app/api/agent/route.ts',
-            fileType: 'typescript',
+            path: '/app/api/agent/route.ts',
             content: `import { streamText } from 'ai'
 import { openai } from '@ai-sdk/openai'
 import { agentTools } from '@/lib/tools'
@@ -200,8 +195,7 @@ export async function POST(req: Request) {
 `,
         },
         {
-            name: 'components/AgentChat.tsx',
-            fileType: 'typescript',
+            path: '/components/AgentChat.tsx',
             content: `'use client'
 
 import { useChat } from 'ai/react'

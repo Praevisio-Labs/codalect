@@ -2,8 +2,7 @@ import type { File } from '@/types/index'
 
 export const DEMO_FILES: File[] = [
     {
-        name: 'page.tsx',
-        fileType: 'typescript',
+        path: '/page.tsx',
         content: `
 
 interface User {
@@ -18,8 +17,7 @@ function greet(user: User): string {
   `.trim(),
     },
     {
-        name: 'index.js',
-        fileType: 'javascript',
+        path: '/index.js',
         content: `
 
 const greet = (name) => {
@@ -31,8 +29,7 @@ greet("World")
 `.trim(),
     },
     {
-        name: 'main.py',
-        fileType: 'python',
+        path: '/main.py',
         content: `
 
 def main():
@@ -44,8 +41,7 @@ if __name__ == "__main__":
     `.trim(),
     },
     {
-        name: 'index.html',
-        fileType: 'html',
+        path: '/index.html',
         content: `
 
 <!DOCTYPE html>
@@ -65,8 +61,7 @@ if __name__ == "__main__":
         `.trim(),
     },
     {
-        name: 'styles.css',
-        fileType: 'css',
+        path: '/styles.css',
         content: `
 
 body {
@@ -84,8 +79,7 @@ h1 {
         `.trim(),
     },
     {
-        name: 'README.md',
-        fileType: 'markdown',
+        path: '/README.md',
         content: `
 
 <br/>

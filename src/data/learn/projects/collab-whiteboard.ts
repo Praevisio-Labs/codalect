@@ -49,8 +49,7 @@ By the time you finish, you should be able to:
     isReleased: true,
     files: [
         {
-            name: 'app/layout.tsx',
-            fileType: 'typescript',
+            path: '/app/layout.tsx',
             content: `import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
@@ -77,8 +76,7 @@ export default function RootLayout({
 `,
         },
         {
-            name: 'app/page.tsx',
-            fileType: 'typescript',
+            path: '/app/page.tsx',
             content: `import { Chat } from '@/components/Chat'
 
 // Entry point — renders the Chat component. Complete, no TODOs.
@@ -88,16 +86,14 @@ export default function HomePage() {
 `,
         },
         {
-            name: 'app/globals.css',
-            fileType: 'css',
+            path: '/app/globals.css',
             content: `@tailwind base;
 @tailwind components;
 @tailwind utilities;
 `,
         },
         {
-            name: 'components/Chat.tsx',
-            fileType: 'typescript',
+            path: '/components/Chat.tsx',
             content: `'use client'
 
 import { useState, useEffect, useRef } from 'react'
@@ -243,8 +239,7 @@ export function Chat() {
 `,
         },
         {
-            name: 'lib/supabase.ts',
-            fileType: 'typescript',
+            path: '/lib/supabase.ts',
             content: `import { createBrowserClient } from '@supabase/ssr'
 
 // A single browser client instance for use in Client Components.
@@ -259,8 +254,7 @@ export function createClient() {
 `,
         },
         {
-            name: 'supabase-schema.sql',
-            fileType: 'sql',
+            path: '/supabase-schema.sql',
             content: `-- Run this in the Supabase SQL editor to set up the messages table.
 
 create table if not exists messages (

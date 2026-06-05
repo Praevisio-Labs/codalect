@@ -49,8 +49,7 @@ By the time you finish, you should be able to:
     isReleased: true,
     files: [
         {
-            name: 'app/layout.tsx',
-            fileType: 'typescript',
+            path: '/app/layout.tsx',
             content: `import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
@@ -77,8 +76,7 @@ export default function RootLayout({
 `,
         },
         {
-            name: 'app/page.tsx',
-            fileType: 'typescript',
+            path: '/app/page.tsx',
             content: `import { Chat } from '@/components/Chat'
 
 // Entry point — renders the Chat component. Complete, no TODOs.
@@ -88,16 +86,14 @@ export default function HomePage() {
 `,
         },
         {
-            name: 'app/globals.css',
-            fileType: 'css',
+            path: '/app/globals.css',
             content: `@tailwind base;
 @tailwind components;
 @tailwind utilities;
 `,
         },
         {
-            name: 'app/api/chat/route.ts',
-            fileType: 'typescript',
+            path: '/app/api/chat/route.ts',
             content: `import { streamText } from 'ai'
 import { openai } from '@ai-sdk/openai'
 import { personas } from '@/lib/personas'
@@ -127,8 +123,7 @@ export async function POST(req: Request) {
 `,
         },
         {
-            name: 'components/MessageList.tsx',
-            fileType: 'typescript',
+            path: '/components/MessageList.tsx',
             content: `'use client'
 
 import type { Message } from 'ai'
@@ -163,8 +158,7 @@ export function MessageList({ messages, isLoading }: MessageListProps) {
 `,
         },
         {
-            name: 'components/Chat.tsx',
-            fileType: 'typescript',
+            path: '/components/Chat.tsx',
             content: `'use client'
 
 import { useChat } from 'ai/react'
@@ -221,8 +215,7 @@ export function Chat() {
 `,
         },
         {
-            name: 'components/PersonaSelect.tsx',
-            fileType: 'typescript',
+            path: '/components/PersonaSelect.tsx',
             content: `'use client'
 
 import { personas, type Persona } from '@/lib/personas'
@@ -260,8 +253,7 @@ export function PersonaSelect({ selectedId, onSelect }: PersonaSelectProps) {
 `,
         },
         {
-            name: 'lib/personas.ts',
-            fileType: 'typescript',
+            path: '/lib/personas.ts',
             content: `export type Persona = {
     id: string
     name: string

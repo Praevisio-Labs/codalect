@@ -55,8 +55,7 @@ By the time you finish, you should be able to:
     isReleased: true,
     files: [
         {
-            name: 'app/layout.tsx',
-            fileType: 'typescript',
+            path: '/app/layout.tsx',
             content: `import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
@@ -83,8 +82,7 @@ export default function RootLayout({
 `,
         },
         {
-            name: 'app/page.tsx',
-            fileType: 'typescript',
+            path: '/app/page.tsx',
             content: `import { Chat } from '@/components/Chat'
 
 // Entry point — renders the Chat component. Complete, no TODOs.
@@ -94,16 +92,14 @@ export default function HomePage() {
 `,
         },
         {
-            name: 'app/globals.css',
-            fileType: 'css',
+            path: '/app/globals.css',
             content: `@tailwind base;
 @tailwind components;
 @tailwind utilities;
 `,
         },
         {
-            name: 'lib/bedrock.ts',
-            fileType: 'typescript',
+            path: '/lib/bedrock.ts',
             content: `import { createAmazonBedrock } from '@ai-sdk/amazon-bedrock'
 
 // TODO: Initialize the Bedrock provider with your AWS credentials.
@@ -130,8 +126,7 @@ export type BedrockModelId = (typeof MODELS)[keyof typeof MODELS]
 `,
         },
         {
-            name: 'app/api/chat/route.ts',
-            fileType: 'typescript',
+            path: '/app/api/chat/route.ts',
             content: `import { streamText } from 'ai'
 import { bedrock, MODELS, type BedrockModelId } from '@/lib/bedrock'
 
@@ -175,8 +170,7 @@ export async function POST(req: Request) {
 `,
         },
         {
-            name: 'components/Chat.tsx',
-            fileType: 'typescript',
+            path: '/components/Chat.tsx',
             content: `'use client'
 
 import { useChat } from 'ai/react'

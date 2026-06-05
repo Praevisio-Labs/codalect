@@ -28,7 +28,7 @@ export default function ChatInput({
             const body = isContextHidden
                 ? { selectedTask, selectedConstraint }
                 : {
-                      fileName: file.name,
+                      fileName: file.path.slice(1),
                       fileContent,
                       cursorLine,
                       selectedTask,

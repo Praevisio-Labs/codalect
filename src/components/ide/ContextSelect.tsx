@@ -32,7 +32,7 @@ export default function ContextSelect({
             <span className={isContextHidden ? 'opacity-40' : 'opacity-80'}>
                 {textSelection.isActive
                     ? `${linesHighlightedCount} lines highlighted`
-                    : file.name}
+                    : file.path.slice(1)}
             </span>
             <span className="absolute -top-7 left-1/2 -translate-x-1/2 px-1.5 py-0.5 rounded-sm bg-panel text-font-apex text-[9px] whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-150 pointer-events-none">
                 {tooltipText}

@@ -40,8 +40,7 @@ By the time you finish, you should be able to:
     isReleased: true,
     files: [
         {
-            name: 'app/layout.tsx',
-            fileType: 'typescript',
+            path: '/app/layout.tsx',
             content: `import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
@@ -68,8 +67,7 @@ export default function RootLayout({
 `,
         },
         {
-            name: 'app/page.tsx',
-            fileType: 'typescript',
+            path: '/app/page.tsx',
             content: `import { createServerClient } from '@supabase/ssr'
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
@@ -117,16 +115,14 @@ export default async function DashboardPage() {
 `,
         },
         {
-            name: 'app/globals.css',
-            fileType: 'css',
+            path: '/app/globals.css',
             content: `@tailwind base;
 @tailwind components;
 @tailwind utilities;
 `,
         },
         {
-            name: 'app/login/page.tsx',
-            fileType: 'typescript',
+            path: '/app/login/page.tsx',
             content: `'use client'
 
 import { useState } from 'react'
@@ -214,8 +210,7 @@ export default function LoginPage() {
 `,
         },
         {
-            name: 'app/signup/page.tsx',
-            fileType: 'typescript',
+            path: '/app/signup/page.tsx',
             content: `'use client'
 
 import { useState } from 'react'
@@ -322,8 +317,7 @@ export default function SignupPage() {
 `,
         },
         {
-            name: 'middleware.ts',
-            fileType: 'typescript',
+            path: '/middleware.ts',
             content: `import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 

@@ -47,16 +47,14 @@ By the time you finish, you should be able to:
     isReleased: true,
     files: [
         {
-            name: 'app/globals.css',
-            fileType: 'css',
+            path: '/app/globals.css',
             content: `@tailwind base;
 @tailwind components;
 @tailwind utilities;
 `,
         },
         {
-            name: 'app/layout.tsx',
-            fileType: 'typescript',
+            path: '/app/layout.tsx',
             content: `import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { Nav } from '@/components/Nav'
@@ -88,8 +86,7 @@ export default function RootLayout({
 `,
         },
         {
-            name: 'app/page.tsx',
-            fileType: 'typescript',
+            path: '/app/page.tsx',
             content: `import { personalInfo, projects } from '@/lib/data'
 import { ProjectCard } from '@/components/ProjectCard'
 
@@ -120,8 +117,7 @@ export default function HomePage() {
 `,
         },
         {
-            name: 'app/about/page.tsx',
-            fileType: 'typescript',
+            path: '/app/about/page.tsx',
             content: `import { personalInfo, skills } from '@/lib/data'
 
 // About page — bio is rendered, skills section is a TODO.
@@ -178,8 +174,7 @@ export default function AboutPage() {
 `,
         },
         {
-            name: 'lib/data.ts',
-            fileType: 'typescript',
+            path: '/lib/data.ts',
             content: `// Replace this placeholder data with your own information.
 // The types here define the shape that the components expect —
 // don't change the type structure, just the values.
@@ -259,8 +254,7 @@ export const skills: Skill[] = [
 `,
         },
         {
-            name: 'components/ProjectCard.tsx',
-            fileType: 'typescript',
+            path: '/components/ProjectCard.tsx',
             content: `import type { Project } from '@/lib/data'
 
 type ProjectCardProps = {
@@ -287,8 +281,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
 `,
         },
         {
-            name: 'components/Nav.tsx',
-            fileType: 'typescript',
+            path: '/components/Nav.tsx',
             content: `'use client'
 
 import Link from 'next/link'

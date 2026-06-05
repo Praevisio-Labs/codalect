@@ -49,15 +49,15 @@ export default function CodeEditor({
                     {' > '}
                 </span>
                 <span className="normal-case tracking-normal text-[11px] opacity-80">
-                    {file.name}
+                    {file.path.slice(1)}
                 </span>
             </div>
             <div className="flex-1 min-h-0">
                 <Editor
                     height="100%"
-                    path={file.name}
+                    path={file.path}
                     defaultValue={file.content}
-                    defaultLanguage={file.fileType}
+
                     className="overflow-hidden"
                     theme={editorTheme}
                     onMount={handleMount}
