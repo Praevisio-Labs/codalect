@@ -1,6 +1,6 @@
 import { RocketLaunchIcon, ClockIcon } from '@heroicons/react/24/outline'
 import { ModuleProps } from '@/types/components'
-import { domainLabels, skillLabels, projectIcons } from '@/data/lookups'
+import { domainLabels, skillLabels, projectIcons } from '@/app/utils/lookups'
 
 export default function ModuleCard({ project, onClick }: ModuleProps) {
     const isComingSoon = project.isReleased === false

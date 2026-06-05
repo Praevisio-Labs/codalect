@@ -32,7 +32,7 @@ export default function FileTree({ files, selected, onSelect }: FileTreeProps) {
                             flex items-center gap-2
                             text-xs px-2 py-1
                             cursor-pointer
-                            ${selected === file ? highlightStyle : baseStyle}
+                            ${selected.path === file.path ? highlightStyle : baseStyle}
                             `}>
                         <FileIcon filepath={file.path} />
                         {file.path.slice(1)}

@@ -2,9 +2,12 @@
 
 import { useState, useEffect, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
+import { SandpackProvider } from '@codesandbox/sandpack-react'
 
 import { DEMO_FILES } from '@/data/ide/demo-files'
 import { projectData } from '@/data/learn/projects'
+import { loadFiles } from '@/app/utils/sandpack'
+
 import Header from '@/components/Header'
 import FileTree from '@/components/ide/FileTree'
 import CodeEditor from '@/components/ide/CodeEditor'
@@ -65,56 +68,64 @@ function Page() {
                 linkText="Learn"
             />
             {/* Wrapper */}
-            <div
-                className={`
+            <SandpackProvider
+                key={moduleID ?? 'sandbox'}
+                template="react-ts"
+                files={loadFiles(workspaceFiles)}
+                options={{
+                    activeFile: workspaceFiles[0]?.path,
+                    visibleFiles: workspaceFiles.map((file) => file.path),
+                }}>
+                <div
+                    className={`
                     flex-1 
                     min-h-0 gap-1 p-1 
                     overflow-hidden
                     flex flex-col md:flex-row 
                 `}>
-                {/* File Tree */}
-                <CollapsiblePanel
-                    title="Explorer"
-                    isOpen={isFileTreeOpen}
-                    onToggle={() => setIsFileTreeOpen(!isFileTreeOpen)}
-                    className={`
+                    {/* File Tree */}
+                    <CollapsiblePanel
+                        title="Explorer"
+                        isOpen={isFileTreeOpen}
+                        onToggle={() => setIsFileTreeOpen(!isFileTreeOpen)}
+                        className={`
                         order-1 
                         rounded-sm md:rounded-bl-lg
                         overflow-hidden bg-panel
                         flex-none md:h-full md:flex-1
                         ${isFileTreeOpen ? 'max-md:h-2/10' : ''}
                     `}>
-                    <FileTree
-                        files={workspaceFiles}
-                        selected={selectedFile}
-                        onSelect={setSelectedFile}
-                    />
-                </CollapsiblePanel>
-                {/* Monaco Editor */}
-                <div
-                    className={`
+                        <FileTree
+                            files={workspaceFiles}
+                            selected={selectedFile}
+                            onSelect={setSelectedFile}
+                        />
+                    </CollapsiblePanel>
+                    {/* Monaco Editor */}
+                    <div
+                        className={`
                         order-2 
                         flex-1 md:flex-[4_4_0%]
                         max-md:min-h-3/10 md:h-full md:min-h-0
                         overflow-hidden rounded-sm bg-editor
                         flex flex-col
                     `}>
-                    <CodeEditor
-                        file={selectedFile}
-                        theme={theme}
-                        onCursorChange={setCursorLine}
-                        onHighlightChange={setHighlightedText}
-                        onContentChange={handleContentChange}
-                    />
-                </div>
-                {/* Assistant Panel */}
-                <CollapsiblePanel
-                    title="Assistant"
-                    isOpen={isAssistantPanelOpen}
-                    onToggle={() =>
-                        setIsAssistantPanelOpen(!isAssistantPanelOpen)
-                    }
-                    className={`
+                        <CodeEditor
+                            file={selectedFile}
+                            theme={theme}
+                            onCursorChange={setCursorLine}
+                            onHighlightChange={setHighlightedText}
+                            onContentChange={handleContentChange}
+                        />
+                    </div>
+                    {/* Assistant Panel */}
+                    <CollapsiblePanel
+                        title="Assistant"
+                        isOpen={isAssistantPanelOpen}
+                        onToggle={() =>
+                            setIsAssistantPanelOpen(!isAssistantPanelOpen)
+                        }
+                        className={`
                         order-3
                         rounded-sm md:rounded-br-lg
                         overflow-hidden bg-panel
@@ -122,16 +133,17 @@ function Page() {
                         ${isAssistantPanelOpen ? 'max-md:h-4/10' : ''}
                         
                     `}>
-                    <AssistantPanel
-                        file={selectedFile}
-                        cursorLine={cursorLine}
-                        fileContent={activeContent}
-                        textSelection={highlightedText}
-                        isContextHidden={isContextHidden}
-                        setIsContextHidden={setIsContextHidden}
-                    />
-                </CollapsiblePanel>
-            </div>
+                        <AssistantPanel
+                            file={selectedFile}
+                            cursorLine={cursorLine}
+                            fileContent={activeContent}
+                            textSelection={highlightedText}
+                            isContextHidden={isContextHidden}
+                            setIsContextHidden={setIsContextHidden}
+                        />
+                    </CollapsiblePanel>
+                </div>
+            </SandpackProvider>
         </main>
     )
 }

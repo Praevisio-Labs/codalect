@@ -7,7 +7,7 @@ import { DefaultChatTransport } from 'ai'
 import { Task, Constraint, Model } from '@/types/index'
 import { AssistantPanelProps } from '@/types/components'
 
-import { defaultMessage } from '@/data/defaults'
+import { defaultMessage } from '@/app/utils/defaults'
 import { tasks } from '@/data/ai/tasks'
 import { constraintLevels } from '@/data/ai/constraints'
 import { DEMO_MODELS as models } from '@/data/ai/models'
