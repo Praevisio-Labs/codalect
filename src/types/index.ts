@@ -93,3 +93,9 @@ export type Domain =
     | 'mobile'
 
 export type Level = 'Beginner' | 'Intermediate' | 'Advanced'
+
+export type AssistantContext = {
+    fileName: string
+    fileContent: string
+    cursorLine: number
+}

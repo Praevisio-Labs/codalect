@@ -46,6 +46,13 @@ export interface AssistantPanelProps {
     setIsContextHidden: (value: boolean) => void
 }
 
+export interface AssistantContextProps {
+    activeFile: File
+    selection: TextSelection
+    cursorLine: number
+    isContextHidden: boolean
+}
+
 export interface TaskSelectProps {
     selectedTask: Task
     setSelectedTask: (value: Task) => void
