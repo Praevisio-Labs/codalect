@@ -40,7 +40,6 @@ export interface EditorProps {
 export interface AssistantPanelProps {
     file: File
     cursorLine: number
-    fileContent: string
     textSelection: TextSelection
     isContextHidden: boolean
     setIsContextHidden: (value: boolean) => void
@@ -78,7 +77,6 @@ export interface ChatInputProps {
     setInput: (value: string) => void
     sendMessage: (message: { text: string }, options: { body: any }) => void
     file: File
-    fileContent: string
     cursorLine: number
     textSelection: TextSelection
     isContextHidden: boolean

@@ -1,6 +1,8 @@
 import { ChatInputProps } from '@/types/components'
 import { ArrowUpCircleIcon } from '@heroicons/react/24/outline'
 
+import { getAssistantContext } from '@/app/utils/assistant'
+
 import ContextSelect from '@/components/ide/ContextSelect'
 import ModelSelect from '@/components/ide/ModelSelect'
 import TaskSelect from '@/components/ide/TaskSelect'
@@ -11,7 +13,6 @@ export default function ChatInput({
     setInput,
     sendMessage,
     file,
-    fileContent,
     cursorLine,
     textSelection,
     isContextHidden,
@@ -25,15 +26,17 @@ export default function ChatInput({
     function handleSubmit(e?: React.SubmitEvent) {
         e?.preventDefault()
         if (input.trim()) {
-            const body = isContextHidden
-                ? { selectedTask, selectedConstraint }
-                : {
-                      fileName: file.path.slice(1),
-                      fileContent,
-                      cursorLine,
-                      selectedTask,
-                      selectedConstraint,
-                  }
+            const context = getAssistantContext({
+                activeFile: file,
+                selection: textSelection,
+                cursorLine,
+                isContextHidden,
+            })
+
+            const body = context
+                ? { ...context, selectedTask, selectedConstraint }
+                : { selectedTask, selectedConstraint }
+
             sendMessage({ text: input }, { body })
             setInput('')
         }

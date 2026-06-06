@@ -26,7 +26,6 @@ const defaultConstraint = constraintLevels.find(
 export default function AssistantPanel({
     file,
     cursorLine,
-    fileContent,
     textSelection,
     isContextHidden,
     setIsContextHidden,
@@ -84,7 +83,6 @@ export default function AssistantPanel({
                     setInput={setInput}
                     sendMessage={sendMessage}
                     file={file}
-                    fileContent={fileContent}
                     cursorLine={cursorLine}
                     textSelection={textSelection}
                     isContextHidden={isContextHidden}

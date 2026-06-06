@@ -36,10 +36,6 @@ export default function IDEPanels({ theme }: IDEPanelsProps) {
         content: code,
     }
 
-    const assistantFileContent = highlightedText.isActive
-        ? highlightedText.content
-        : code
-
     return (
         <div
             className={`
@@ -97,7 +93,6 @@ export default function IDEPanels({ theme }: IDEPanelsProps) {
                 <AssistantPanel
                     file={activeFile}
                     cursorLine={cursorLine}
-                    fileContent={assistantFileContent}
                     textSelection={highlightedText}
                     isContextHidden={isContextHidden}
                     setIsContextHidden={setIsContextHidden}
