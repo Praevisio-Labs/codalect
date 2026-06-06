@@ -37,7 +37,7 @@ export async function getStreamingResponse({
     const convertedMessages = await convertToModelMessages(messages)
 
     const fileContext = fileName
-        ? `The user is currently viewing: ${fileName} (cursor at line ${cursorLine ?? 1})\n\nFile contents:\n\`\`\`\n${fileContent}\n\`\`\``
+        ? `Relevant code from ${fileName} (cursor at line ${cursorLine ?? 1}):\n\`\`\`\n${fileContent}\n\`\`\``
         : ''
 
     const systemPrompt = `
@@ -53,9 +53,7 @@ ${systemTaskType[selectedTask.key]}
 ${systemConstraintLevel[selectedConstraint.level]}
 
 **File Context:**
-\`\`\`
-${fileContext ?? 'None'}
-\`\`\`
+${fileContext || 'None'}
 
 ${outputFormat.markdown}
 
