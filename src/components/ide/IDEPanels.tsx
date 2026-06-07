@@ -60,8 +60,11 @@ export default function IDEPanels({ theme }: IDEPanelsProps) {
                 onClick={togglePreview}
                 aria-label="Toggle preview"
                 aria-pressed={isPreviewOpen}
-                className="fixed bottom-3 left-3 z-50 rounded-sm bg-button p-1.5 text-font-apex shadow hover:opacity-80">
-                <PreviewIcon className="size-5" />
+                className="group fixed bottom-3 left-3 z-50 cursor-pointer rounded-full bg-button p-1.5 md:p-2.5 text-font-apex shadow">
+                <PreviewIcon className="size-5 md:size-7" />
+                <span className="absolute bottom-full left-0 mb-2 px-1.5 py-0.5 rounded-sm bg-panel text-font-apex text-[9px] whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-150 pointer-events-none">
+                    Toggle preview
+                </span>
             </button>
 
             <div className="relative order-1 flex flex-col md:flex-row flex-1 md:flex-[5_5_0%] min-h-0 gap-1 overflow-hidden">
