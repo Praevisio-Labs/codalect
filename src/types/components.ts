@@ -5,7 +5,6 @@ import {
     Link,
     File,
     Project,
-    Skill,
     Aside,
     TextSelection,
     Task,
@@ -20,14 +19,18 @@ export interface HeaderProps {
     linkText: string
 }
 
+export interface IDEPanelsProps {
+    theme: string
+}
+
+export interface PreviewDrawerProps {
+    isOpen: boolean
+}
+
 export interface FileTreeProps {
     files: File[]
     selected: File
     onSelect: (file: File) => void
-}
-
-export interface IDEPanelsProps {
-    theme: string
 }
 
 export interface EditorProps {
