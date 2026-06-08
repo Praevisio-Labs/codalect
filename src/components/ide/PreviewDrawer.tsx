@@ -44,7 +44,6 @@ export default function PreviewDrawer({ isOpen, onClose }: PreviewDrawerProps) {
                     showOpenInCodeSandbox={false}
                     showRefreshButton
                     showNavigator={false}
-                    showOpenNewtab
                 />
             </div>
 

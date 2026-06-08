@@ -43,3 +43,6 @@ next-env.d.ts
 # dev
 /\!dev/
 .vscode/
+
+# data
+src/data/learn/experimental-curriculum/

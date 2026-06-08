@@ -1,0 +1,21 @@
+{
+    "name": "nextjs-dice-game",
+    "description": "A TypeScript learning app for practicing interactive UI with the Next.js App Router.",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "NEXT_TELEMETRY_DISABLED=1 next dev",
+        "start": "NEXT_TELEMETRY_DISABLED=1 next dev",
+        "build": "next build"
+    },
+    "dependencies": {
+        "@next/swc-wasm-nodejs": "14.2.16",
+        "@types/node": "20.17.6",
+        "@types/react": "18.3.12",
+        "@types/react-dom": "18.3.1",
+        "next": "14.2.16",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
+        "typescript": "5.6.3"
+    }
+}

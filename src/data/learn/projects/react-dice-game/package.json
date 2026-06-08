@@ -1,0 +1,11 @@
+{
+    "name": "react-dice-game",
+    "description": "A JSX learning app for practicing React state, props, and events.",
+    "private": true,
+    "main": "/index.jsx",
+    "dependencies": {
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0",
+        "react-scripts": "^4.0.0"
+    }
+}
