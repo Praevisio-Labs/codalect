@@ -1,0 +1,214 @@
+:root {
+    color: #18211f;
+    background: #f6f2eb;
+    font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        'Segoe UI',
+        sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+.shell {
+    min-height: 100vh;
+    padding: 32px;
+    background:
+        linear-gradient(135deg, rgba(73, 126, 107, 0.14), transparent 42%),
+        #f6f2eb;
+}
+
+.workspace {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 64px);
+    width: min(920px, 100%);
+    margin: 0 auto;
+    border: 1px solid rgba(24, 33, 31, 0.14);
+    border-radius: 8px;
+    background: rgba(255, 252, 246, 0.92);
+    box-shadow: 0 18px 50px rgba(24, 33, 31, 0.12);
+}
+
+.hero {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 28px;
+    border-bottom: 1px solid rgba(24, 33, 31, 0.12);
+}
+
+.eyebrow,
+.modelPicker span,
+.message span {
+    margin: 0 0 6px;
+    color: #69766f;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: uppercase;
+}
+
+h1 {
+    max-width: 620px;
+    margin: 0;
+    font-size: clamp(2rem, 5vw, 4.5rem);
+    line-height: 0.98;
+    letter-spacing: 0;
+}
+
+.modelPicker {
+    display: grid;
+    min-width: 220px;
+    gap: 6px;
+}
+
+select,
+input {
+    width: 100%;
+    border: 1px solid rgba(24, 33, 31, 0.16);
+    border-radius: 8px;
+    background: #fffaf2;
+    color: #18211f;
+}
+
+select {
+    padding: 10px 12px;
+}
+
+.modelHint {
+    margin: 0;
+    padding: 14px 28px;
+    border-bottom: 1px solid rgba(24, 33, 31, 0.12);
+    color: #4f5f58;
+}
+
+.conversation {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 14px;
+    padding: 28px;
+    overflow-y: auto;
+}
+
+.emptyState {
+    display: grid;
+    min-height: 260px;
+    place-items: center;
+    border: 1px dashed rgba(24, 33, 31, 0.2);
+    border-radius: 8px;
+    color: #69766f;
+    text-align: center;
+}
+
+.message {
+    width: min(680px, 88%);
+    padding: 16px;
+    border-radius: 8px;
+    line-height: 1.55;
+}
+
+.message.user {
+    align-self: flex-end;
+    background: #263a35;
+    color: #fffaf2;
+}
+
+.message.assistant {
+    align-self: flex-start;
+    border: 1px solid rgba(24, 33, 31, 0.12);
+    background: #fffaf2;
+}
+
+.message p {
+    margin: 0;
+}
+
+.status,
+.error {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.status {
+    color: #69766f;
+}
+
+.error {
+    border-radius: 8px;
+    padding: 12px 14px;
+    background: #fff0ec;
+    color: #9f341f;
+}
+
+.composer {
+    display: flex;
+    gap: 12px;
+    padding: 18px 28px 28px;
+    border-top: 1px solid rgba(24, 33, 31, 0.12);
+}
+
+input {
+    min-width: 0;
+    padding: 12px 14px;
+}
+
+button {
+    border: 0;
+    border-radius: 8px;
+    padding: 0 18px;
+    background: #d86135;
+    color: white;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+}
+
+@media (max-width: 720px) {
+    .shell {
+        padding: 16px;
+    }
+
+    .workspace {
+        min-height: calc(100vh - 32px);
+    }
+
+    .hero,
+    .composer {
+        flex-direction: column;
+    }
+
+    .modelPicker,
+    button {
+        width: 100%;
+    }
+
+    button {
+        min-height: 44px;
+    }
+
+    .message {
+        width: 100%;
+    }
+}

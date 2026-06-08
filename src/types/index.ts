@@ -35,6 +35,30 @@ export type Project = {
     files: File[]
 }
 
+// Sandpack runtime template for a real-file module (see src/data/learn/content/<id>/).
+export type Template = 'static' | 'react-ts' | 'nextjs'
+
+// Metadata for a real-file learner module. Mirrors Project minus inlined `files`
+// (the files live in src/data/learn/content/<id>/), plus the runtime fields the
+// Sandpack pipeline needs. Lives in src/data/learn/registry/<id>.ts (host-checked);
+// paired to its content folder by `id`.
+export type ModuleMeta = {
+    id: string
+    name: string
+    description: string
+    overview: string
+    instructions: string
+    outcomes: string
+    skills: string[]
+    domains: Domain[]
+    level: Level
+    duration: string
+    isReleased?: boolean
+    template: Template
+    activeFile: string
+    visibleFiles?: string[]
+}
+
 export type Skill = {
     id: string
     name?: string
