@@ -52,7 +52,7 @@ By the time you finish, you should be able to:
     domains: ['ai', 'full-stack'],
     level: 'Advanced',
     duration: '10 hrs',
-    isReleased: true,
+    isReleased: false,
     files: [
         {
             path: '/app/layout.tsx',

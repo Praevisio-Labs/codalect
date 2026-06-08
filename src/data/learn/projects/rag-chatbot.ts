@@ -40,7 +40,7 @@ By the time you finish, you should be able to:
     domains: ['ai', 'rag', 'agents'],
     level: 'Intermediate',
     duration: '12 hrs',
-    isReleased: true,
+    isReleased: false,
     files: [
         {
             path: '/docs/sample.txt',

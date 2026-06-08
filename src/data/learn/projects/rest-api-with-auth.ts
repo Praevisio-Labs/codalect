@@ -37,7 +37,7 @@ By the time you finish, you should be able to:
     domains: ['full-stack', 'security'],
     level: 'Intermediate',
     duration: '10 hrs',
-    isReleased: true,
+    isReleased: false,
     files: [
         {
             path: '/app/layout.tsx',
