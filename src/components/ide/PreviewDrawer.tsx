@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { SandpackPreview, SandpackConsole } from '@codesandbox/sandpack-react'
-import { ChevronDownIcon } from '@heroicons/react/20/solid'
+import { ChevronDownIcon, XMarkIcon } from '@heroicons/react/20/solid'
 import { PreviewDrawerProps } from '@/types/components'
 
-export default function PreviewDrawer({ isOpen }: PreviewDrawerProps) {
+export default function PreviewDrawer({ isOpen, onClose }: PreviewDrawerProps) {
     const [isConsoleOpen, setIsConsoleOpen] = useState(false)
 
     return (
@@ -12,10 +12,32 @@ export default function PreviewDrawer({ isOpen }: PreviewDrawerProps) {
                 max-md:fixed max-md:inset-0 max-md:z-40
                 md:absolute md:inset-0 md:z-20
                 flex flex-col
+                rounded-sm md:rounded-bl-lg
                 bg-editor overflow-hidden
                 transition-transform duration-200 ease-out
                 ${isOpen ? 'translate-x-0' : '-translate-x-full'}
             `}>
+            {/* Title */}
+            <div
+                className={`
+                flex items-center justify-between
+                shrink-0
+                h-9 px-2
+                bg-header
+                uppercase tracking-wider
+                text-[10px] text-font-apex
+            `}>
+                <span>Preview Code</span>
+                <button
+                    type="button"
+                    onClick={onClose}
+                    aria-label="Close preview"
+                    className="cursor-pointer text-font-apex hover:opacity-80">
+                    <XMarkIcon className="size-4" />
+                </button>
+            </div>
+
+            {/* Preview */}
             <div className="flex-1 min-h-0">
                 <SandpackPreview
                     style={{ height: '100%' }}
@@ -25,6 +47,8 @@ export default function PreviewDrawer({ isOpen }: PreviewDrawerProps) {
                     showOpenNewtab
                 />
             </div>
+
+            {/* Console */}
             <div className="flex-none border-t border-accent-muted">
                 <button
                     type="button"

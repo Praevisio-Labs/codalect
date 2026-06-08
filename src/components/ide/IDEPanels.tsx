@@ -42,9 +42,9 @@ export default function IDEPanels({ theme }: IDEPanelsProps) {
         content: code,
     }
 
-    function togglePreview() {
+    function openPreview() {
         setHasOpenedPreview(true)
-        setIsPreviewOpen((open) => !open)
+        setIsPreviewOpen(true)
     }
 
     return (
@@ -54,24 +54,14 @@ export default function IDEPanels({ theme }: IDEPanelsProps) {
                     overflow-hidden
                     flex flex-col md:flex-row
                 `}>
-            {/* Toggle Preview */}
-            <button
-                type="button"
-                onClick={togglePreview}
-                aria-label="Toggle preview"
-                aria-pressed={isPreviewOpen}
-                className="group fixed bottom-3 left-3 z-50 cursor-pointer rounded-full bg-button p-1.5 md:p-2.5 text-font-apex shadow">
-                <PreviewIcon className="size-5 md:size-7" />
-                <span className="absolute bottom-full left-0 mb-2 px-1.5 py-0.5 rounded-sm bg-panel text-font-apex text-[9px] whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-150 pointer-events-none">
-                    Toggle preview
-                </span>
-            </button>
-
             <div className="relative order-1 flex flex-col md:flex-row flex-1 md:flex-[5_5_0%] min-h-0 gap-1 overflow-hidden">
                 {/* Preview Drawer */}
                 {hasOpenedPreview && (
                     <Suspense fallback={null}>
-                        <PreviewDrawer isOpen={isPreviewOpen} />
+                        <PreviewDrawer
+                            isOpen={isPreviewOpen}
+                            onClose={() => setIsPreviewOpen(false)}
+                        />
                     </Suspense>
                 )}
 
@@ -97,12 +87,23 @@ export default function IDEPanels({ theme }: IDEPanelsProps) {
                 {/* Monaco Editor */}
                 <div
                     className={`
-                        order-2
+                        relative order-2
                         flex-1 md:flex-[4_4_0%]
                         max-md:min-h-3/10 md:h-full md:min-h-0
                         overflow-hidden rounded-sm bg-editor
                         flex flex-col
                     `}>
+                    {/* Open Preview */}
+                    <button
+                        type="button"
+                        onClick={openPreview}
+                        aria-label="Open preview"
+                        className="group absolute right-1.5 top-1.5 z-10 cursor-pointer rounded-xs bg-accent-contra p-0.5 text-font-apex shadow">
+                        <PreviewIcon className="size-5 grayscale transition group-hover:grayscale-0" />
+                        <span className="absolute top-full right-0 mt-1 px-1.5 py-0.5 rounded-sm bg-panel text-font-apex text-[9px] whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-150 pointer-events-none">
+                            Open preview
+                        </span>
+                    </button>
                     <CodeEditor
                         file={activeFile}
                         theme={theme}

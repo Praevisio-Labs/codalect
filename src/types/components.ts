@@ -25,6 +25,7 @@ export interface IDEPanelsProps {
 
 export interface PreviewDrawerProps {
     isOpen: boolean
+    onClose: () => void
 }
 
 export interface FileTreeProps {
