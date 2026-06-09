@@ -1,6 +1,6 @@
-import type { ModuleMeta } from '@/types/index'
+import type { ModuleMetadata } from '@/types/index'
 
-export const eCommerceStorefront: ModuleMeta = {
+export const eCommerceStorefront: ModuleMetadata = {
     id: 'e-commerce-storefront',
     name: 'E-commerce Storefront',
     description:
@@ -52,7 +52,7 @@ By the time you finish, you should be able to:
     duration: '12 hrs',
     isReleased: true,
     template: 'react-ts',
-    activeFile: '/lib/cart.tsx',
+    activeFile: '/App.tsx',
     visibleFiles: [
         '/app/page.tsx',
         '/app/products/[id]/page.tsx',

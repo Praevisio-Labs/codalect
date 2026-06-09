@@ -6,20 +6,25 @@ import {
     SiCss,
     SiMarkdown,
 } from 'react-icons/si'
+import type { IconType } from 'react-icons'
 import { FileIconProps } from '@/types/components'
 
-const extensionLookup: Record<string, React.ReactNode> = {
-    ts: <SiTypescript size={13} className="text-blue-500" />,
-    tsx: <SiTypescript size={13} className="text-blue-500" />,
-    js: <SiJavascript size={13} className="text-yellow-400" />,
-    jsx: <SiJavascript size={13} className="text-yellow-400" />,
-    py: <SiPython size={13} className="text-blue-500" />,
-    html: <SiHtml5 size={13} className="text-orange-500" />,
-    css: <SiCss size={13} className="text-blue-400" />,
-    md: <SiMarkdown size={13} className="text-gray-400" />,
+const extensionIcons: Record<string, { Icon: IconType; className: string }> = {
+    ts: { Icon: SiTypescript, className: 'text-blue-500' },
+    tsx: { Icon: SiTypescript, className: 'text-blue-500' },
+    js: { Icon: SiJavascript, className: 'text-yellow-400' },
+    jsx: { Icon: SiJavascript, className: 'text-yellow-400' },
+    py: { Icon: SiPython, className: 'text-blue-500' },
+    html: { Icon: SiHtml5, className: 'text-orange-500' },
+    css: { Icon: SiCss, className: 'text-blue-400' },
+    md: { Icon: SiMarkdown, className: 'text-gray-400' },
 }
 
 export default function FileIcon({ filepath }: FileIconProps) {
-    const ext = filepath.split('.').pop() ?? ''
-    return extensionLookup[ext] ?? null
+    const ext = filepath.split('.').pop()?.toLowerCase() ?? ''
+    const entry = extensionIcons[ext]
+    if (!entry) return null
+
+    const { Icon, className } = entry
+    return <Icon size={13} className={className} />
 }

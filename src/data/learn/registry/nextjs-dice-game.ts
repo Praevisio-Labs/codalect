@@ -1,6 +1,6 @@
-import type { ModuleMeta } from '@/types/index'
+import type { ModuleMetadata } from '@/types/index'
 
-export const nextjsDiceGame: ModuleMeta = {
+export const nextjsDiceGame: ModuleMetadata = {
     id: 'nextjs-dice-game',
     name: 'Next.js Dice Game',
     description:
@@ -26,7 +26,7 @@ By the end you should be able to:
     domains: ['frontend'],
     level: 'Intermediate',
     duration: '2 hrs',
-    isReleased: true,
+    isReleased: false,
     template: 'nextjs',
     activeFile: '/app/page.tsx',
     visibleFiles: [

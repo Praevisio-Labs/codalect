@@ -1,7 +1,5 @@
 import type { ComponentType, SVGProps } from 'react'
 import {
-    ChartBarSquareIcon,
-    ChatBubbleLeftRightIcon,
     CloudIcon,
     DocumentMagnifyingGlassIcon,
     IdentificationIcon,
@@ -50,9 +48,7 @@ export const skillLabels: Record<string, string> = {
 export const projectIcons: Record<string, ComponentType<SVGProps<SVGSVGElement>>> = {
     'animation-playground': PlayCircleIcon,
     'bedrock-ai-app': SparklesIcon,
-    'collab-whiteboard': ChatBubbleLeftRightIcon,
     'e-commerce-storefront': ShoppingBagIcon,
-    'interactive-dashboard': ChartBarSquareIcon,
     'personal-portfolio': IdentificationIcon,
     'rag-chatbot': DocumentMagnifyingGlassIcon,
     'react-component-library': PuzzlePieceIcon,

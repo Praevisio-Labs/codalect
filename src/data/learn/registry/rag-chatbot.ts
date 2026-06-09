@@ -1,6 +1,6 @@
-import type { ModuleMeta } from '@/types/index'
+import type { ModuleMetadata } from '@/types/index'
 
-export const ragChatbot: ModuleMeta = {
+export const ragChatbot: ModuleMetadata = {
     id: 'rag-chatbot',
     name: 'RAG Chatbot',
     description:

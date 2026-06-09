@@ -1,6 +1,6 @@
-import type { ModuleMeta } from '@/types/index'
+import type { ModuleMetadata } from '@/types/index'
 
-export const saasStarter: ModuleMeta = {
+export const saasStarter: ModuleMetadata = {
     id: 'saas-starter',
     name: 'AI Chat Starter',
     description:

@@ -1,6 +1,6 @@
-import type { ModuleMeta } from '@/types/index'
+import type { ModuleMetadata } from '@/types/index'
 
-export const restApiWithAuth: ModuleMeta = {
+export const restApiWithAuth: ModuleMetadata = {
     id: 'rest-api-with-auth',
     name: 'Full-Stack Auth App',
     description:

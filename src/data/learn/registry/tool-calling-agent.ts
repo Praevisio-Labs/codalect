@@ -1,6 +1,6 @@
-import type { ModuleMeta } from '@/types/index'
+import type { ModuleMetadata } from '@/types/index'
 
-export const toolCallingAgent: ModuleMeta = {
+export const toolCallingAgent: ModuleMetadata = {
     id: 'tool-calling-agent',
     name: 'Tool-Calling Agent',
     description:

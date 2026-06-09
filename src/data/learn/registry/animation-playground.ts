@@ -1,6 +1,6 @@
-import type { ModuleMeta } from '@/types/index'
+import type { ModuleMetadata } from '@/types/index'
 
-export const animationPlayground: ModuleMeta = {
+export const animationPlayground: ModuleMetadata = {
     id: 'animation-playground',
     name: 'Animation Playground',
     description:
@@ -45,7 +45,7 @@ By the time you finish, you should be able to:
     duration: '6 hrs',
     isReleased: true,
     template: 'react-ts',
-    activeFile: '/components/StaggerList.tsx',
+    activeFile: '/App.tsx',
     visibleFiles: [
         '/App.tsx',
         '/components/StaggerList.tsx',

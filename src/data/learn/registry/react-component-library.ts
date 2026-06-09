@@ -1,6 +1,6 @@
-import type { ModuleMeta } from '@/types/index'
+import type { ModuleMetadata } from '@/types/index'
 
-export const reactComponentLibrary: ModuleMeta = {
+export const reactComponentLibrary: ModuleMetadata = {
     id: 'react-component-library',
     name: 'TypeScript UI Kit',
     description:

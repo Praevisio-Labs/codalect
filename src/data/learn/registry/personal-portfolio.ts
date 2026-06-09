@@ -1,6 +1,6 @@
-import type { ModuleMeta } from '@/types/index'
+import type { ModuleMetadata } from '@/types/index'
 
-export const personalPortfolio: ModuleMeta = {
+export const personalPortfolio: ModuleMetadata = {
     id: 'personal-portfolio',
     name: 'Personal Portfolio Site',
     description:
@@ -46,7 +46,7 @@ By the time you finish, you should be able to:
     duration: '6 hrs',
     isReleased: true,
     template: 'react-ts',
-    activeFile: '/lib/data.ts',
+    activeFile: '/App.tsx',
     visibleFiles: [
         '/lib/data.ts',
         '/components/Nav.tsx',

@@ -1,6 +1,21 @@
-import Editor, { OnMount } from '@monaco-editor/react'
+import Editor, { OnMount, BeforeMount } from '@monaco-editor/react'
 import { useActiveCode, useSandpack } from '@codesandbox/sandpack-react'
 import { EditorProps } from '@/types/components'
+
+const configureMonaco: BeforeMount = (monaco) => {
+    const ts = monaco.languages.typescript
+    const compilerOptions = {
+        jsx: ts.JsxEmit.ReactJSX,
+        esModuleInterop: true,
+        allowJs: true,
+        allowNonTsExtensions: true,
+        target: ts.ScriptTarget.Latest,
+    }
+    ts.typescriptDefaults.setCompilerOptions(compilerOptions)
+    ts.javascriptDefaults.setCompilerOptions(compilerOptions)
+    ts.typescriptDefaults.setDiagnosticsOptions({ noSemanticValidation: true })
+    ts.javascriptDefaults.setDiagnosticsOptions({ noSemanticValidation: true })
+}
 
 export default function CodeEditor({
     file,
@@ -58,6 +73,7 @@ export default function CodeEditor({
                     defaultValue={code}
                     className="overflow-hidden"
                     theme={editorTheme}
+                    beforeMount={configureMonaco}
                     onMount={handleMount}
                     onChange={(value) => updateCode(value || '')}
                     options={{

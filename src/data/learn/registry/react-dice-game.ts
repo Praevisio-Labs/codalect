@@ -1,6 +1,6 @@
-import type { ModuleMeta } from '@/types/index'
+import type { ModuleMetadata } from '@/types/index'
 
-export const reactDiceGame: ModuleMeta = {
+export const reactDiceGame: ModuleMetadata = {
     id: 'react-dice-game',
     name: 'React Dice Game',
     description: 'Practice core React ideas by building a dice matching game.',
@@ -29,6 +29,6 @@ By the end you should be able to:
     duration: '2 hrs',
     isReleased: true,
     template: 'react-ts',
-    activeFile: '/App.jsx',
-    visibleFiles: ['/App.jsx', '/DiceTile.jsx', '/styles.css'],
+    activeFile: '/App.tsx',
+    visibleFiles: ['/App.tsx', '/DiceTile.tsx', '/styles.css'],
 }

@@ -4,7 +4,7 @@ import { type ReactNode } from 'react'
 import {
     Link,
     File,
-    Project,
+    ModuleMetadata,
     Aside,
     TextSelection,
     Task,
@@ -123,7 +123,7 @@ export interface LoadingIndicatorProps {
 }
 
 export interface ModuleProps {
-    project: Project
+    project: ModuleMetadata
     onClick: () => void
 }
 
@@ -136,7 +136,7 @@ export interface DashboardProps {
 export interface ProjectProps {
     theme: string
     setTheme: (theme: string) => void
-    project: Project
+    project: ModuleMetadata
     onClick: () => void
 }
 

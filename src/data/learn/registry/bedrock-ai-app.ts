@@ -1,6 +1,6 @@
-import type { ModuleMeta } from '@/types/index'
+import type { ModuleMetadata } from '@/types/index'
 
-export const bedrockAiApp: ModuleMeta = {
+export const bedrockAiApp: ModuleMetadata = {
     id: 'bedrock-ai-app',
     name: 'Bedrock AI App',
     description:

@@ -1,5 +1,5 @@
 import { DashboardProps } from '@/types/components'
-import { projectData } from '@/data/learn/projects'
+import { moduleData } from '@/data/learn/registry'
 
 import Header from '@/components/Header'
 import ModuleCard from '@/components/learn/ModuleCard'
@@ -26,7 +26,7 @@ export default function Dashboard({
             </div>
             <div className="flex-1 overflow-y-auto px-6 pb-6">
                 <div className="grid grid-cols-1 gap-4 md:gap-6 md:grid-cols-2 xl:grid-cols-3">
-                    {projectData.map((project) => (
+                    {moduleData.map((project) => (
                         <ModuleCard
                             key={project.id}
                             project={project}

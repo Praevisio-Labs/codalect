@@ -5,7 +5,7 @@ import { domainLabels, skillLabels, projectIcons } from '@/app/utils/lookups'
 export default function ModuleCard({ project, onClick }: ModuleProps) {
     const isComingSoon = project.isReleased === false
     const cardStateClasses = isComingSoon
-        ? 'opacity-70 cursor-default'
+        ? 'cursor-default'
         : 'hover:opacity-60 cursor-pointer'
     const ProjectIcon = projectIcons[project.id] ?? RocketLaunchIcon
 
@@ -13,7 +13,7 @@ export default function ModuleCard({ project, onClick }: ModuleProps) {
         <div
             onClick={isComingSoon ? undefined : onClick}
             className={`
-                    flex flex-col gap-4 p-6
+                    relative flex flex-col gap-4 p-6
                     w-full min-w-0
                     rounded-lg border-1 border-accent-muted
                     bg-panel
@@ -83,6 +83,13 @@ export default function ModuleCard({ project, onClick }: ModuleProps) {
                     </div>
                 </div>
             </div>
+            {isComingSoon && (
+                <div className="absolute inset-0 rounded-lg flex items-center justify-center backdrop-blur-[2px] bg-panel/10">
+                    <span className="rounded-full bg-accent-bright px-4 py-1.5 text-font-apex text-sm font-semibold shadow-lg">
+                        Coming Soon
+                    </span>
+                </div>
+            )}
         </div>
     )
 }

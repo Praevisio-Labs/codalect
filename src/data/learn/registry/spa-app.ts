@@ -1,6 +1,6 @@
-import type { ModuleMeta } from '@/types/index'
+import type { ModuleMetadata } from '@/types/index'
 
-export const spaApp: ModuleMeta = {
+export const spaApp: ModuleMetadata = {
     id: 'spa-app',
     name: 'Simple SPA App',
     description: 'Build a mini todo list with HTML, JavaScript, and CSS.',
