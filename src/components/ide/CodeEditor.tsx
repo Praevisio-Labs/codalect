@@ -64,7 +64,7 @@ export default function CodeEditor({
                     onChange={(value) => updateCode(value || '')}
                     options={{
                         fontSize: 10,
-                        wordWrap: 'on',
+                        wordWrap: 'off',
                         glyphMargin: false,
                         cursorStyle: 'block',
                         padding: { top: 12 },
