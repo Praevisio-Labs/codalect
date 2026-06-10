@@ -31,8 +31,14 @@ export default function IDEWorkspace({ workspace }: { workspace: Workspace }) {
                 key={workspace.key}
                 template={workspace.template}
                 files={workspace.files}
+                theme="dark"
                 style={{ flex: 1, minHeight: 0, overflow: 'hidden' }}
-                options={{ activeFile: workspace.activeFile }}>
+                options={{
+                    activeFile: workspace.activeFile,
+                    externalResources: [
+                        'https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4',
+                    ],
+                }}>
                 <IDEPanels theme={theme} />
             </SandpackProvider>
         </main>

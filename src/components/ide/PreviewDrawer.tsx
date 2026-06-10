@@ -58,11 +58,9 @@ export default function PreviewDrawer({ isOpen, onClose }: PreviewDrawerProps) {
                         className={`size-4 transition-transform ${isConsoleOpen ? 'rotate-180' : ''}`}
                     />
                 </button>
-                {isConsoleOpen && (
-                    <div className="h-40">
-                        <SandpackConsole style={{ height: '100%' }} />
-                    </div>
-                )}
+                <div className={isConsoleOpen ? 'h-40' : 'h-0 overflow-hidden'}>
+                    <SandpackConsole style={{ height: '100%' }} />
+                </div>
             </div>
         </div>
     )

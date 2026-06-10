@@ -75,7 +75,7 @@
 - [x] refactor lesson modules, test Nodebox, and update load pipeline, #75
 - [x] add expandable folders UI to FileTree for component nesting, #76
 - [x] build a themed, runnable React starter for the default sandbox, #77
-- [ ] wire @tailwindcss/browser into Sandpack preview externalResources, #72
+- [x] wire Tailwind into Sandpack preview and fix console log capture, #72
 - [ ] verify Sandpack preview renders cleanly on Vercel preview deploy, #73
 
 ## Planned Improvements 
