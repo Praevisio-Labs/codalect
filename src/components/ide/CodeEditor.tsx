@@ -1,21 +1,7 @@
-import Editor, { OnMount, BeforeMount } from '@monaco-editor/react'
+import Editor, { OnMount } from '@monaco-editor/react'
 import { useActiveCode, useSandpack } from '@codesandbox/sandpack-react'
 import { EditorProps } from '@/types/components'
-
-const configureMonaco: BeforeMount = (monaco) => {
-    const ts = monaco.languages.typescript
-    const compilerOptions = {
-        jsx: ts.JsxEmit.ReactJSX,
-        esModuleInterop: true,
-        allowJs: true,
-        allowNonTsExtensions: true,
-        target: ts.ScriptTarget.Latest,
-    }
-    ts.typescriptDefaults.setCompilerOptions(compilerOptions)
-    ts.javascriptDefaults.setCompilerOptions(compilerOptions)
-    ts.typescriptDefaults.setDiagnosticsOptions({ noSemanticValidation: true })
-    ts.javascriptDefaults.setDiagnosticsOptions({ noSemanticValidation: true })
-}
+import { configureMonaco } from '@/app/utils/monaco'
 
 export default function CodeEditor({
     file,

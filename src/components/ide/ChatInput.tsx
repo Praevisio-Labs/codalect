@@ -94,8 +94,8 @@ export default function ChatInput({
                     <button
                         type="submit"
                         disabled={status !== 'ready'}
-                        className={`bg-button px-1 py-0.5 rounded-sm`}>
-                        <ArrowUpCircleIcon className="h-4.5 w-4.5" />
+                        className={`bg-button px-1 py-0.5 rounded-sm cursor-pointer`}>
+                        <ArrowUpCircleIcon className="size-4.5 text-accent-contra" />
                     </button>
                 </div>
             </div>
