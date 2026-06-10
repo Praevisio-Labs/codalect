@@ -1,14 +1,31 @@
+'use client'
+
+import { useState } from 'react'
+import { ChevronRightIcon } from '@heroicons/react/20/solid'
 import FileIcon from '@/components/icons/FileIcon'
-import type { File } from '@/types/index'
+import { buildTree, flattenTree } from '@/app/utils/fileTree'
 import { FileTreeProps } from '@/types/components'
 
 export default function FileTree({ files, selected, onSelect }: FileTreeProps) {
     const baseStyle = `border border-accent-muted bg-card text-font-apex hover:opacity-60`
-    const highlightStyle = `border-y-2 border-page -my-px bg-highlight text-card`
+    const highlightStyle = `border border-accent-muted bg-highlight text-card`
 
-    function handleSelect(file: File) {
-        onSelect(file)
+    const [collapsed, setCollapsed] = useState<Set<string>>(new Set())
+
+    function toggleFolder(path: string) {
+        setCollapsed((previous) => {
+            const next = new Set(previous)
+            if (next.has(path)) {
+                next.delete(path)
+            } else {
+                next.add(path)
+            }
+            return next
+        })
     }
+
+    const tree = buildTree(files)
+    const rows = flattenTree(tree, collapsed, 0, '')
 
     return (
         <>
@@ -23,21 +40,41 @@ export default function FileTree({ files, selected, onSelect }: FileTreeProps) {
                 `}>
                 Explorer
             </div>
-            <ul className="flex-1 min-h-0 overflow-y-auto flex flex-col gap-1">
-                {files.map((file, index) => (
-                    <li
-                        key={index}
-                        onClick={() => handleSelect(file)}
-                        className={`
-                            flex items-center gap-2
-                            text-xs px-2 py-1
-                            cursor-pointer
-                            ${selected.path === file.path ? highlightStyle : baseStyle}
+            <ul className="flex-1 min-h-0 overflow-y-auto flex flex-col gap-0.5">
+                {rows.map((row) =>
+                    row.kind === 'folder' ? (
+                        <li
+                            key={row.path}
+                            onClick={() => toggleFolder(row.path)}
+                            style={{
+                                paddingLeft: `${0.25 + row.depth * 0.75}rem`,
+                            }}
+                            className={`flex items-center gap-0.5 pr-1 py-1 text-[9px] md:text-[10px] cursor-pointer ${baseStyle}`}>
+                            <ChevronRightIcon
+                                className={`size-3 shrink-0 transition-transform ${
+                                    collapsed.has(row.path) ? '' : 'rotate-90'
+                                }`}
+                            />
+                            {row.name}
+                        </li>
+                    ) : (
+                        <li
+                            key={row.path}
+                            onClick={() => onSelect(row.file)}
+                            style={{
+                                paddingLeft: `${0.25 + row.depth * 0.75}rem`,
+                            }}
+                            className={`
+                                flex items-center gap-1.5
+                                pr-1 py-1
+                                text-[9px] md:text-[10px] cursor-pointer
+                                ${selected.path === row.path ? highlightStyle : baseStyle}
                             `}>
-                        <FileIcon filepath={file.path} />
-                        {file.path.slice(1)}
-                    </li>
-                ))}
+                            <FileIcon filepath={row.path} />
+                            {row.name}
+                        </li>
+                    ),
+                )}
             </ul>
         </>
     )

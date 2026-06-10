@@ -20,6 +20,15 @@ export type File = {
     content: string
 }
 
+export type FolderNode = {
+    folders: Map<string, FolderNode>
+    files: Map<string, File>
+}
+
+export type Row =
+    | { kind: 'folder'; name: string; path: string; depth: number }
+    | { kind: 'file'; name: string; path: string; depth: number; file: File }
+
 export type Project = {
     id: string
     name: string

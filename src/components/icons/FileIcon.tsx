@@ -26,5 +26,5 @@ export default function FileIcon({ filepath }: FileIconProps) {
     if (!entry) return null
 
     const { Icon, className } = entry
-    return <Icon size={13} className={className} />
+    return <Icon size={11} className={`${className} shrink-0`} />
 }

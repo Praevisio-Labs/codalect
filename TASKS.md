@@ -72,7 +72,8 @@
 - [x] migrate file state from page.tsx Record to Sandpack files store, #68
 - [x] refactor assistant file/cursor/selection context for Sandpack store, #69
 - [x] build slide-out preview + console drawer with branded toggle, #70
-- [ ] refactor lesson modules, test Nodebox, and update load pipeline, #75
+- [x] refactor lesson modules, test Nodebox, and update load pipeline, #75
+- [x] add expandable folders UI to FileTree for component nesting, #76
 - [ ] add inline create, rename, delete to file tree against Sandpack store, #71
 - [ ] wire @tailwindcss/browser into Sandpack preview externalResources, #72
 - [ ] verify Sandpack preview renders cleanly on Vercel preview deploy, #73
