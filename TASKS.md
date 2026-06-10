@@ -74,10 +74,11 @@
 - [x] build slide-out preview + console drawer with branded toggle, #70
 - [x] refactor lesson modules, test Nodebox, and update load pipeline, #75
 - [x] add expandable folders UI to FileTree for component nesting, #76
-- [ ] add inline create, rename, delete to file tree against Sandpack store, #71
+- [x] build a themed, runnable React starter for the default sandbox, #77
 - [ ] wire @tailwindcss/browser into Sandpack preview externalResources, #72
 - [ ] verify Sandpack preview renders cleanly on Vercel preview deploy, #73
 
 ## Planned Improvements 
 
 - [ ] wire up model select component to backend API routes, #49
+- [ ] add inline create, rename, delete to file tree against Sandpack store, #71

@@ -67,28 +67,27 @@ function applyVisibility(
     return result
 }
 
-const DEFAULT_SANDBOX: Workspace = {
-    key: 'sandbox',
-    template: 'react-ts',
-    activeFile: '/App.tsx',
-    files: {
-        '/App.tsx': {
-            code: `export default function App() {
-    return (
-        <main style={{ fontFamily: 'sans-serif', padding: 24 }}>
-            <h1>Codalect Sandbox</h1>
-            <p>Edit App.tsx and the preview updates live.</p>
-        </main>
-    )
-}
-`,
-        },
-    },
+const SANDBOX_ID = 'sandbox'
+
+function getSandbox(): Workspace {
+    const files = readModuleFiles(SANDBOX_ID)
+    const result: SandpackFiles = {}
+
+    for (const [path, code] of Object.entries(files)) {
+        result[path] = isHiddenByDefault(path) ? { code, hidden: true } : { code }
+    }
+
+    return {
+        key: SANDBOX_ID,
+        template: 'react-ts',
+        activeFile: '/App.tsx',
+        files: result,
+    }
 }
 
 export function getWorkspace(id: string | null): Workspace {
     const meta = getModule(id)
-    if (!isRenderable(meta)) return DEFAULT_SANDBOX
+    if (!isRenderable(meta)) return getSandbox()
 
     return {
         key: meta.id,
