@@ -45,7 +45,7 @@ export default function Project({
                     content="The sections below are refreshers on each skill this project uses. If you're already comfortable, feel free to skip ahead."
                     link={{
                         href: '#exercise-instructions',
-                        text: 'Jump to exercise instructions',
+                        text: 'Jump to exercise instructions or start project',
                     }}
                 />
                 {project.skills.map((projectSkill) => {
@@ -60,13 +60,13 @@ export default function Project({
                 <div id="exercise-instructions">
                     <Markdown content={project.instructions} />
                 </div>
-                <div className="relative flex justify-center mb-4 md:mb-6">
+                <div className="relative flex justify-center mb-6 md:mb-12">
                     <div
-                        className={`bg-panel rounded-xl py-[3px] px-[4px] border border-page`}>
+                        className={`bg-panel rounded-xl py-[3px] px-[4px] border border-accent-muted`}>
                         <button
                             onClick={onClick}
                             className={`
-                                border border-accent-bright
+                                border-2 border-accent-bright
                                 text-accent-bright
                                 ${outfit.className} text-sm
                                 px-8 py-3 rounded-lg
