@@ -19,10 +19,13 @@ export default function Header({
             ${sora.className} text-font-apex
             bg-header p-2
             `}>
-            <div className="flex items-center gap-1">
+            <Link
+                href="/"
+                aria-label="Codalect home"
+                className="flex items-center gap-1 cursor-pointer hover:opacity-80 transition">
                 <BrandmarkIcon className="size-5 md:size-8 text-font-apex" />
                 <WordmarkIcon className="h-5 md:h-8 text-font-apex" />
-            </div>
+            </Link>
             <div className="flex gap-5">
                 <Link
                     href={path}

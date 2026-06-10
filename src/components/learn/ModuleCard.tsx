@@ -6,7 +6,7 @@ export default function ModuleCard({ project, onClick }: ModuleProps) {
     const isComingSoon = project.isReleased === false
     const cardStateClasses = isComingSoon
         ? 'cursor-default'
-        : 'hover:opacity-60 cursor-pointer'
+        : 'cursor-pointer transition duration-200 hover:-translate-y-0.5 hover:border-accent-bright hover:bg-card hover:shadow-[0_0_12px_-2px_var(--color-accent-bright)]'
     const ProjectIcon = projectIcons[project.id] ?? RocketLaunchIcon
 
     return (
