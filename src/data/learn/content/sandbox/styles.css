@@ -1,0 +1,149 @@
+/* styles.css — colors mirror Codalect's default theme so the
+   sandbox feels at home inside the app. Change them and see what happens. */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.app {
+    min-height: 100vh;
+    padding: 2.5rem 1.25rem;
+    background: #240046; /* panel */
+    color: #e9d9ff; /* font-paragraph */
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* --- Hero: the ASCII banner + intro --- */
+
+.hero {
+    max-width: 44rem;
+    margin: 0 auto 2.5rem;
+    text-align: center;
+}
+
+.banner {
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto 1.5rem;
+    overflow-x: auto;
+    text-align: left;
+    color: #ff9f00; /* font-apex */
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: clamp(0.4rem, 1.5vw, 0.78rem);
+    line-height: 1;
+    text-shadow: 0 0 4px rgba(255, 159, 0, 0.4); /* terminal glow */
+}
+
+.intro {
+    max-width: 34rem;
+    margin: 0 auto 0.85rem;
+    line-height: 1.65;
+}
+
+.intro strong {
+    color: #ff9f00;
+}
+
+.intro code,
+.hint code {
+    padding: 0.1rem 0.35rem;
+    border-radius: 0.25rem;
+    background: #3c096c; /* page */
+    color: #ff9f00;
+    font-size: 0.9em;
+}
+
+.hint {
+    max-width: 34rem;
+    margin: 1.5rem auto 0;
+    padding: 0.75rem 1rem;
+    border: 1px solid #8415ec; /* accent-muted */
+    border-radius: 0.5rem;
+    background: rgba(87, 13, 155, 0.35); /* card, translucent */
+    color: #dabfff; /* font-tertiary */
+    font-size: 0.95rem;
+}
+
+.hint strong {
+    color: #ff9f00;
+}
+
+/* --- Components --- */
+
+.card {
+    max-width: 28rem;
+    margin: 0 auto 1rem;
+    padding: 1.25rem 1.5rem;
+    border: 1px solid #8415ec; /* accent-muted */
+    border-radius: 0.75rem;
+    background: #570d9b; /* card */
+}
+
+.card h2 {
+    margin: 0 0 1rem;
+    color: #ff9f00;
+    font-size: 0.95rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+}
+
+.counter button {
+    width: 2.75rem;
+    height: 2.75rem;
+    border: none;
+    border-radius: 0.5rem;
+    background: #ff6d00; /* button */
+    color: #240046;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: opacity 0.15s ease;
+}
+
+.counter button:hover {
+    opacity: 0.85;
+}
+
+.counter-value {
+    min-width: 3rem;
+    color: #bff1ff; /* font-primary */
+    font-size: 1.75rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.greeting {
+    margin: 0 0 1rem;
+    color: #bff1ff;
+    font-size: 1.25rem;
+}
+
+.input {
+    width: 100%;
+    padding: 0.6rem 0.85rem;
+    border: 1px solid #8415ec;
+    border-radius: 0.5rem;
+    background: #3c096c; /* page */
+    color: #e9d9ff;
+    font-size: 1rem;
+    outline: none;
+}
+
+.input:focus {
+    border-color: #a049f0; /* highlight */
+}
+
+.input::placeholder {
+    color: #dabfff; /* font-tertiary */
+}

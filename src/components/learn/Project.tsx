@@ -30,12 +30,12 @@ export default function Project({
             />
             <div className="flex-none text-center pt-4">
                 <h2
-                    className={`${sora.className} text-xl md:text-2xl text-font-apex font-bold mb-2 md:mb-4`}>
+                    className={`font-sora tracking-tight text-xl md:text-2xl text-font-apex font-bold my-1 md:my-2`}>
                     {project.name}
                 </h2>
             </div>
             <div
-                className="flex-1 flex flex-col gap-12 p-3 overflow-y-auto"
+                className="flex-1 flex flex-col gap-12 p-3 overflow-y-auto w-[90%] md:w-2/3 mx-auto"
                 style={scrollMask}>
                 <div id="project-overview">
                     <Markdown content={project.overview} />
@@ -45,7 +45,7 @@ export default function Project({
                     content="The sections below are refreshers on each skill this project uses. If you're already comfortable, feel free to skip ahead."
                     link={{
                         href: '#exercise-instructions',
-                        text: 'Jump to exercise instructions',
+                        text: 'Jump to instructions or start project',
                     }}
                 />
                 {project.skills.map((projectSkill) => {
@@ -60,18 +60,19 @@ export default function Project({
                 <div id="exercise-instructions">
                     <Markdown content={project.instructions} />
                 </div>
-                <div className="relative flex justify-center mb-4 md:mb-6">
+                <div className="relative flex justify-center mb-6 md:mb-12">
                     <div
-                        className={`bg-panel rounded-xl py-[3px] px-[4px] border border-page`}>
+                        className={`bg-panel rounded-xl py-[3px] px-[4px] border border-accent-muted`}>
                         <button
                             onClick={onClick}
                             className={`
-                                border border-accent-bright
-                                text-accent-bright
-                                ${outfit.className} text-sm
+                                border-2 border-accent-bright
+                                text-font-apex font-semibold
+                                font-outfit tracking-wider text-sm
                                 px-8 py-3 rounded-lg
                                 hover:bg-accent-bright hover:text-header
-                                cursor-pointer
+                                transition-colors
+                                cursor-pointer 
                                 `}>
                             Start Project
                         </button>

@@ -1,28 +1,47 @@
 @import 'tailwindcss';
 @plugin "@tailwindcss/typography";
 
+@theme inline {
+    --font-inter:                 var(--next-font-inter);
+    --font-sora:                  var(--next-font-sora);
+    --font-outfit:                var(--next-font-outfit);
+    --font-manrope:               var(--next-font-manrope);
+}
+
 @theme {
-    --color-header:         #10002B;
-    --color-page:           #3C096C;
-    --color-panel:          #240046;
-    --color-editor:         #240046;
-    --color-input:          #570D9B;
-    --color-message:        #570D9B;
-    --color-button:         #FF6D00;
-    --color-ring:           #B67211;
-    --color-card:           #570D9B;
-    --color-highlight:      #A049F0;
-    --color-font-apex:      #FF9F00;
-    --color-font-primary:   #BFF1FF;
-    --color-font-secondary: #FFC900;
-    --color-font-tertiary:  #DABFFF;
-    --color-font-paragraph: #E9D9FF;
-    --color-font-neutral:   #F1DEDE;
-    --color-accent-apex:    #FF6D00;
-    --color-accent-bright:  #B100E8;
-    --color-accent-muted:   #8415EC;
-    --color-accent-dark:    #6F2DBD;
-    --color-accent-contra:  #3C096C;
+    --color-brand-black:          #1F1F22;
+    --color-brand-white:          #F6F4F3;
+    --color-brand-purple:         #3C096C;
+    --color-brand-gold:           #FF9F00;
+    --color-code:                 #20B2AA;
+    --color-link:                 #00BFFF;
+    --color-divider:              #EFABFF;
+    --color-electric-rose:        #DE0D92;
+    --color-electric-sapphire:    #4D6CFA;
+}
+
+@theme {
+    --color-header:               #10002B;
+    --color-page:                 #3C096C;
+    --color-panel:                #240046;
+    --color-editor:               #240046;
+    --color-input:                #570D9B;
+    --color-message:              #570D9B;
+    --color-button:               #FF6D00;
+    --color-ring:                 #B67211;
+    --color-card:                 #570D9B;
+    --color-highlight:            #A049F0;
+    --color-font-apex:            #FF9F00;
+    --color-font-primary:         #BFF1FF;
+    --color-font-secondary:       #FFC900;
+    --color-font-tertiary:        #DABFFF;
+    --color-font-paragraph:       #E9D9FF;
+    --color-font-neutral:         #F1DEDE;
+    --color-accent-apex:          #FF6D00;
+    --color-accent-bright:        #B100E8;
+    --color-accent-muted:         #8415EC;
+    --color-accent-dark:          #6F2DBD;
+    --color-accent-contra:        #3C096C;
 }
 
 @layer base {
@@ -37,13 +56,13 @@
         --color-ring:           #0B7FFF;
         --color-card:           #0D1116;
         --color-highlight:      #98C1D9;
-        --color-font-apex:      #C2C2C2;
+        --color-font-apex:      #E8E8E8;
         --color-font-primary:   #A684FF;
         --color-font-secondary: #5BC0BE;
         --color-font-tertiary:  #F1DEDE;
         --color-font-paragraph: #CBEEF3;
         --color-font-neutral:   #EDEDED;
-        --color-accent-apex:    #C2C2C2;
+        --color-accent-apex:    #E8E8E8;
         --color-accent-bright:  #0B7FFF;
         --color-accent-muted:   #004EA4;
         --color-accent-dark:    #2A55A6;

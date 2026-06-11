@@ -4,8 +4,7 @@ import { type ReactNode } from 'react'
 import {
     Link,
     File,
-    Project,
-    Skill,
+    ModuleMetadata,
     Aside,
     TextSelection,
     Task,
@@ -20,6 +19,15 @@ export interface HeaderProps {
     linkText: string
 }
 
+export interface IDEPanelsProps {
+    theme: string
+}
+
+export interface PreviewDrawerProps {
+    isOpen: boolean
+    onClose: () => void
+}
+
 export interface FileTreeProps {
     files: File[]
     selected: File
@@ -31,16 +39,21 @@ export interface EditorProps {
     file: File
     onCursorChange?: (line: number) => void
     onHighlightChange?: (data: TextSelection) => void
-    onContentChange?: (content: string) => void
 }
 
 export interface AssistantPanelProps {
     file: File
     cursorLine: number
-    fileContent: string
     textSelection: TextSelection
     isContextHidden: boolean
     setIsContextHidden: (value: boolean) => void
+}
+
+export interface AssistantContextProps {
+    activeFile: File
+    selection: TextSelection
+    cursorLine: number
+    isContextHidden: boolean
 }
 
 export interface TaskSelectProps {
@@ -68,7 +81,6 @@ export interface ChatInputProps {
     setInput: (value: string) => void
     sendMessage: (message: { text: string }, options: { body: any }) => void
     file: File
-    fileContent: string
     cursorLine: number
     textSelection: TextSelection
     isContextHidden: boolean
@@ -103,7 +115,7 @@ export interface LogoProps {
 }
 
 export interface FileIconProps {
-    fileType: string
+    filepath: string
 }
 
 export interface LoadingIndicatorProps {
@@ -111,7 +123,7 @@ export interface LoadingIndicatorProps {
 }
 
 export interface ModuleProps {
-    project: Project
+    project: ModuleMetadata
     onClick: () => void
 }
 
@@ -124,7 +136,7 @@ export interface DashboardProps {
 export interface ProjectProps {
     theme: string
     setTheme: (theme: string) => void
-    project: Project
+    project: ModuleMetadata
     onClick: () => void
 }
 

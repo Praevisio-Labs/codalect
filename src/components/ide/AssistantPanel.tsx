@@ -7,7 +7,7 @@ import { DefaultChatTransport } from 'ai'
 import { Task, Constraint, Model } from '@/types/index'
 import { AssistantPanelProps } from '@/types/components'
 
-import { defaultMessage } from '@/data/defaults'
+import { defaultMessage } from '@/app/utils/defaults'
 import { tasks } from '@/data/ai/tasks'
 import { constraintLevels } from '@/data/ai/constraints'
 import { DEMO_MODELS as models } from '@/data/ai/models'
@@ -26,7 +26,6 @@ const defaultConstraint = constraintLevels.find(
 export default function AssistantPanel({
     file,
     cursorLine,
-    fileContent,
     textSelection,
     isContextHidden,
     setIsContextHidden,
@@ -50,7 +49,8 @@ export default function AssistantPanel({
                     shrink-0
                     gap-4 h-9 px-2 
                     bg-header 
-                    uppercase tracking-wider text-[10px]
+                    uppercase font-manrope tracking-wider
+                    text-[10px] text-font-apex
                 `}>
                 <span className={`flex-1 text-font-apex`}>Assistant</span>
                 <div className="w-1/2">
@@ -84,7 +84,6 @@ export default function AssistantPanel({
                     setInput={setInput}
                     sendMessage={sendMessage}
                     file={file}
-                    fileContent={fileContent}
                     cursorLine={cursorLine}
                     textSelection={textSelection}
                     isContextHidden={isContextHidden}

@@ -24,7 +24,7 @@ export default function ModelSelect({
 
     return (
         <Listbox value={selectedModel} onChange={handleChange}>
-            <div className="relative">
+            <div className="relative font-outfit tracking-wide">
                 <ListboxButton className="grid w-full cursor-pointer grid-cols-1 rounded-sm bg-panel/50 py-1 pr-2 pl-3 text-left text-font-paragraph normal-case outline-1 -outline-offset-1 outline-accent-dark text-[10px]">
                     <span className="col-start-1 row-start-1 flex items-center gap-3 pr-6">
                         <span className="block truncate">

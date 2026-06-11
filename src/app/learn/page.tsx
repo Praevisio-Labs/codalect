@@ -4,7 +4,7 @@ import { useState, useEffect, Suspense } from 'react'
 import { useSearchParams, useRouter } from 'next/navigation'
 import Dashboard from '@/components/learn/Dashboard'
 import Project from '@/components/learn/Project'
-import { projectData } from '@/data/learn/projects'
+import { moduleData } from '@/data/learn/registry'
 
 function Page() {
     const [theme, setTheme] = useState('raisin')
@@ -16,7 +16,7 @@ function Page() {
     const router = useRouter()
     const moduleID = searchParams.get('module')
     const project = moduleID
-        ? projectData.find((proj) => proj.id === moduleID)
+        ? moduleData.find((proj) => proj.id === moduleID)
         : null
 
     return project ? (

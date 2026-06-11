@@ -11,12 +11,15 @@ export default function Markdown({ content, size = 'sm' }: MarkdownProps) {
                 max-w-none py-2 text-${size}
                 prose prose-sm
                 prose-p:text-font-paragraph
-                prose-headings:text-font-primary
+                prose-headings:font-sora 
+                prose-headings:tracking-tight
+                prose-headings:font-medium
+                prose-headings:text-font-primary 
                 prose-strong:text-font-paragraph
-                prose-code:text-[#B8D0EB]
+                prose-code:text-code
                 prose-li:text-font-secondary
-                prose-a:text-accent-bright
-                prose-hr:border-[#EFABFF]
+                prose-a:text-link
+                prose-hr:border-divider
                 prose-hr:opacity-20 prose-hr:my-10 prose-hr:mx-75
             `}>
             <ReactMarkdown

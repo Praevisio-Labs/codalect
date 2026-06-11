@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import { Analytics } from '@vercel/analytics/next'
-import { inter } from '@/app/ui/fonts'
+import { inter, sora, outfit, manrope } from '@/app/ui/fonts'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -17,6 +17,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
     width: 'device-width',
     initialScale: 1,
+    maximumScale: 1,
     interactiveWidget: 'resizes-visual',
 }
 
@@ -26,8 +27,10 @@ export default function RootLayout({
     children: React.ReactNode
 }) {
     return (
-        <html lang="en">
-            <body className={`${inter.className} antialiased`}>
+        <html
+            lang="en"
+            className={`${inter.variable} ${sora.variable} ${outfit.variable} ${manrope.variable}`}>
+            <body className="font-outfit tracking-wide antialiased">
                 {children}
                 <Analytics />
             </body>

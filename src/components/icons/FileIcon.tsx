@@ -6,17 +6,25 @@ import {
     SiCss,
     SiMarkdown,
 } from 'react-icons/si'
+import type { IconType } from 'react-icons'
 import { FileIconProps } from '@/types/components'
 
-const iconLookup: Record<string, React.ReactNode> = {
-    typescript: <SiTypescript size={13} className="text-blue-500" />,
-    javascript: <SiJavascript size={13} className="text-yellow-400" />,
-    python: <SiPython size={13} className="text-blue-500" />,
-    html: <SiHtml5 size={13} className="text-orange-500" />,
-    css: <SiCss size={13} className="text-blue-400" />,
-    markdown: <SiMarkdown size={13} className="text-gray-400" />,
+const extensionIcons: Record<string, { Icon: IconType; className: string }> = {
+    ts: { Icon: SiTypescript, className: 'text-blue-500' },
+    tsx: { Icon: SiTypescript, className: 'text-blue-500' },
+    js: { Icon: SiJavascript, className: 'text-yellow-400' },
+    jsx: { Icon: SiJavascript, className: 'text-yellow-400' },
+    py: { Icon: SiPython, className: 'text-blue-500' },
+    html: { Icon: SiHtml5, className: 'text-orange-500' },
+    css: { Icon: SiCss, className: 'text-blue-400' },
+    md: { Icon: SiMarkdown, className: 'text-gray-400' },
 }
 
-export default function FileIcon({ fileType }: FileIconProps) {
-    return iconLookup[fileType]
+export default function FileIcon({ filepath }: FileIconProps) {
+    const ext = filepath.split('.').pop()?.toLowerCase() ?? ''
+    const entry = extensionIcons[ext]
+    if (!entry) return null
+
+    const { Icon, className } = entry
+    return <Icon size={11} className={`${className} shrink-0`} />
 }

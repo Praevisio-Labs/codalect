@@ -1,56 +1,76 @@
 <br>
 
-<div id="codalect-logo" align="center">
-
+<div id="codalect-brandmark" align="center">
 <img src="./public/brandmark.svg" alt="Codalect Logo" width="70"/>  
-
-<h3>Codalect</h3>
-</div>
-
-<div id="tagline" align="center">
-<em>Rethinking Coding Education for the AI Era</em>
 </div>
 
 <br>
 
-> **Live Demo:** [codalect.com](https://www.codalect.com/)
+<div id="codalect-wordmark" align="center">
+<img src="./public/wordmark.svg" alt="Codalect Logo" width="175"/>  
+</div>
 
-### An Uphill Battle
+<br>
 
-Professional AI coding tools weren't designed for learners. They're governed by task completion as the success condition.
+<div id="tagline" align="center">
+<h3><em>Rethinking Coding Education for the AI Era</em></h3>
+</div>
 
-Any constraint that doesn't change that governance structure reverts to completion behavior over time. A post-processed, inline context injection to "teach, don't complete" is always going to be fighting against this intentional behavior. 
+<div id="live-site" align="center">
+<h3><a href="https://www.codalect.com/">codalect.com</a></h3>
+</div>
 
-That's why existing tools do not feel native.
+<br>
 
-Because that's not the problem they're optimized to solve.
+### The Problem
 
-By and large, AI coding tools weren't (and won't be) designed with learners as the target audience. Given the revenue dynamics and macro AI game-plan, it's understandable that most startups and major AI labs are chasing professional developers. And for the enterprise team that's evaluating AI ROI, *completion* is the only metric that matters. 
+Professional AI coding tools weren't designed for learning. They're optimized for task completion. 
 
-### The Recalibration
+Even a direct override to to "teach, don't complete" will fight against this intentional behavior. Without changing this premise, the model will always revert to completion behavior over time.
 
-But just because there's no money to be made in retail, doesn't mean that there isn't thousands, if not millions, of folks who are learning to code or trying to improve. 
+And getting a Mr. Meeseeks box is great - until you need to take 2 strokes off Jerry's golf game. 
 
-In our view, the first step to serving this sizable population, is to acknowledge the need to bifurcate the treatment of coding professionals from those who are learning to code. 
+<br>
 
-It's tempting to lump these two demographics into the same group, but to quote Jeremy Keith: 
+<div align="center">
+  <img src="https://media.giphy.com/media/lpxqmxzQHL7hUejepu/giphy.gif" alt="Rick and Morty via GIPHY" width="50%">
+  <p><a href="https://giphy.com/gifs/rickandmorty-season-1-adult-swim-rick-and-morty-lpxqmxzQHL7hUejepu">via GIPHY</a></p>
+</div>
 
-> "Java is to JavaScript as ham is to hamster." 
+<br>
 
-While the terms *professional coder* and *beginner coder* sound similar, that overlap is in name only, much like the hamster analogy. After all, knowledge acquisition (encoding) lights up a fundamentally different part of our brain than task execution (retrieval), even if those networks run parallel to each other.
+We believe that even in the age of agentic coding, judgement and critical thinking remain evergreen. 
 
-### The Necessary Battle
+Yet this bias for completion often robs those who are building judgement by short-circuiting the journey.
+
+In our view, this makes existing tools sub-optimal for learning. 
+
+### Why Now
+
+By and large, AI coding tools weren't (and won't be) designed with learners as the target audience. 
+
+Given the revenue dynamics, it's understandable that most startups and major AI labs are chasing professional developers. And for the enterprise team that's evaluating AI ROI, completion *should* be the metric they target. 
+
+But this product-lens leaves out thousands, if not millions, of folks around the world who are just beginning to code. 
+
+While it can be tempting to lump these two demographics together, we think that their priorities are different enough to warrant tailored features. 
+
+To quote Jeremy Keith: 
+
+> &emsp; *"Java is to JavaScript as ham is to hamster."* 
+
+While the terms *professional coder* and *beginner coder* may sound similar, knowledge acquisition (encoding) lights up a fundamentally different part of our brain than task execution (retrieval).
+
+### Why Us
 
 Codalect is a bet on the fact that for this latter group of folks, a solution tailored to their needs will deliver indispensable value. 
 
-Codalect is also a bet that learning to code will still be important despite how the role of coders will change in the age of AI.
+Codalect is also a bet that learning to code will still be important despite how the role of developers have changed in the age of AI.
 
 Read our full thesis here: [blog.stackademic.com](https://blog.stackademic.com/rethinking-coding-education-for-the-ai-era-054b40a350d5).
 
 <br>
 
 <div id="praevisio-slogan" align="left">
-
 <img src="./public/praevisio/brand-slogan.png" alt="Praevisio.Labs Slogan" width="250"/>  
-
 </div>

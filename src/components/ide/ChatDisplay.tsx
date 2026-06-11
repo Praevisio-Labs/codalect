@@ -43,22 +43,23 @@ export default function ChatDisplay({ messages, status }: ChatDisplayProps) {
 
                 if (!textContent.trim()) return null // prevent first empty msg from rendering
 
-            return (
-                <div
-                    key={msg.id}
-                    className={`
-                        py-1 px-2.5 
-                        text-xs text-font-paragraph 
-                        ${ msg.role === 'user' 
-                            ? userStyle
-                            : assistantStyle }
-                    `}>
-                    {msg.role === 'user'
-                        ? <span>{textContent}</span>
-                        : <Markdown content={textContent} size={'xs'} />
-                    }
-                </div>
-            )
+                return (
+                    <div
+                        key={msg.id}
+                        className={`
+                            py-1 px-2.5 
+                            text-xs 
+                            font-outfit tracking-wide 
+                            text-font-paragraph 
+                            ${msg.role === 'user' ? userStyle : assistantStyle}
+                        `}>
+                        {msg.role === 'user' ? (
+                            <span>{textContent}</span>
+                        ) : (
+                            <Markdown content={textContent} size={'xs'} />
+                        )}
+                    </div>
+                )
             })}
             <LoadingIndicator show={showLoadingIndicator} />
             <div ref={scrollRef}></div>

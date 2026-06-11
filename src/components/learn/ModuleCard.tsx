@@ -1,19 +1,19 @@
 import { RocketLaunchIcon, ClockIcon } from '@heroicons/react/24/outline'
 import { ModuleProps } from '@/types/components'
-import { domainLabels, skillLabels, projectIcons } from '@/data/lookups'
+import { domainLabels, skillLabels, projectIcons } from '@/app/utils/lookups'
 
 export default function ModuleCard({ project, onClick }: ModuleProps) {
     const isComingSoon = project.isReleased === false
     const cardStateClasses = isComingSoon
-        ? 'opacity-70 cursor-default'
-        : 'hover:opacity-60 cursor-pointer'
+        ? 'cursor-default'
+        : 'cursor-pointer transition duration-200 hover:-translate-y-0.5 hover:border-accent-bright hover:bg-card hover:shadow-[0_0_12px_-2px_var(--color-accent-bright)]'
     const ProjectIcon = projectIcons[project.id] ?? RocketLaunchIcon
 
     return (
         <div
             onClick={isComingSoon ? undefined : onClick}
             className={`
-                    flex flex-col gap-4 p-6
+                    relative flex flex-col gap-4 p-6
                     w-full min-w-0
                     rounded-lg border-1 border-accent-muted
                     bg-panel
@@ -31,7 +31,7 @@ export default function ModuleCard({ project, onClick }: ModuleProps) {
                             <ProjectIcon className="size-5 text-font-primary" />
                         </div>
                         <div className="flex items-center gap-3">
-                            <strong className="rounded-sm border border-accent-muted px-3 py-1.5 text-[10px] font-medium text-font-secondary">
+                            <strong className="rounded-sm border border-accent-muted px-3 py-1.5 text-[10px] font-manrope tracking-wider font-medium text-font-secondary">
                                 {project.level}
                             </strong>
                             <div className="flex items-center gap-1 text-font-secondary">
@@ -39,7 +39,7 @@ export default function ModuleCard({ project, onClick }: ModuleProps) {
                                     className="size-4"
                                     aria-hidden="true"
                                 />
-                                <span className="text-xs font-medium">
+                                <span className="text-xs font-manrope tracking-wider font-medium">
                                     {project.duration}
                                 </span>
                             </div>
@@ -47,18 +47,18 @@ export default function ModuleCard({ project, onClick }: ModuleProps) {
                     </div>
 
                     <div className="hidden md:flex items-center justify-between">
-                        <strong className="rounded-sm border border-accent-muted px-3 py-1.5 text-xs font-medium text-font-secondary">
+                        <strong className="rounded-sm border border-accent-muted px-3 py-1.5 text-xs font-manrope tracking-wider font-medium text-font-secondary">
                             {project.level}
                         </strong>
                         <div className="flex items-center gap-1 text-font-secondary">
                             <ClockIcon className="size-4" aria-hidden="true" />
-                            <span className="text-xs font-medium">
+                            <span className="text-xs font-manrope tracking-wider font-medium">
                                 {project.duration}
                             </span>
                         </div>
                     </div>
 
-                    <h3 className="mt-4 text-lg font-medium text-font-apex md:text-xl">
+                    <h3 className="mt-4 text-lg font-sora tracking-tight font-medium text-font-apex md:text-xl">
                         {project.name}
                     </h3>
 
@@ -69,20 +69,27 @@ export default function ModuleCard({ project, onClick }: ModuleProps) {
                         {project.domains.map((domain) => (
                             <span
                                 key={domain}
-                                className="rounded-full border border-accent-muted px-2.5 py-0.5 text-xs whitespace-nowrap text-font-secondary">
+                                className="rounded-full border border-accent-muted px-2.5 py-0.5 text-xs font-manrope tracking-wider whitespace-nowrap text-font-secondary">
                                 {domainLabels[domain] ?? domain}
                             </span>
                         ))}
                         {project.skills.map((skill) => (
                             <span
                                 key={skill}
-                                className="rounded-full border border-accent-muted px-2.5 py-0.5 text-xs whitespace-nowrap text-font-secondary">
+                                className="rounded-full border border-accent-muted px-2.5 py-0.5 text-xs font-manrope tracking-wider whitespace-nowrap text-font-secondary">
                                 {skillLabels[skill] ?? skill}
                             </span>
                         ))}
                     </div>
                 </div>
             </div>
+            {isComingSoon && (
+                <div className="absolute inset-0 rounded-lg flex items-center justify-center backdrop-blur-[2px] bg-panel/10">
+                    <span className="rounded-full bg-accent-bright px-4 py-1.5 text-font-apex text-sm font-manrope tracking-wider font-semibold shadow-lg">
+                        Coming Soon
+                    </span>
+                </div>
+            )}
         </div>
     )
 }

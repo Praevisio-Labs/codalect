@@ -16,10 +16,18 @@ export type Link = {
 }
 
 export type File = {
-    name: string
-    fileType: Language
+    path: string
     content: string
 }
+
+export type FolderNode = {
+    folders: Map<string, FolderNode>
+    files: Map<string, File>
+}
+
+export type Row =
+    | { kind: 'folder'; name: string; path: string; depth: number }
+    | { kind: 'file'; name: string; path: string; depth: number; file: File }
 
 export type Project = {
     id: string
@@ -32,9 +40,37 @@ export type Project = {
     domains: Domain[]
     level: Level
     duration: string
-    teachers: string[]
     isReleased?: boolean
     files: File[]
+}
+
+export type Template = 'static' | 'react-ts' | 'nextjs'
+
+export type ModuleMetadata = {
+    id: string
+    name: string
+    description: string
+    overview: string
+    instructions: string
+    outcomes: string
+    skills: string[]
+    domains: Domain[]
+    level: Level
+    duration: string
+    isReleased?: boolean
+    template: Template
+    activeFile: string
+    visibleFiles?: string[]
+}
+
+export type SandpackFile = { code: string; hidden?: boolean }
+export type SandpackFiles = Record<string, SandpackFile>
+
+export type Workspace = {
+    key: string
+    template: Template
+    activeFile: string
+    files: SandpackFiles
 }
 
 export type Skill = {
@@ -95,3 +131,9 @@ export type Domain =
     | 'mobile'
 
 export type Level = 'Beginner' | 'Intermediate' | 'Advanced'
+
+export type AssistantContext = {
+    fileName: string
+    fileContent: string
+    cursorLine: number
+}

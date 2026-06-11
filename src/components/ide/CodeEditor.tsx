@@ -1,28 +1,27 @@
 import Editor, { OnMount } from '@monaco-editor/react'
+import { useActiveCode, useSandpack } from '@codesandbox/sandpack-react'
 import { EditorProps } from '@/types/components'
+import { configureMonaco } from '@/app/utils/monaco'
 
 export default function CodeEditor({
     file,
     theme,
     onCursorChange,
     onHighlightChange,
-    onContentChange,
 }: EditorProps) {
-    const editorTheme = theme == 'light' ? 'vs' : 'vs-dark'
+    const { code, updateCode } = useActiveCode()
+    const { sandpack } = useSandpack()
 
-    // note shape: (editor: IStandaloneCodeEditor, monaco: Monaco)
+    const editorTheme = theme === 'light' ? 'vs' : 'vs-dark'
+
     const handleMount: OnMount = (editor) => {
         editor.onDidChangeCursorPosition((e) => {
-            if (onCursorChange) {
-                onCursorChange(e.position.lineNumber)
-            }
+            if (onCursorChange) onCursorChange(e.position.lineNumber)
         })
         editor.onDidChangeCursorSelection((e) => {
             const model = editor.getModel()
-
             if (!model) return
             const isEmpty = e.selection.isEmpty()
-
             if (onHighlightChange) {
                 onHighlightChange({
                     isActive: !isEmpty,
@@ -42,40 +41,36 @@ export default function CodeEditor({
                     shrink-0
                     gap-1 h-9 px-2 
                     bg-header 
-                    uppercase tracking-wider text-[10px] text-font-apex
+                    uppercase font-manrope tracking-wider
+                    text-[10px] text-font-apex
                 `}>
                 Files
                 <span className="normal-case tracking-normal text-[11px] opacity-60">
                     {' > '}
                 </span>
                 <span className="normal-case tracking-normal text-[11px] opacity-80">
-                    {file.name}
+                    {file.path.slice(1)}
                 </span>
             </div>
             <div className="flex-1 min-h-0">
                 <Editor
                     height="100%"
-                    path={file.name}
-                    defaultValue={file.content}
-                    defaultLanguage={file.fileType}
+                    key={sandpack.activeFile}
+                    path={sandpack.activeFile}
+                    defaultValue={code}
                     className="overflow-hidden"
                     theme={editorTheme}
+                    beforeMount={configureMonaco}
                     onMount={handleMount}
-                    onChange={(value) => {
-                        if (onContentChange) {
-                            onContentChange(value ?? '')
-                        }
-                    }}
+                    onChange={(value) => updateCode(value || '')}
                     options={{
                         fontSize: 10,
-                        wordWrap: 'on',
+                        wordWrap: 'off',
                         glyphMargin: false,
                         cursorStyle: 'block',
                         padding: { top: 12 },
                         minimap: { enabled: false },
-                        bracketPairColorization: {
-                            enabled: true,
-                        },
+                        bracketPairColorization: { enabled: true },
                     }}
                 />
             </div>

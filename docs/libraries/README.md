@@ -17,3 +17,17 @@
 Handles streaming, provider switching, and the `useChat` hook. The foundations doc covers how streaming works under the hood; the Next.js App Router guide covers the API route + client hook setup used in this project.
 - [streaming foundations](https://ai-sdk.dev/docs/foundations/streaming)
 - [Next.js App Router quickstart](https://ai-sdk.dev/docs/getting-started/nextjs-app-router)
+
+---
+
+## Sandpack
+
+**@codesandbox/sandpack-react** - out-of-the-box solution for app's preview/console functions
+- Sandpack has a CodeMirror editor, but we opted to keep Monaco because CodeMirror is too simplistic (i.e. no IntelliSense)
+
+Documented pattern for [integrating Monaco Editor with Sandpack](https://sandpack.codesandbox.io/docs/guides/integrate-monaco-editor)
+
+Sandpack Components:
+- [Preview](https://sandpack.codesandbox.io/docs/advanced-usage/components#preview)
+- [FileTree](https://sandpack.codesandbox.io/docs/advanced-usage/components#file-explorer)
+- [Console](https://sandpack.codesandbox.io/docs/advanced-usage/components#console)

@@ -37,6 +37,9 @@
 - [x] track user edits in memory and synchronize AI context injection, #37
 - [x] track selection bounds and conditionally inject highlighted text, #38
 - [x] add filename and selection bounds indicator to AI panel, #32
+
+## Conference Demo Enhancements: AI Engineer Singapore 2026
+
 - [x] add persona selection and tune response, refine format guidelines, #33
 - [x] measure time to first token and reduce response latency, #35
 - [x] add persona display component rendering longer role description, #44
@@ -59,10 +62,24 @@
 - [x] replace Persona type with Task and ConstraintLevel data layer, #56
 - [x] redesign system prompt with Socratic base layers and task overlays, #57
 - [x] add TaskSelect pills and refactor PersonaSelect into ConstraintSelect, #58
-- [x] author per-mode adversarial test sets and eval methodology doc, #59
-- [x] build standalone eval pipeline with Bedrock agent and LLM-as-Judge, #60
-- [x] publish eval results, head-to-head comparisons, and matrix artifacts, #61
+- [x] document eval methodology and run manual per-mode baseline evals, #59
+- [x] (Closed as will not complete), #60
+- [x] publish manual eval results and benchmark against baseline models, #61
+
+## Sprint 6: In-browser preview/console + editable VFS
+
+- [x] install @codesandbox/sandpack-react and confirm no conflicts, #67
+- [x] migrate file state from page.tsx Record to Sandpack files store, #68
+- [x] refactor assistant file/cursor/selection context for Sandpack store, #69
+- [x] build slide-out preview + console drawer with branded toggle, #70
+- [x] refactor lesson modules, test Nodebox, and update load pipeline, #75
+- [x] add expandable folders UI to FileTree for component nesting, #76
+- [x] build a themed, runnable React starter for the default sandbox, #77
+- [x] wire Tailwind into Sandpack preview and fix console log capture, #72
+- [x] verify Sandpack preview renders cleanly on Vercel preview deploy, #73
+- [x] final enhancements to Codalect before merging Sprint 6 into main, #78
 
 ## Planned Improvements 
 
 - [ ] wire up model select component to backend API routes, #49
+- [ ] add inline create, rename, delete to file tree against Sandpack store, #71

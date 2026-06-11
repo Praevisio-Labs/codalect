@@ -16,13 +16,16 @@ export default function Header({
         <div
             className={`
             flex justify-between
-            ${sora.className} text-font-apex
+            text-font-apex
             bg-header p-2
             `}>
-            <div className="flex items-center gap-1">
+            <Link
+                href="/"
+                aria-label="Codalect home"
+                className="flex items-center gap-1 cursor-pointer hover:opacity-80 transition">
                 <BrandmarkIcon className="size-5 md:size-8 text-font-apex" />
                 <WordmarkIcon className="h-5 md:h-8 text-font-apex" />
-            </div>
+            </Link>
             <div className="flex gap-5">
                 <Link
                     href={path}
@@ -30,7 +33,7 @@ export default function Header({
                     flex gap-1 items-center px-3
                     border-1 border-ring
                     rounded-sm bg-none 
-                    ${outfit.className} text-xs
+                    text-xs
                     hover:underline hover:bg-button transition 
                     cursor-pointer
                     `}>

@@ -1,0 +1,9 @@
+Introduction to Vector Databases
+
+Vector databases are specialized data stores designed to handle high-dimensional vector embeddings. Unlike traditional databases that store structured data in rows and columns, vector databases store numerical representations of data — typically arrays of floating-point numbers — and enable fast similarity search across millions or billions of vectors.
+
+The core operation in a vector database is similarity search. Given a query vector, the database returns the k most similar vectors from its index. Similarity is typically measured using cosine similarity, Euclidean distance, or dot product. This operation powers semantic search, recommendation systems, and retrieval-augmented generation (RAG) in AI applications.
+
+Modern vector databases like Pinecone, Weaviate, and Qdrant use approximate nearest neighbor (ANN) algorithms to make similarity search fast even at scale. These algorithms trade a small amount of accuracy for massive speed improvements, making it practical to search billions of vectors in milliseconds.
+
+In a RAG system, vector databases serve as the knowledge layer. Documents are split into chunks, embedded into vectors, and stored in the database. When a user asks a question, the question is embedded and used to retrieve the most relevant chunks. These chunks are then injected into the language model's context, grounding its response in the source material.

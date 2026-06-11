@@ -21,7 +21,7 @@ export default function ContextSelect({
     return (
         <div
             onClick={() => setIsContextHidden(!isContextHidden)}
-            className="group relative flex items-center gap-1 cursor-pointer text-[10px] text-font-paragraph">
+            className="group relative flex items-center gap-1 cursor-pointer text-[10px] font-outfit tracking-wide text-font-paragraph">
             <span className={isContextHidden ? 'opacity-40' : 'opacity-80'}>
                 {isContextHidden ? (
                     <EyeSlashIcon className="h-4 w-4" />
@@ -32,7 +32,7 @@ export default function ContextSelect({
             <span className={isContextHidden ? 'opacity-40' : 'opacity-80'}>
                 {textSelection.isActive
                     ? `${linesHighlightedCount} lines highlighted`
-                    : file.name}
+                    : file.path.slice(1)}
             </span>
             <span className="absolute -top-7 left-1/2 -translate-x-1/2 px-1.5 py-0.5 rounded-sm bg-panel text-font-apex text-[9px] whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-150 pointer-events-none">
                 {tooltipText}

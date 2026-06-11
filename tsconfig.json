@@ -30,5 +30,10 @@
     ".next/dev/types/**/*.ts",
     "**/*.mts"
   ],
-  "exclude": ["node_modules", "!dev"]
+  "exclude": [
+    "node_modules",
+    "!dev",
+    "src/data/learn/experimental-curriculum",
+    "src/data/learn/content"
+  ]
 }
