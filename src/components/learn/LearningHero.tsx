@@ -12,12 +12,12 @@ const steps = [
     },
     {
         label: 'Review the brief',
-        detail: 'See the goal, context, and refresher notes.',
+        detail: 'See goals, context, and refreshers.',
         Icon: DocumentTextIcon,
     },
     {
         label: 'Launch starter files',
-        detail: 'Open a prepared workspace with gaps to fill.',
+        detail: 'Complete exercises in prepped files.',
         Icon: RocketLaunchIcon,
     },
 ]
@@ -51,7 +51,7 @@ export default function LearningHero() {
                             <span className="size-1.5 rounded-full bg-font-secondary" />
                             <span>How modules work</span>
                         </div>
-                        <h3 className="mt-3 text-lg font-semibold text-font-apex md:text-xl">
+                        <h3 className="mt-3 text-lg font-sora tracking-tight font-semibold text-font-apex md:text-xl">
                             Modules include starter files.
                         </h3>
                         <p className="mt-2 text-sm leading-6 text-font-paragraph">
@@ -78,11 +78,11 @@ export default function LearningHero() {
                                     {index + 1}
                                 </span>
                                 <div className="min-w-0">
-                                    <div className="flex items-center gap-1.5 text-sm font-medium text-font-paragraph">
+                                    <div className="flex items-center gap-1.5 text-sm font-sora tracking-tight font-medium text-font-paragraph">
                                         <step.Icon className="size-4 shrink-0" />
                                         <span>{step.label}</span>
                                     </div>
-                                    <p className="mt-1 text-xs leading-5 text-font-paragraph/80">
+                                    <p className="mt-1 text-xs leading-5 font-manrope tracking-wider  text-font-paragraph/80">
                                         {step.detail}
                                     </p>
                                 </div>

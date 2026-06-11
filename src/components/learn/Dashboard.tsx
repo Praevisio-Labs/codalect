@@ -21,7 +21,7 @@ export default function Dashboard({
             />
             <div className="flex-none px-6 pt-6 overflow-auto">
                 <h2
-                    className={`text-font-apex text-xl md:text-3xl font-semibold`}>
+                    className={`font-sora tracking-tight text-font-apex text-xl md:text-3xl font-semibold`}>
                     Project Modules
                 </h2>
             </div>

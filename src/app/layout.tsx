@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import { Analytics } from '@vercel/analytics/next'
-import { inter, sora, outfit, lusitana, manrope } from '@/app/ui/fonts'
+import { inter, sora, outfit, manrope } from '@/app/ui/fonts'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -29,8 +29,8 @@ export default function RootLayout({
     return (
         <html
             lang="en"
-            className={`${inter.variable} ${sora.variable} ${outfit.variable} ${lusitana.variable} ${manrope.variable}`}>
-            <body className="font-inter antialiased">
+            className={`${inter.variable} ${sora.variable} ${outfit.variable} ${manrope.variable}`}>
+            <body className="font-outfit tracking-wide antialiased">
                 {children}
                 <Analytics />
             </body>

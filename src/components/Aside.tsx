@@ -47,14 +47,14 @@ export default function Aside({ type, content, link }: AsideProps) {
             <Icon className={`flex-none w-4 h-4 mt-0.5 ${labelColor}`} />
             <div className="flex flex-col gap-1 text-sm">
                 <span
-                    className={`font-semibold text-xs uppercase tracking-wide ${labelColor}`}>
+                    className={`font-semibold text-xs font-sora tracking-tight uppercase tracking-wide ${labelColor}`}>
                     {label}
                 </span>
                 <p className="text-font-paragraph leading-relaxed">{content}</p>
                 {link && (
                     <a
                         href={link.href}
-                        className="underline cursor-pointer text-font-paragraph">
+                        className="underline cursor-pointer text-xs text-link hover:text-electric-sapphire transition-colors">
                         {link.text}
                     </a>
                 )}

@@ -16,7 +16,7 @@ export default function Header({
         <div
             className={`
             flex justify-between
-            ${sora.className} text-font-apex
+            text-font-apex
             bg-header p-2
             `}>
             <Link
@@ -33,7 +33,7 @@ export default function Header({
                     flex gap-1 items-center px-3
                     border-1 border-ring
                     rounded-sm bg-none 
-                    ${outfit.className} text-xs
+                    text-xs
                     hover:underline hover:bg-button transition 
                     cursor-pointer
                     `}>
