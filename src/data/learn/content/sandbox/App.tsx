@@ -1,4 +1,3 @@
-import './styles.css'
 import Greeting from './components/Greeting'
 import Counter from './components/Counter'
 
