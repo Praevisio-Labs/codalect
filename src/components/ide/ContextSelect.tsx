@@ -21,7 +21,7 @@ export default function ContextSelect({
     return (
         <div
             onClick={() => setIsContextHidden(!isContextHidden)}
-            className="group relative flex items-center gap-1 cursor-pointer text-[10px] text-font-paragraph">
+            className="group relative flex items-center gap-1 cursor-pointer text-[10px] font-outfit tracking-wide text-font-paragraph">
             <span className={isContextHidden ? 'opacity-40' : 'opacity-80'}>
                 {isContextHidden ? (
                     <EyeSlashIcon className="h-4 w-4" />

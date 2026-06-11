@@ -100,7 +100,7 @@ export default function IDEPanels({ theme }: IDEPanelsProps) {
                         aria-label="Open preview"
                         className="group absolute right-1.5 top-1.5 z-10 cursor-pointer rounded-xs bg-accent-bright p-0.5 text-font-apex shadow">
                         <PreviewIcon className="size-5 grayscale-0 transition group-hover:grayscale" />
-                        <span className="absolute top-full right-0 mt-1 px-1.5 py-0.5 rounded-sm bg-panel text-font-apex text-[9px] whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-150 pointer-events-none">
+                        <span className="absolute top-full right-0 mt-1 px-1.5 py-0.5 rounded-sm bg-panel text-font-apex text-[9px] font-outfit tracking-wide whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-150 pointer-events-none">
                             Open preview
                         </span>
                     </button>

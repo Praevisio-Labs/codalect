@@ -35,7 +35,7 @@ export default function FileTree({ files, selected, onSelect }: FileTreeProps) {
                     shrink-0
                     h-9 px-2
                     bg-header
-                    uppercase tracking-wider
+                    uppercase font-manrope tracking-wider
                     text-[10px] text-font-apex
                 `}>
                 Explorer
@@ -49,7 +49,14 @@ export default function FileTree({ files, selected, onSelect }: FileTreeProps) {
                             style={{
                                 paddingLeft: `${0.25 + row.depth * 0.75}rem`,
                             }}
-                            className={`flex items-center gap-0.5 pr-1 py-1 text-[9px] md:text-[10px] cursor-pointer ${baseStyle}`}>
+                            className={`
+                                flex items-center gap-0.5
+                                pr-1 py-1
+                                text-[9px] md:text-[10px] 
+                                font-manrope tracking-wider
+                                cursor-pointer
+                                ${baseStyle}
+                            `}>
                             <ChevronRightIcon
                                 className={`size-3 shrink-0 transition-transform ${
                                     collapsed.has(row.path) ? '' : 'rotate-90'
@@ -67,7 +74,9 @@ export default function FileTree({ files, selected, onSelect }: FileTreeProps) {
                             className={`
                                 flex items-center gap-1.5
                                 pr-1 py-1
-                                text-[9px] md:text-[10px] cursor-pointer
+                                text-[9px] md:text-[10px] 
+                                font-manrope tracking-wider
+                                cursor-pointer
                                 ${selected.path === row.path ? highlightStyle : baseStyle}
                             `}>
                             <FileIcon filepath={row.path} />

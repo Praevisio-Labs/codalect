@@ -6,7 +6,7 @@ export default function ConstraintDisplay({
     return (
         <div className="w-full flex justify-center p-0 md:p-2">
             <span
-                className={`italic text-[10px] text-font-paragraph opacity-60`}>
+                className={`italic text-[10px] font-outfit tracking-wide text-font-paragraph opacity-60`}>
                 {selectedConstraint.description.long}
             </span>
         </div>

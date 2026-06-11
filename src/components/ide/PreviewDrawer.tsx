@@ -24,7 +24,7 @@ export default function PreviewDrawer({ isOpen, onClose }: PreviewDrawerProps) {
                 shrink-0
                 h-9 px-2
                 bg-header
-                uppercase tracking-wider
+                uppercase font-manrope tracking-wider
                 text-[10px] text-font-apex
             `}>
                 <span>Preview Code</span>
@@ -52,7 +52,7 @@ export default function PreviewDrawer({ isOpen, onClose }: PreviewDrawerProps) {
                 <button
                     type="button"
                     onClick={() => setIsConsoleOpen(!isConsoleOpen)}
-                    className="flex h-9 w-full items-center justify-between bg-header px-2 text-[10px] uppercase tracking-wider text-font-apex">
+                    className="flex h-9 w-full items-center justify-between bg-header px-2 text-[10px] uppercase font-manrope tracking-wider text-font-apex">
                     <span>Console</span>
                     <ChevronDownIcon
                         className={`size-4 transition-transform ${isConsoleOpen ? 'rotate-180' : ''}`}

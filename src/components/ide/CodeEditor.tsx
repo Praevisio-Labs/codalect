@@ -41,7 +41,8 @@ export default function CodeEditor({
                     shrink-0
                     gap-1 h-9 px-2 
                     bg-header 
-                    uppercase tracking-wider text-[10px] text-font-apex
+                    uppercase font-manrope tracking-wider
+                    text-[10px] text-font-apex
                 `}>
                 Files
                 <span className="normal-case tracking-normal text-[11px] opacity-60">

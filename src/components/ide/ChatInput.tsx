@@ -71,7 +71,9 @@ export default function ChatInput({
                     max-h-20
                     resize-none outline-none
                     bg-transparent
-                    text-xs text-font-paragraph
+                    text-xs 
+                    font-outfit tracking-wide 
+                    text-font-paragraph
                     px-2 pt-2 pb-1
                 `}
             />

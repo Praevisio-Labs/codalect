@@ -76,7 +76,8 @@
 - [x] add expandable folders UI to FileTree for component nesting, #76
 - [x] build a themed, runnable React starter for the default sandbox, #77
 - [x] wire Tailwind into Sandpack preview and fix console log capture, #72
-- [ ] verify Sandpack preview renders cleanly on Vercel preview deploy, #73
+- [x] verify Sandpack preview renders cleanly on Vercel preview deploy, #73
+- [x] final enhancements to Codalect before merging Sprint 6 into main, #78
 
 ## Planned Improvements 
 

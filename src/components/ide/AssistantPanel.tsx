@@ -49,7 +49,8 @@ export default function AssistantPanel({
                     shrink-0
                     gap-4 h-9 px-2 
                     bg-header 
-                    uppercase tracking-wider text-[10px]
+                    uppercase font-manrope tracking-wider
+                    text-[10px] text-font-apex
                 `}>
                 <span className={`flex-1 text-font-apex`}>Assistant</span>
                 <div className="w-1/2">

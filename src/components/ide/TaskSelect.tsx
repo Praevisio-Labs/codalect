@@ -18,7 +18,7 @@ export default function TaskSelect({
     setSelectedTask,
 }: TaskSelectProps) {
     return (
-        <div className="flex gap-1 rounded-sm bg-page/50 p-0.5 text-[10px]">
+        <div className="flex gap-1 rounded-sm bg-page/50 p-0.5 text-[10px] font-outfit tracking-wide">
             {tasks.map((task) => {
                 const isActive = task.key === selectedTask.key
                 const Icon = iconMap[task.key]
