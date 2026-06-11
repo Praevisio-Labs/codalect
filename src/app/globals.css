@@ -1,6 +1,14 @@
 @import 'tailwindcss';
 @plugin "@tailwindcss/typography";
 
+@theme inline {
+    --font-inter:           var(--next-font-inter);
+    --font-sora:            var(--next-font-sora);
+    --font-outfit:          var(--next-font-outfit);
+    --font-lusitana:        var(--next-font-lusitana);
+    --font-manrope:         var(--next-font-manrope);
+}
+
 @theme {
     --color-header:         #10002B;
     --color-page:           #3C096C;

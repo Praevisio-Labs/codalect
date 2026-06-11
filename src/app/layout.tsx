@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import { Analytics } from '@vercel/analytics/next'
-import { inter } from '@/app/ui/fonts'
+import { inter, sora, outfit, lusitana, manrope } from '@/app/ui/fonts'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -27,8 +27,10 @@ export default function RootLayout({
     children: React.ReactNode
 }) {
     return (
-        <html lang="en">
-            <body className={`${inter.className} antialiased`}>
+        <html
+            lang="en"
+            className={`${inter.variable} ${sora.variable} ${outfit.variable} ${lusitana.variable} ${manrope.variable}`}>
+            <body className="font-inter antialiased">
                 {children}
                 <Analytics />
             </body>
