@@ -1,5 +1,5 @@
 import { ChatInputProps } from '@/types/components'
-import { ArrowUpCircleIcon } from '@heroicons/react/24/outline'
+import { ArrowUpCircleIcon, StopIcon } from '@heroicons/react/24/outline'
 
 import { getAssistantContext } from '@/app/utils/assistant'
 
@@ -97,7 +97,11 @@ export default function ChatInput({
                         type="submit"
                         disabled={status !== 'ready'}
                         className={`bg-button px-1 py-0.5 rounded-sm cursor-pointer`}>
-                        <ArrowUpCircleIcon className="size-4.5 text-accent-contra" />
+                        {status === 'ready' ? (
+                            <ArrowUpCircleIcon className="size-4.5 text-accent-contra" />
+                        ) : (
+                            <StopIcon className="size-4.5 text-accent-contra" />
+                        )}
                     </button>
                 </div>
             </div>
