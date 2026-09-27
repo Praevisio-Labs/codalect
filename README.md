@@ -20,6 +20,10 @@
 <h3><a href="https://www.codalect.com/">codalect.com</a></h3>
 </div>
 
+<div id="project-board" align="center">
+<p><a href="https://github.com/orgs/Praevisio-Labs/projects/3/views/1">Project Kanban Board</a></p>
+</div>
+
 <br>
 
 ### The Problem
