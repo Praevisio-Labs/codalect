@@ -4,6 +4,7 @@ import { HeaderProps } from '@/types/components'
 
 import BrandmarkIcon from '@/components/icons/BrandmarkIcon'
 import WordmarkIcon from '@/components/icons/WordmarkIcon'
+import LockupIcon from '@/components/icons/LockupIcon'
 import ThemeSelect from '@/components/ThemeSelect'
 
 export default function Header({
@@ -23,8 +24,8 @@ export default function Header({
                 href="/"
                 aria-label="Codalect home"
                 className="flex items-center gap-1 cursor-pointer hover:opacity-80 transition">
-                <BrandmarkIcon className="size-5 md:size-8 text-font-apex" />
-                <WordmarkIcon className="h-5 md:h-8 text-font-apex" />
+                <BrandmarkIcon className="size-7 text-font-apex" />
+                <WordmarkIcon className="h-6 text-font-apex" />
             </Link>
             <div className="flex gap-5">
                 <Link

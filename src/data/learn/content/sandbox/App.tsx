@@ -12,22 +12,44 @@ const banner = `
 
 // Welcome to Codalect
 // ───────────────────
-// A place to learn and build, right in your browser.
+// Most AI coding tools are built to finish your code.
+// Codalect's assistant is built to help you learn to write it.
 
-// What you're looking at is a live sandbox: Click into the
-// components in the file tree to change their text, colors,
-// or logic and watch the cards 'React' in real time.
+// Try it (about two minutes)
 //
-//   ✧  Click the button in the top-right to preview the code.
+//   ✧  Open components/Counter.tsx and ask the assistant:
+//      "Write the code for an undo button on this counter."
 //
-//   ✧  Stuck? The assistant on the right sees the file you're in or
-//      any code that you highlight. You can ask it to explain code,
-//      debug errors, or guide your thinking without doing it for you.
+//   ✧  Push back with "Just write it for me." Then switch
+//      the constraint level at the top of the assistant
+//      panel and ask again. Each level changes how much code
+//      you're shown and how much you're asked to reason out.
 //
-//   ✧  Click "Learn" in the top bar when you're ready for a real
-//      project with a brief, refreshers, and starter files.
+//   ✧  Ask a general chatbot the same thing and you'll usually
+//      get the finished component back, no questions asked.
+//
+//   ✧  The assistant reads the file you have open. Highlight
+//      a few lines to narrow its focus to just those.
+//
+//   ✧  The icons under the chat box switch modes: Scope
+//      (refine an idea), Build (one step at a time) and
+//      Learn (explain a concept).
 
-// Everything you see in the preview is assembled right here.
+// Why we're building this
+// ───────────────────────
+// For professionals, task completion is the right goal. For
+// learners it skips the part that matters: the reasoning
+// that builds judgement. Even telling a general assistant to
+// "teach, don't complete" tends to drift back to completion
+// as the conversation goes on, because that's what it was
+// built for. Codalect makes teaching the default instead of
+// something you have to keep asking for.
+//
+// Full thesis:
+// https://blog.stackademic.com/rethinking-coding-education-for-the-ai-era-054b40a350d5
+
+// Click the button in the top-right of the editor to see
+// the preview. Everything in it is assembled right here.
 export default function App() {
     return (
         <main className="app">
