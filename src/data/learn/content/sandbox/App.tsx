@@ -44,9 +44,6 @@ const banner = `
 // as the conversation goes on, because that's what it was
 // built for. Codalect makes teaching the default instead of
 // something you have to keep asking for.
-//
-// Full thesis:
-// https://blog.stackademic.com/rethinking-coding-education-for-the-ai-era-054b40a350d5
 
 // Click the button in the top-right of the editor to see
 // the preview. Everything in it is assembled right here.
